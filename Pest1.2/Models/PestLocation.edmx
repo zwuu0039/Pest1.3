@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PestLocationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PestLocation">
+          <Key>
+            <PropertyRef Name="column_0" />
+          </Key>
+          <Property Name="column_0" Type="int" Nullable="false" />
+          <Property Name="Scientific_Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Vernacular_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Event_Date__parsed" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Latitude" Type="numeric" Precision="10" Scale="6" />
+          <Property Name="Longitude" Type="numeric" Precision="11" Scale="6" />
+        </EntityType>
+        <EntityContainer Name="PestLocationModelStoreContainer">
+          <EntitySet Name="PestLocation" EntityType="Self.PestLocation" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PestLocationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PestLocation">
+          <Key>
+            <PropertyRef Name="column_0" />
+          </Key>
+          <Property Name="column_0" Type="Int32" Nullable="false" />
+          <Property Name="Scientific_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Vernacular_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Event_Date__parsed" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Latitude" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="Longitude" Type="Decimal" Precision="11" Scale="6" />
+        </EntityType>
+        <EntityContainer Name="PestLocationEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PestLocation" EntityType="Self.PestLocation" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PestLocationModelStoreContainer" CdmEntityContainer="PestLocationEntities">
+          <EntitySetMapping Name="PestLocation">
+            <EntityTypeMapping TypeName="PestLocationModel.PestLocation">
+              <MappingFragment StoreEntitySet="PestLocation">
+                <ScalarProperty Name="column_0" ColumnName="column_0" />
+                <ScalarProperty Name="Scientific_Name" ColumnName="Scientific_Name" />
+                <ScalarProperty Name="Vernacular_name" ColumnName="Vernacular_name" />
+                <ScalarProperty Name="Event_Date__parsed" ColumnName="Event_Date__parsed" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
