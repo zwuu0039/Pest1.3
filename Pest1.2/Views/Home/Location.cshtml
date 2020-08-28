@@ -15,13 +15,12 @@
 <br>
 <br>
 <br>
-<br>
 <div class="section_title text-center mb-55">
     <h3>Pest in AU</h3>
-    <p>Please try to input you address here:<br></p>
+    <h5>Locate yourself and see what kind of pests around you.<br></h5>
 </div>
 
-<div class="container">
+@*<div class="container">
     <div class="row">
         <div class="col-lg-12">
             <div class="blog_right_sidebar">
@@ -49,7 +48,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 
 
@@ -58,10 +57,10 @@
       href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
       type="text/css" />
 
-<div id="map" style="height: 480px; position: relative; overflow: hidden;"></div>
+<div id="map" style="height: 580px; position: relative; overflow: hidden;"></div>
 
 
-<table class="table">
+<table class="table" style="display:none">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Scientific_Name)
@@ -236,7 +235,7 @@
             new mapboxgl.Marker(el)
                 .setLngLat(marker.geometry.coordinates)
                 .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                    .setHTML('<h3>' + marker.properties.name1 + '</h3><p>' + marker.properties.name2 + '</p><p>' + marker.properties.date + '</p>'))
+                    .setHTML('<h3>' + marker.properties.name1 + '</h3><h4>' + marker.properties.name2 + '</h4><h5>Date of Apperance:<h5><p>' + marker.properties.date + '</p>'))
                 .addTo(map);
         });
 
@@ -259,12 +258,14 @@
 
         map.addControl(new mapboxgl.NavigationControl());
 
+
+
     </script>
 }
 
 <style>
     .marker {
-        background-image: url('../../img/mark3.jpg');
+        background-image: url('../../img/marker2.png');
         background-size: cover;
         width: 40px;
         height: 40px;

@@ -187,7 +187,6 @@
     <Content Include="fonts\themify.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="img\3.png" />
     <Content Include="img\about\about_lft.png" />
     <Content Include="img\about\about_right.png" />
     <Content Include="img\banner\banner.png" />
@@ -241,9 +240,6 @@
     <Content Include="img\elements\primary-radio.png" />
     <Content Include="img\elements\success-check.png" />
     <Content Include="img\elements\success-radio.png" />
-    <Content Include="img\favicon.ico" />
-    <Content Include="img\favicon.png" />
-    <Content Include="img\footer-logo.png" />
     <Content Include="img\fox1.jpg" />
     <Content Include="img\fox2.jpg" />
     <Content Include="img\fox3.jpg" />
@@ -253,11 +249,12 @@
     <Content Include="img\gallery\video.png" />
     <Content Include="img\hourse1.jpg" />
     <Content Include="img\hourse2.jpg" />
-    <Content Include="img\logo.png" />
     <Content Include="img\logo2.png" />
+    <Content Include="img\logo3.png" />
+    <Content Include="img\logo4.png" />
+    <Content Include="img\logo5.png" />
     <Content Include="img\Mark1.png" />
-    <Content Include="img\mark2.png" />
-    <Content Include="img\mark3.jpg" />
+    <Content Include="img\marker2.png" />
     <Content Include="img\offers\1.png" />
     <Content Include="img\offers\2.png" />
     <Content Include="img\offers\3.png" />
