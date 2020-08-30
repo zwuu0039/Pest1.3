@@ -249,6 +249,8 @@
     <Content Include="img\gallery\video.png" />
     <Content Include="img\hourse1.jpg" />
     <Content Include="img\hourse2.jpg" />
+    <Content Include="img\Jon.jpg" />
+    <Content Include="img\Lei.jpg" />
     <Content Include="img\logo2.png" />
     <Content Include="img\logo3.png" />
     <Content Include="img\logo4.png" />
@@ -256,6 +258,7 @@
     <Content Include="img\Mark1.png" />
     <Content Include="img\marker2.png" />
     <Content Include="img\me.jpg" />
+    <Content Include="img\me1.jpg" />
     <Content Include="img\offers\1.png" />
     <Content Include="img\offers\2.png" />
     <Content Include="img\offers\3.png" />
@@ -283,6 +286,7 @@
     <Content Include="img\prising\9.png" />
     <Content Include="img\rabbit1.jpg" />
     <Content Include="img\rabbit2.jpg" />
+    <Content Include="img\Rui.jpg" />
     <Content Include="img\service\1.png" />
     <Content Include="img\service\2.png" />
     <Content Include="img\service\3.png" />
