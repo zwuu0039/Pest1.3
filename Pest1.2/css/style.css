@@ -2446,14 +2446,14 @@ h3 {
 
     /* line 9, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_footer.scss */
     .footer .footer_top {
-        padding-top: 130px;
-        padding-bottom: 110px;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 
-@media (max-width: 300px) {
+@media (max-width: 30px) {
     /* line 9, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_footer.scss */
     .footer .footer_top {
-        padding-top: 60px;
+        padding-top: 30px;
         padding-bottom: 30px;
     }
 }
@@ -2465,17 +2465,17 @@ h3 {
     color: #959595;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 30px) {
     /* line 16, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_footer.scss */
     .footer .footer_top .footer_widget {
-        margin-bottom: 30px;
+        margin-bottom: 10px;
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 30px) and (max-width: 30px) {
     /* line 16, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_footer.scss */
     .footer .footer_top .footer_widget {
-        margin-bottom: 30px;
+        margin-bottom: 10px;
     }
 }
 
@@ -2503,7 +2503,7 @@ h3 {
     margin-top: 20px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 30px) {
     /* line 38, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_footer.scss */
     .footer .footer_top .footer_widget .footer_title {
         margin-bottom: 20px;
@@ -2516,13 +2516,13 @@ h3 {
     font-weight: 400;
     color: #fff;
     text-transform: capitalize;
-    margin-bottom: 35px;
+    margin-bottom: 10px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 30px) {
     /* line 51, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_footer.scss */
     .footer .footer_top .footer_widget .footer_logo {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 }
 
@@ -2697,7 +2697,7 @@ h3 {
         font-weight: 400;
     }
 
-@media (max-width: 767px) {
+@media (max-width: 300px) {
     /* line 188, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_footer.scss */
     .footer .copy-right_text .copy_right {
         font-size: 15px;
@@ -2714,7 +2714,7 @@ h3 {
     margin-top: 26px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 300px) {
     /* line 201, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_footer.scss */
     .footer .socail_links {
         margin-top: 20px;
