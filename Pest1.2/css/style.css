@@ -1734,7 +1734,7 @@ h3 {
     padding-top: 150px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 70px) {
     /* line 1, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_team.scss */
     .team_area {
         padding-top: 60px;
@@ -1742,7 +1742,7 @@ h3 {
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 70px) and (max-width: 70px) {
     /* line 8, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_team.scss */
     .team_area .single_team_member {
         margin-bottom: 30px;
@@ -1806,7 +1806,7 @@ h3 {
     background: #fdf9f6;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 70px) {
     /* line 1, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_make_apointment.scss */
     .make_apppointment_area {
         padding-top: 60px;
@@ -3193,7 +3193,7 @@ h3 {
 /* line 75, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_elements.scss */
 .sample-text-area {
     background: #fff;
-    padding: 100px 0 70px 0;
+    padding: 70px 0 70px 0;
 }
 
 /* line 80, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_elements.scss */
