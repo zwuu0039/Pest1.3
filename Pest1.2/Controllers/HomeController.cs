@@ -7,6 +7,8 @@ using System.Web.Mvc;
 
 namespace Pest1._2.Controllers
 {
+    [BasicAuthenticationAttribute("user123", "user123", BasicRealm = "your-realm")]
+
     public class HomeController : Controller
     {
         private PestLocationEntities db = new PestLocationEntities();
