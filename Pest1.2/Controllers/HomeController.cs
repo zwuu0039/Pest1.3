@@ -38,5 +38,13 @@ namespace Pest1._2.Controllers
 
             return View(pest);
         }
+
+        public ActionResult Fox()
+        {
+            var pest = db.PestLocation.ToList();
+
+
+            return View(pest);
+        }
     }
 }

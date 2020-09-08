@@ -244,6 +244,7 @@
     <Content Include="img\fox1.jpg" />
     <Content Include="img\fox2.jpg" />
     <Content Include="img\fox3.jpg" />
+    <Content Include="img\fox4.jpg" />
     <Content Include="img\gallery\1.png" />
     <Content Include="img\gallery\2.png" />
     <Content Include="img\gallery\3.png" />
@@ -426,6 +427,7 @@
     <Content Include="Views\PestLocations\Details.cshtml" />
     <Content Include="Views\PestLocations\Edit.cshtml" />
     <Content Include="Views\PestLocations\Index.cshtml" />
+    <Content Include="Views\Home\Fox.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
