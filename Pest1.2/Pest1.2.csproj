@@ -190,6 +190,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="img\about\about_lft.png" />
     <Content Include="img\about\about_right.png" />
+    <Content Include="img\asiantoad.png" />
     <Content Include="img\banner\banner.png" />
     <Content Include="img\banner\banner2.png" />
     <Content Include="img\banner\banner3.png" />
@@ -210,6 +211,7 @@
     <Content Include="img\blog\single_blog_4.png" />
     <Content Include="img\blog\single_blog_5.png" />
     <Content Include="img\blog\slide_thumb_1.png" />
+    <Content Include="img\canetoad.jpg" />
     <Content Include="img\cat1.jpg" />
     <Content Include="img\cat2.jpg" />
     <Content Include="img\cat3.jpg" />
@@ -249,6 +251,7 @@
     <Content Include="img\gallery\2.png" />
     <Content Include="img\gallery\3.png" />
     <Content Include="img\gallery\video.png" />
+    <Content Include="img\goose.jpg" />
     <Content Include="img\hourse1.jpg" />
     <Content Include="img\hourse2.jpg" />
     <Content Include="img\Jon.jpg" />
@@ -264,6 +267,7 @@
     <Content Include="img\offers\1.png" />
     <Content Include="img\offers\2.png" />
     <Content Include="img\offers\3.png" />
+    <Content Include="img\pig.jpg" />
     <Content Include="img\post\next.png" />
     <Content Include="img\post\post_1.png" />
     <Content Include="img\post\post_10.png" />
@@ -293,6 +297,7 @@
     <Content Include="img\service\1.png" />
     <Content Include="img\service\2.png" />
     <Content Include="img\service\3.png" />
+    <Content Include="img\snake.jpg" />
     <Content Include="img\team\1.png" />
     <Content Include="img\team\2.png" />
     <Content Include="img\team\3.png" />
@@ -428,6 +433,13 @@
     <Content Include="Views\PestLocations\Edit.cshtml" />
     <Content Include="Views\PestLocations\Index.cshtml" />
     <Content Include="Views\Home\Fox.cshtml" />
+    <Content Include="Views\Home\AsianToad.cshtml" />
+    <Content Include="Views\Home\BoaConstrictor.cshtml" />
+    <Content Include="Views\Home\CanadaGoose.cshtml" />
+    <Content Include="Views\Home\Cat.cshtml" />
+    <Content Include="Views\Home\CaneToad.cshtml" />
+    <Content Include="Views\Home\Pig.cshtml" />
+    <Content Include="Views\Home\Rabbit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

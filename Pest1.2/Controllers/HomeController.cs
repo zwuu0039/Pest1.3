@@ -41,10 +41,58 @@ namespace Pest1._2.Controllers
 
         public ActionResult Fox()
         {
-            var pest = db.PestLocation.ToList();
 
-
-            return View(pest);
+            return View();
         }
+
+
+        public ActionResult AsianToad()
+        {
+
+            return View();
+        }
+
+        public ActionResult BoaConstrictor()
+        {
+
+
+            return View();
+        }
+
+        public ActionResult CanadaGoose()
+        {
+
+
+            return View();
+        }
+
+        public ActionResult Cat()
+        {
+
+
+            return View();
+        }
+
+        public ActionResult CaneToad()
+        {
+
+
+            return View();
+        }
+
+        public ActionResult Rabbit()
+        {
+
+
+            return View();
+        }
+
+        public ActionResult Pig()
+        {
+
+
+            return View();
+        }
+
     }
 }

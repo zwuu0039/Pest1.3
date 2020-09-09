@@ -2765,6 +2765,34 @@ h3 {
     background-image: url(../img/fox4.jpg);
 }
 
+.breadcam_bg_4 {
+    background-image: url(../img/rabbit4.jpg);
+}
+
+.breadcam_bg_5 {
+    background-image: url(../img/pig.jpg);
+}
+
+.breadcam_bg_6 {
+    background-image: url(../img/snake.jpg);
+}
+
+.breadcam_bg_7 {
+    background-image: url(../img/goose.jpg);
+}
+
+.breadcam_bg_8 {
+    background-image: url(../img/cat3.jpg);
+}
+
+.breadcam_bg_9 {
+    background-image: url(../img/canetoad.jpg);
+}
+
+.breadcam_bg_10 {
+    background-image: url(../img/asiantoad.png);
+}
+
 /* line 10, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_bradcam.scss */
 .bradcam_area {
     background-size: cover;
