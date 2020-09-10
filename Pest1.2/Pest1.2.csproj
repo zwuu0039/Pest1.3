@@ -188,8 +188,14 @@
     <Content Include="fonts\themify.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="img\about\about_lft.png" />
-    <Content Include="img\about\about_right.png" />
+    <Content Include="img\about\AsianToad.jpg" />
+    <Content Include="img\about\CanadaGoose.jpg" />
+    <Content Include="img\about\CaneToad.jpg" />
+    <Content Include="img\about\FeralCat.jpg" />
+    <Content Include="img\about\Pig.jpg" />
+    <Content Include="img\about\Rabbit.jpg" />
+    <Content Include="img\about\RedFox.jpg" />
+    <Content Include="img\about\Snake.jpg" />
     <Content Include="img\asiantoad.png" />
     <Content Include="img\banner\banner.png" />
     <Content Include="img\banner\banner2.png" />
@@ -254,6 +260,7 @@
     <Content Include="img\goose.jpg" />
     <Content Include="img\hourse1.jpg" />
     <Content Include="img\hourse2.jpg" />
+    <Content Include="img\hourse3.jpg" />
     <Content Include="img\Jon.jpg" />
     <Content Include="img\Lei.jpg" />
     <Content Include="img\logo2.png" />
@@ -262,6 +269,8 @@
     <Content Include="img\logo5.png" />
     <Content Include="img\Mark1.png" />
     <Content Include="img\marker2.png" />
+    <Content Include="img\marker3.png" />
+    <Content Include="img\marker4.png" />
     <Content Include="img\me.jpg" />
     <Content Include="img\me1.jpg" />
     <Content Include="img\offers\1.png" />
@@ -290,7 +299,6 @@
     <Content Include="img\prising\7.png" />
     <Content Include="img\prising\8.png" />
     <Content Include="img\prising\9.png" />
-    <Content Include="img\rabbit1.jpg" />
     <Content Include="img\rabbit2.jpg" />
     <Content Include="img\rabbit4.jpg" />
     <Content Include="img\Rui.jpg" />
@@ -302,7 +310,12 @@
     <Content Include="img\team\2.png" />
     <Content Include="img\team\3.png" />
     <Content Include="img\testmonial\1.png" />
+    <Content Include="img\us.jpg" />
+    <Content Include="img\us1.jpg" />
+    <Content Include="img\us2.jpg" />
     <Content Include="img\us3.jpg" />
+    <Content Include="img\us4.jpg" />
+    <Content Include="img\us5.jpg" />
     <Content Include="js\ajax-form.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\contact.js" />
