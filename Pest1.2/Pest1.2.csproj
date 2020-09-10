@@ -440,6 +440,7 @@
     <Content Include="Views\Home\CaneToad.cshtml" />
     <Content Include="Views\Home\Pig.cshtml" />
     <Content Include="Views\Home\Rabbit.cshtml" />
+    <Content Include="Views\Home\Hourse.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
