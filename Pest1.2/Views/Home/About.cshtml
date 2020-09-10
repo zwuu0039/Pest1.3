@@ -49,35 +49,26 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-6">
                 <div class="single_team_member">
-                    <div class="team_thumb">
-                        <img src="~/img/hourse2.jpg" alt="">
-                    </div>
-                    <div class="member_info text-center">
-                        <h3>Feral Horse</h3>
-                        <p id="01">
-                            Australia has an estimated 400 000 feral horses mainly in central and northern Australia. Feral horses cause erosion,
-                            spread weeds and compete for pasture with native animals and livestock.
-
-                        </p><br>
-                        <a href="~/Home/Hourse" class="boxed-btn3">Know More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="single_team_member">
-                    <div class="team_thumb">
-                        <img src="~/img/cat1.jpg" alt="">
-                    </div>
+                        <div class="team_thumb">
+                            <figure class="snip0016">
+                                <img src="~/img/cat1.jpg">
+                                <figcaption>
+                                    <h2 style="color:white">Test</h2>
+                                    <p style="color:white"> Test test test</p>
+                                    <a href="~/Home/Cat"></a>
+                                </figcaption>
+                            </figure>
+                        </div>
                     <div class="member_info text-center">
                         <h3>Wild Cat</h3>
                         <p id="02">
                             Cats are solitary hunters that feed on small mammals, birds, reptiles and invertebrates.
                             They are often kept as domesticated pets but also occur wild in Australia as feral animals.
-
                         </p><br>
                         <a href="~/Home/Cat" class="boxed-btn3">Know More</a>
                     </div>
                 </div>
+
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="single_team_member">
@@ -210,3 +201,108 @@
     </div>
 </div>
 <!-- Introduction_area_end  -->
+
+<style>
+
+    figure.snip0016 {
+        position: relative;
+        overflow: hidden;
+        margin: 10px;
+        width: 100%;
+        background: #000000;
+        text-align: left;
+    }
+
+figure.snip0016 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+figure.snip0016 img {
+  max-width: 100%;
+  opacity: 1;
+  width: 100%;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+figure.snip0016 figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 30px 3em;
+  width: 100%;
+  height: 100%;
+}
+figure.snip0016 figcaption::before {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  left: 100%;
+  border-left: 4px solid rgba(255, 255, 255, 0.8);
+  content: '';
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+figure.snip0016 h2,
+figure.snip0016 p {
+  margin: 0 0 5px;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s,-webkit-transform 0.35s,-moz-transform 0.35s,-o-transform 0.35s,transform 0.35s;
+}
+figure.snip0016 h2 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+  text-transform: uppercase;
+  -webkit-transform: translate3d(30%, 0%, 0);
+  transform: translate3d(30%, 0%, 0);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+figure.snip0016 h2 span {
+  font-weight: 800;
+}
+figure.snip0016 p {
+  font-weight: 200;
+  -webkit-transform: translate3d(0%, 30%, 0);
+  transform: translate3d(0%, 30%, 0);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+figure.snip0016 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  color: #ffffff;
+}
+figure.snip0016:hover img {
+  opacity: 0.3;
+}
+figure.snip0016:hover figcaption h2 {
+  opacity: 1;
+  -webkit-transform: translate3d(0%, 0%, 0);
+  transform: translate3d(0%, 0%, 0);
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+figure.snip0016:hover figcaption p {
+  opacity: 0.9;
+  -webkit-transform: translate3d(0%, 0%, 0);
+  transform: translate3d(0%, 0%, 0);
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+figure.snip0016:hover figcaption::before {
+  background: rgba(255, 255, 255, 0);
+  left: 30px;
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+</style>
