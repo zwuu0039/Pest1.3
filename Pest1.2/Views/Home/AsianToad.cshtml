@@ -1,4 +1,83 @@
-﻿<!-- bradcam_area_start -->
+﻿@section scripts{
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35376/topojson.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35376/datamaps.world.min.js"></script>
+    <script type="text/javascript">
+        var Popup = {
+            Show: function (geography, data, element, e) {
+                e.stopPropagation();
+
+                var el =
+                    '<div class="popup-card"> \
+                        <span class="country">' + geography.properties.name + '</span>\
+                </div>';
+
+                var $el = $(el).css({
+                    top: e.clientY - 10,
+                    left: e.clientX
+                });
+
+                Popup.Hide();
+                $('body').append($el);
+            },
+
+            Hide: function () {
+                $('body .popup-card').remove();
+            }
+        };
+
+        var dataMap = new Datamap({
+            element: document.getElementById('map'),
+            scope: 'world',
+            projection: 'mercator',
+            geographyConfig: {
+                highlightBorderColor: '#fff',
+                highlightBorderWidth: 1,
+                highlightFillColor: '#f75455',
+                popupOnHover: false
+            },
+
+            fills: {
+                defaultFill: '#eff0f2',
+                gt: '#ed1f24'
+            },
+            data: {
+                AFG: { fillKey: 'gt' },
+                BGD: { fillKey: 'gt' },
+                BTN: { fillKey: 'gt' },
+                IND: { fillKey: 'gt' },
+                MDV: { fillKey: 'gt' },
+                NPL: { fillKey: 'gt' },
+                PAK: { fillKey: 'gt' },
+                LKA: { fillKey: 'gt' },
+                LAO: { fillKey: 'gt' },
+                MMR: { fillKey: 'gt' },
+                SGP: { fillKey: 'gt' },
+                CHN: { fillKey: 'gt' },
+                IDN: { fillKey: 'gt' }          
+            },
+
+            done: function (datamap) {
+                datamap.svg.selectAll('.datamaps-subunit').on('click', function (geography) {
+                    Popup.Show(geography, datamap.options.data[geography.id], this, d3.event);
+                });
+            }
+        });
+
+        $('body').on('click', function (e) {
+            Popup.Hide();
+        })
+            .on('click', '.datamaps-subunit,.popup-card', function (e) {
+                e.stopPropagation();
+            });
+
+    </script>
+
+}
+
+
+<!-- bradcam_area_start -->
 <div class="bradcam_area breadcam_bg_10 overlay">
     <div class="container">
         <div class="row">
@@ -10,6 +89,107 @@
 </div>
 
 <!-- body_area_start -->
-<div>
-    <p>body</p>
+<div id="map-container">
+    <div id="map">
+        <br />
+        <div class="datamaps-hoverover" style="z-index: 10001; position: absolute; display: none;"></div>
+    </div>
 </div>
+
+
+
+
+<style>
+    #map-container {
+        width: 100%;
+        height: auto;
+        max-width: 800px;
+        max-height: 600px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        margin: 0 0 0 -400px;
+    }
+
+    #map {
+        width: 100%;
+        height: 600px;
+    }
+
+    .popup-card {
+        background-color: rgba(43,43,43,0.9);
+        border-bottom: 2px solid #2b2b2b;
+        border-radius: 3px;
+        padding: 15px 15px 10px;
+        position: absolute;
+        opacity: 0;
+        width: 100px;
+        margin-left: -65px;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: "Montserrat";
+        font-size: 12px;
+        line-height: 16px;
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        animation: fadeUp 500ms cubic-bezier(0.51,0.01,0.37,0.98);
+        animation-fill-mode: forwards;
+    }
+
+        .popup-card:after, .popup-card:before {
+            top: 100%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            margin-top: 2px;
+        }
+
+        .popup-card:after {
+            border-color: transparent;
+            border-top-color: #2b2b2b;
+            border-width: 6px;
+            left: 50%;
+            margin-left: -6px;
+        }
+
+        .popup-card:before {
+            border-color: transparent;
+            border-top-color: #2b2b2b;
+            border-width: 9px;
+            left: 50%;
+            margin-left: -9px;
+        }
+
+        .popup-card span {
+            display: block;
+            color: #d4dbe2;
+        }
+
+            .popup-card span.country {
+                font-size: 14px;
+                margin-bottom: 8px;
+                color: #fff;
+            }
+
+        .popup-card em {
+            font-style: normal;
+            display: inline-block;
+            color: #a3b1bf;
+            margin-right: 3px;
+        }
+
+    @@keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(-80%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(-100%);
+        }
+    }
+</style>
