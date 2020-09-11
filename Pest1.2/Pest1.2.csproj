@@ -230,6 +230,22 @@
     <Content Include="img\elements\d.jpg" />
     <Content Include="img\elements\disabled-check.png" />
     <Content Include="img\elements\disabled-radio.png" />
+    <Content Include="img\elements\easiantoad.jpg" />
+    <Content Include="img\elements\easiantoad1.jpeg" />
+    <Content Include="img\elements\edead.jpg" />
+    <Content Include="img\elements\ediease.jpg" />
+    <Content Include="img\elements\eforest.png" />
+    <Content Include="img\elements\efox1.jpg" />
+    <Content Include="img\elements\efox2.png" />
+    <Content Include="img\elements\egoose.jpg" />
+    <Content Include="img\elements\egoose1.jpg" />
+    <Content Include="img\elements\ehand.jpg" />
+    <Content Include="img\elements\ehealth.jpg" />
+    <Content Include="img\elements\eillness.jpg" />
+    <Content Include="img\elements\elamb.jpg" />
+    <Content Include="img\elements\esnake.jpg" />
+    <Content Include="img\elements\esnake1.jpg" />
+    <Content Include="img\elements\esnake2.jpg" />
     <Content Include="img\elements\f1.jpg" />
     <Content Include="img\elements\f2.jpg" />
     <Content Include="img\elements\f3.jpg" />
@@ -238,6 +254,7 @@
     <Content Include="img\elements\f6.jpg" />
     <Content Include="img\elements\f7.jpg" />
     <Content Include="img\elements\f8.jpg" />
+    <Content Include="img\elements\false.png" />
     <Content Include="img\elements\g1.jpg" />
     <Content Include="img\elements\g2.jpg" />
     <Content Include="img\elements\g3.jpg" />
@@ -454,7 +471,6 @@
     <Content Include="Views\Home\CaneToad.cshtml" />
     <Content Include="Views\Home\Pig.cshtml" />
     <Content Include="Views\Home\Rabbit.cshtml" />
-    <Content Include="Views\Home\Hourse.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
