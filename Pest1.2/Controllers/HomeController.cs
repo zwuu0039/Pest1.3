@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Pest1._2.Controllers
 {
-    [BasicAuthenticationAttribute("user123", "user123", BasicRealm = "your-realm")]
+    [BasicAuthenticationAttribute("iloveie", "pleasegiveHD", BasicRealm = "your-realm")]
 
     public class HomeController : Controller
     {
