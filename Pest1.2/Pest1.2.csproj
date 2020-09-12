@@ -232,6 +232,10 @@
     <Content Include="img\elements\disabled-radio.png" />
     <Content Include="img\elements\easiantoad.jpg" />
     <Content Include="img\elements\easiantoad1.jpeg" />
+    <Content Include="img\elements\ecanetoad1.jpg" />
+    <Content Include="img\elements\ecanetoad2.jpg" />
+    <Content Include="img\elements\ecat1.jpg" />
+    <Content Include="img\elements\ecat2.jpg" />
     <Content Include="img\elements\edead.jpg" />
     <Content Include="img\elements\ediease.jpg" />
     <Content Include="img\elements\eforest.png" />
@@ -243,6 +247,10 @@
     <Content Include="img\elements\ehealth.jpg" />
     <Content Include="img\elements\eillness.jpg" />
     <Content Include="img\elements\elamb.jpg" />
+    <Content Include="img\elements\epig1.jpg" />
+    <Content Include="img\elements\epig2.jpg" />
+    <Content Include="img\elements\erabbit1.jpg" />
+    <Content Include="img\elements\erabbit2.jpg" />
     <Content Include="img\elements\esnake.jpg" />
     <Content Include="img\elements\esnake1.jpg" />
     <Content Include="img\elements\esnake2.jpg" />
