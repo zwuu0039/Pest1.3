@@ -1772,6 +1772,7 @@ h3 {
 .team_area .single_team_member .member_info {
     background: #fdf9f6;
     padding: 36px 0 35px 0;
+    margin-left: 10px;
 }
 
     /* line 23, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_team.scss */
