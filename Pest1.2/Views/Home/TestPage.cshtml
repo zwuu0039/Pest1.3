@@ -10,8 +10,8 @@
 
                 var el =
                     '<div class="popup-card"> \
-                                                                <span class="country">' + geography.properties.name + '</span>\
-                                                        </div>';
+                                                                        <span class="country">' + geography.properties.name + '</span>\
+                                                                </div>';
 
                 var $el = $(el).css({
                     top: e.pageY - 10,
@@ -246,30 +246,7 @@
 
     .pesthalf {
     }
-</style>
 
-<!--Pest image and name-->
-<div class="pestname">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <img src="~/img/elements/easiantoad.jpg" alt="" />
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="about_info">
-                    <div class="section_title mb-20px">
-                        <h3>What is an <br />Asian Toad?</h3>
-                        <p><b>Common name:</b> Asian black-spined toad</p>
-                        <p><b>Scientific name:</b> Duttaphrynus melanostictus</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Pest image and name end-->
-
-<style>
     #navigation_block {
         position: relative;
         top: 200px;
@@ -283,8 +260,8 @@
     }
 
     ul#move-navigation {
-        position: absolute;
-        top: 900px;
+        position: fixed;
+        top: 175px;
         list-style: none;
         font-size: 0.85em;
         margin: 30px 0;
@@ -317,35 +294,58 @@
             }
 </style>
 
+<!--Pest list navigation start-->
 <ul id="move-navigation">
-    <li class="move-element">
-        <h3>Pest List</h3>
-    </li>
-    <li class="move-element">
-        <a href="~/Home/AsianToad">Asian Toad</a>
-    </li>
-    <li class="move-element">
-        <a href="~/Home/BoaConstrictor">Boa Constrictor</a>
-    </li>
-    <li class="move-element">
-        <a href="~/Home/CanadaGoose">Canada Goose</a>
-    </li>
-    <li class="move-element">
-        <a href="~/Home/CaneToad">Cane Toad</a>
-    </li>
-    <li class="move-element">
-        <a href="~/Home/Cat">Feral Cat</a>
-    </li>
-    <li class="move-element">
-        <a href="~/Home/Pig">Feral Pig</a>
-    </li>
-    <li class="move-element">
-        <a href="~/Home/Rabbit">Rabbit</a>
-    </li>
-    <li class="move-element">
-        <a href="~/Home/Fox">Red Fox</a>
-    </li>
+<li class="move-element">
+    <h3>Pest List</h3>
+</li>
+<li class="move-element">
+    <a href="~/Home/AsianToad">Asian Toad</a>
+</li>
+<li class="move-element">
+    <a href="~/Home/BoaConstrictor">Boa Constrictor</a>
+</li>
+<li class="move-element">
+    <a href="~/Home/CanadaGoose">Canada Goose</a>
+</li>
+<li class="move-element">
+    <a href="~/Home/CaneToad">Cane Toad</a>
+</li>
+<li class="move-element">
+    <a href="~/Home/Cat">Feral Cat</a>
+</li>
+<li class="move-element">
+    <a href="~/Home/Pig">Feral Pig</a>
+</li>
+<li class="move-element">
+    <a href="~/Home/Rabbit">Rabbit</a>
+</li>
+<li class="move-element">
+    <a href="~/Home/Fox">Red Fox</a>
+</li>
 </ul>
+<!--Pest list navigation end-->
+
+<!--Pest image and name-->
+<div class="pestname">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <img src="~/img/elements/easiantoad.jpg" alt="" />
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="about_info">
+                    <div class="section_title mb-20px">
+                        <h3>What is an <br />Asian Toad?</h3>
+                        <p><b>Common name:</b> Asian black-spined toad</p>
+                        <p><b>Scientific name:</b> Duttaphrynus melanostictus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Pest image and name end-->
 
 <!--Pest pyhsical description start-->
 <div class="pestdescription">
@@ -371,6 +371,7 @@
     </div>
 </div>
 <!--Pest physical description end-->
+
 <!--Pest danger start-->
 <div class="service_area">
     <div class="container">
@@ -450,10 +451,24 @@
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6">
+                <img src="~/img/elements/easiantoad.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!--How they spread + what can you do end-->
+<div class="pestdescription">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <img src="~/img/elements/easiantoad.jpg" alt="">
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="about_info">
-                    <div class="section_title mb-20px text-center">
+                    <div class="section_title2 text-center">
                         <h3>What can you do?</h3>
-                        <p>
+                        <p class="text-left">
+                            <br>
                             Report confirmed sighting to Agriculture Victoria. <br>
                             <b>Email:</b> highrisk.invasiveanimals@agriculture.vic.gov.au <br>
                             <b>Call: </b> Call the Agriculture Victoria Customer Service Centre 136 186
@@ -464,4 +479,3 @@
         </div>
     </div>
 </div>
-<!--How they spread + what can you do end-->
