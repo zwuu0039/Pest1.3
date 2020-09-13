@@ -10,8 +10,8 @@
 
                 var el =
                     '<div class="popup-card"> \
-                                                <span class="country">' + geography.properties.name + '</span>\
-                                        </div>';
+                                                        <span class="country">' + geography.properties.name + '</span>\
+                                                </div>';
 
                 var $el = $(el).css({
                     top: e.pageY - 10,
@@ -184,8 +184,8 @@
 
 
     .pestname {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 75px;
+        padding-bottom: 75px;
         background: #FDF9F6
     }
 
@@ -195,14 +195,22 @@
         }
 
     .pestdescription {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 75px;
+        padding-bottom: 75px;
     }
 
         .pestdescription img {
             width: 450px;
             height: auto;
         }
+
+    .pestorigin {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .pesthalf {
+    }
 </style>
 
 <!--Pest image and name-->
@@ -298,62 +306,49 @@
     </div>
 </div>
 <!--Pest danger end-->
-
-<!-- Left_Text Area -->
-<div class="whole-wrap">
-    <div class="container box_1170">
-        <!-- Right_Text Area -->
-        <div class="section-top-border text-right">
-            <h3 class="mb-30">How did they spread?</h3>
-            <div class="row">
-                <div class="col-md-7">
-                    <p class="text-right">
-                        Has been detected at least three times in the wild in Australia.<br>
-                    </p>
-                    <p class="text-right">
-                        Most recent in 2014 – in suburban Melbourne (just one toad was found).
-                    </p>
-                    <p class="text-right">
-                        Usually detected in international vessels, shipping containers and machinery.
-                    </p>
-                </div>
-                <div class="col-md-5">
-                    <img src="~/img/elements/easiantoad1.jpeg" alt="" class="img-fluid">
+<!--Pest origin start-->
+<div class="section_title2 text-center">
+    <div class="pestorigin">
+        <h3 class="mb-30">Where did they come from?</h3>
+        <p>The highlighted areas shows where the Asian Toad originated from.<p>
+            <div id="map-container">
+                <div id="map">
+                    <div class="datamaps-hoverover" style="z-index: 10001; position: absolute; display: none;"></div>
                 </div>
             </div>
-        </div>
-        <!-- Conclusion_Text Area -->
-        <div class="section-top-border">
-            <div class="row">
-                <div class="col-md-12 mt-sm-30">
-                    <h3 class="mb-20">What can you do?</h3>
-                    <div class="">
-                        <ol class="ordered-list">
-                            <li>
-                                <span>Report confirmed sighting to Agriculture Victoria:</span>
-                                <ol class="ordered-list-alpha">
-                                    <li>
-                                        <span>Email: highrisk.invasiveanimals@agriculture.vic.gov.au.</span>
-                                    </li>
-                                    <li>
-                                        <span>Call: Call the Agriculture Victoria Customer Service Centre 136 186.</span>
-                                    </li>
-                                </ol>
-                        </ol>
+    </div>
+</div>
+<!--Pest origin end-->
+
+<!--How they spread + what can you do-->
+<div class="pestname">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="about_info">
+                    <div class="section_title mb-20px text-center">
+                        <h3>How did they <br />spread?</h3>
+                        <p>
+                            Usually detected in international vessels, shipping containers and machinery. <br>
+                            They have been detected at least three times in the wild in Australia.<br>
+                            The most recent sighting is in 2014 - in suburban Melbrourne.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- map_area_start -->
-        <div class="section-top-border">
-            <h3 class="mb-30">Distribution in the World</h3>
-            <div id="map-container">
-                <div id="map">
-                    <br />
-                    <div class="datamaps-hoverover" style="z-index: 10001; position: absolute; display: none;"></div>
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="about_info">
+                    <div class="section_title mb-20px text-center">
+                        <h3>What can you do?</h3>
+                        <p>
+                            Report confirmed sighting to Agriculture Victoria. <br>
+                            <b>Email:</b> highrisk.invasiveanimals@agriculture.vic.gov.au <br>
+                            <b>Call: </b> Call the Agriculture Victoria Customer Service Centre 136 186
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Body_Area_End -->
+<!--How they spread + what can you do end-->
