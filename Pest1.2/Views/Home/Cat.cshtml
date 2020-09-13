@@ -11,8 +11,8 @@
 
                 var el =
                     '<div class="popup-card"> \
-                                            <span class="country">' + geography.properties.name + '</span>\
-                                    </div>';
+                                                    <span class="country">' + geography.properties.name + '</span>\
+                                            </div>';
 
                 var $el = $(el).css({
                     top: e.pageY - 10,
@@ -215,6 +215,41 @@
 
     </script>
 
+    <script>
+        $(document).ready(function () {
+            slide("#move-navigation", 35, 20, 150, 1);
+        });
+
+        function slide(navigation_id, pad_out, pad_in, time, multiplier) {
+            // creates the target paths
+            var list_elements = navigation_id + " li.move-element";
+            var link_elements = list_elements + " a";
+
+            // initiates the timer used for the move animation
+            var timer = 0;
+
+            // creates the slide animation for all list elements
+            $(list_elements).each(function (i) {
+                // margin left = - ([width of element] + [total vertical padding of element])
+                $(this).css("margin-left", "-180px");
+                // updates timer
+                timer = (timer * multiplier + time);
+                $(this).animate({ marginLeft: "0" }, timer);
+                $(this).animate({ marginLeft: "15px" }, timer);
+                $(this).animate({ marginLeft: "0" }, timer);
+            });
+
+            // creates the hover-slide effect for all link elements
+            $(link_elements).each(function (i) {
+                $(this).hover(function () {
+                    $(this).stop().animate({ paddingLeft: pad_out }, 150);
+                }, function () {
+                    $(this).stop().animate({ paddingLeft: pad_in }, 150);
+                });
+            });
+        }
+    </script>
+
 }
 
 
@@ -337,6 +372,84 @@
     </div>
 </section>
 
+<style>
+    #navigation_block {
+        position: relative;
+        top: 200px;
+        left: 200px;
+    }
+
+    #hide {
+        position: absolute;
+        top: 30px;
+        left: -190px;
+    }
+
+    ul#move-navigation {
+        position: absolute;
+        top: 800px;
+        list-style: none;
+        font-size: 0.85em;
+        margin: 30px 0;
+        padding: 0;
+    }
+
+        ul#move-navigation li.move-element h3,
+        ul#move-navigation li.move-element a {
+            display: block;
+            width: 150px;
+            padding: 5px 18px;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        ul#move-navigation li.move-element h3 {
+            color: #fff;
+            background-color: #b5b5b5;
+            font-weight: initial;
+        }
+
+        ul#move-navigation li.move-element a {
+            color: #d4dbe2;
+            background-color: #808080;
+            text-decoration: none;
+        }
+
+            ul#move-navigation li.move-element a:hover {
+                color: #fff;
+            }
+</style>
+
+<ul id="move-navigation">
+    <li class="move-element">
+        <h3>Pest List</h3>
+    </li>
+    <li class="move-element">
+        <a href="~/Home/AsianToad">Asian Toad</a>
+    </li>
+    <li class="move-element">
+        <a href="~/Home/BoaConstrictor">Boa Constrictor</a>
+    </li>
+    <li class="move-element">
+        <a href="~/Home/CanadaGoose">Canada Goose</a>
+    </li>
+    <li class="move-element">
+        <a href="~/Home/CaneToad">Cane Toad</a>
+    </li>
+    <li class="move-element">
+        <a href="~/Home/Cat">Feral Cat</a>
+    </li>
+    <li class="move-element">
+        <a href="~/Home/Pig">Feral Pig</a>
+    </li>
+    <li class="move-element">
+        <a href="~/Home/Rabbit">Rabbit</a>
+    </li>
+    <li class="move-element">
+        <a href="~/Home/Fox">Red Fox</a>
+    </li>
+</ul>
+
 <!-- Left_Text Area -->
 <div class="whole-wrap">
     <div class="container box_1170">
@@ -426,8 +539,6 @@
             </div>
         </div>
         <!-- Damage_area_end  -->
-
-
         <!-- Conclusion_Text Area -->
         <div class="section-top-border">
             <div class="row">
