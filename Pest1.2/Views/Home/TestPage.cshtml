@@ -1,0 +1,359 @@
+﻿<!-- Java Script Part -->
+@section scripts{
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35376/topojson.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35376/datamaps.world.min.js"></script>
+    <script type="text/javascript">
+        var Popup = {
+            Show: function (geography, data, element, e) {
+                e.stopPropagation();
+
+                var el =
+                    '<div class="popup-card"> \
+                                                <span class="country">' + geography.properties.name + '</span>\
+                                        </div>';
+
+                var $el = $(el).css({
+                    top: e.pageY - 10,
+                    left: e.pageX
+                });
+
+                Popup.Hide();
+                $('body').append($el);
+            },
+
+            Hide: function () {
+                $('body .popup-card').remove();
+            }
+        };
+
+        var dataMap = new Datamap({
+            element: document.getElementById('map'),
+            scope: 'world',
+            projection: 'mercator',
+            geographyConfig: {
+                highlightBorderColor: '#fff',
+                highlightBorderWidth: 1,
+                highlightFillColor: '#f75455',
+                popupOnHover: false
+            },
+
+            fills: {
+                defaultFill: '#eff0f2',
+                gt: '#ed1f24'
+            },
+            data: {
+                AFG: { fillKey: 'gt' },
+                BGD: { fillKey: 'gt' },
+                BTN: { fillKey: 'gt' },
+                IND: { fillKey: 'gt' },
+                MDV: { fillKey: 'gt' },
+                NPL: { fillKey: 'gt' },
+                PAK: { fillKey: 'gt' },
+                LKA: { fillKey: 'gt' },
+                LAO: { fillKey: 'gt' },
+                MMR: { fillKey: 'gt' },
+                SGP: { fillKey: 'gt' },
+                CHN: { fillKey: 'gt' },
+                IDN: { fillKey: 'gt' }
+            },
+
+            done: function (datamap) {
+                datamap.svg.selectAll('.datamaps-subunit').on('click', function (geography) {
+                    Popup.Show(geography, datamap.options.data[geography.id], this, d3.event);
+                });
+            }
+        });
+
+        $('body').on('click', function (e) {
+            Popup.Hide();
+        })
+            .on('click', '.datamaps-subunit,.popup-card', function (e) {
+                e.stopPropagation();
+            });
+    </script>
+}
+
+
+<!-- Header&Footer_area_start, Don't change it. -->
+<div class="bradcam_area breadcam_bg_10 overlay">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3> &nbsp;Asian Toad</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- CSS Part -->
+<style>
+    #map-container {
+        width: 100%;
+        height: auto;
+        max-width: 800px;
+        max-height: 600px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        margin: 0 0 0 -400px;
+    }
+
+    #map {
+        width: 100%;
+        height: 600px;
+    }
+
+    .popup-card {
+        background-color: rgba(43,43,43,0.9);
+        border-bottom: 2px solid #2b2b2b;
+        border-radius: 3px;
+        padding: 15px 15px 10px;
+        position: absolute;
+        opacity: 0;
+        width: 120px;
+        margin-left: -65px;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: "Montserrat";
+        font-size: 12px;
+        line-height: 16px;
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        animation: fadeUp 500ms cubic-bezier(0.51,0.01,0.37,0.98);
+        animation-fill-mode: forwards;
+    }
+
+        .popup-card:after, .popup-card:before {
+            top: 100%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            margin-top: 2px;
+        }
+
+        .popup-card:after {
+            border-color: transparent;
+            border-top-color: #2b2b2b;
+            border-width: 6px;
+            left: 50%;
+            margin-left: -6px;
+        }
+
+        .popup-card:before {
+            border-color: transparent;
+            border-top-color: #2b2b2b;
+            border-width: 9px;
+            left: 50%;
+            margin-left: -9px;
+        }
+
+        .popup-card span {
+            display: block;
+            color: #d4dbe2;
+        }
+
+            .popup-card span.country {
+                font-size: 14px;
+                margin-bottom: 8px;
+                color: #fff;
+            }
+
+        .popup-card em {
+            font-style: normal;
+            display: inline-block;
+            color: #a3b1bf;
+            margin-right: 3px;
+        }
+
+    @@keyframes fadeUp {
+        0% {
+            opacity: 0;
+            transform: translateY(-80%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(-100%);
+        }
+    }
+
+
+    .pestname {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background: #FDF9F6
+    }
+
+        .pestname img {
+            width: 450px;
+            height: auto;
+        }
+
+    .pestdescription {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+        .pestdescription img {
+            width: 450px;
+            height: auto;
+        }
+</style>
+
+<!--Pest image and name-->
+<div class="pestname">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <img src="~/img/elements/easiantoad.jpg" alt="" />
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="about_info">
+                    <div class="section_title mb-20px">
+                        <h3>What is an <br />Asian Toad?</h3>
+                        <p><b>Common name:</b> Asian black-spined toad</p>
+                        <p><b>Scientific name:</b> Duttaphrynus melanostictus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Pest image and name end-->
+<!--Pest pyhsical description start-->
+<div class="pestdescription">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="section_title2 text-center">
+                    <h3>What does it look like?</h3>
+                    <p>
+                        Raised, black bony ridges over eyes meeting at nose.<br>
+                        Skin is dry and rough, not moist and slippery.<br>
+                        Short hind limb with pimple-like warts on feet and toes.<br>
+                        White, cream or pale brown underside with black-brown spots.<br>
+                        Prominent black rim on upper lip.<br>
+                        Black tipped, hooked toes.
+                    <p>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <img src="~/img/elements/easiantoad.jpg" alt="" />
+            </div>
+        </div>
+    </div>
+</div>
+<!--Pest physical description end-->
+<!--Pest danger start-->
+<div class="service_area">
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-lg-6 col-md-10">
+                <div class="section_title text-center mb-55">
+                    <h3>What do they harm?</h3>
+                    <p>What dangers and damages does Asian Toad cause?</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="single_service">
+                    <div class="service_thumb">
+                        <img src="~/img/elements/easiantoad.jpg" alt="">
+                    </div>
+                    <div class="service_content text-center">
+                        <h3>Poisonous</h3>
+                        <p>The Asian Toad has poison gland. Secretion may cause itching in the nose and eyes when handled by humans.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_service">
+                    <div class="service_thumb">
+                        <img src="~/img/elements/easiantoad.jpg" alt="">
+                    </div>
+                    <div class="service_content text-center">
+                        <h3>Lethal</h3>
+                        <p>Consumption of Asian Toad skin or eggs can cause serious illness or even death.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_service">
+                    <div class="service_thumb">
+                        <img src="~/img/elements/easiantoad.jpg" alt="">
+                    </div>
+                    <div class="service_content text-center">
+                        <h3>Biodiversity</h3>
+                        <p>Asian Toad competes with native frogs and toads for food and suitable habitats</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Pest danger end-->
+
+<!-- Left_Text Area -->
+<div class="whole-wrap">
+    <div class="container box_1170">
+        <!-- Right_Text Area -->
+        <div class="section-top-border text-right">
+            <h3 class="mb-30">How did they spread?</h3>
+            <div class="row">
+                <div class="col-md-7">
+                    <p class="text-right">
+                        Has been detected at least three times in the wild in Australia.<br>
+                    </p>
+                    <p class="text-right">
+                        Most recent in 2014 – in suburban Melbourne (just one toad was found).
+                    </p>
+                    <p class="text-right">
+                        Usually detected in international vessels, shipping containers and machinery.
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="~/img/elements/easiantoad1.jpeg" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <!-- Conclusion_Text Area -->
+        <div class="section-top-border">
+            <div class="row">
+                <div class="col-md-12 mt-sm-30">
+                    <h3 class="mb-20">What can you do?</h3>
+                    <div class="">
+                        <ol class="ordered-list">
+                            <li>
+                                <span>Report confirmed sighting to Agriculture Victoria:</span>
+                                <ol class="ordered-list-alpha">
+                                    <li>
+                                        <span>Email: highrisk.invasiveanimals@agriculture.vic.gov.au.</span>
+                                    </li>
+                                    <li>
+                                        <span>Call: Call the Agriculture Victoria Customer Service Centre 136 186.</span>
+                                    </li>
+                                </ol>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- map_area_start -->
+        <div class="section-top-border">
+            <h3 class="mb-30">Distribution in the World</h3>
+            <div id="map-container">
+                <div id="map">
+                    <br />
+                    <div class="datamaps-hoverover" style="z-index: 10001; position: absolute; display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Body_Area_End -->

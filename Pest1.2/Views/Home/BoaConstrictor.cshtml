@@ -15,8 +15,8 @@
                                 </div>';
 
                 var $el = $(el).css({
-                    top: e.clientY - 10,
-                    left: e.clientX
+                    top: e.pageY - 10,
+                    left: e.pageX
                 });
 
                 Popup.Hide();
@@ -138,7 +138,7 @@
         padding: 15px 15px 10px;
         position: absolute;
         opacity: 0;
-        width: 100px;
+        width: 120px;
         margin-left: -65px;
         text-transform: uppercase;
         text-align: center;
