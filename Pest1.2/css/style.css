@@ -1655,6 +1655,7 @@ h3 {
     border: 1px solid #ffd1af;
     border-top: none;
     margin-bottom: 30px;
+    height: 250px;
 }
 
 @media (max-width: 767px) {
@@ -1700,15 +1701,15 @@ h3 {
 
 /* line 47, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_service.scss */
 .service_area .single_service .service_content h3 {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 400;
     color: #141419;
 }
 
 /* line 52, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_service.scss */
 .service_area .single_service .service_content p {
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 14px;
+    line-height: 22px;
     color: #575757;
     font-weight: 400;
     margin-bottom: 0;

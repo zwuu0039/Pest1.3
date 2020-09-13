@@ -197,7 +197,8 @@
     <Content Include="img\about\Snake.jpg" />
     <Content Include="img\about\WildCat.jpg" />
     <Content Include="img\about\WildPig.jpg" />
-    <Content Include="img\AsianToad1.jpg" />
+    <Content Include="img\Airport.jpg" />
+    <Content Include="img\AsianToad 1.jpg" />
     <Content Include="img\banner\banner.png" />
     <Content Include="img\banner\banner2.png" />
     <Content Include="img\banner\banner3.png" />
@@ -218,13 +219,18 @@
     <Content Include="img\blog\single_blog_4.png" />
     <Content Include="img\blog\single_blog_5.png" />
     <Content Include="img\blog\slide_thumb_1.png" />
+    <Content Include="img\CanadaGooseCom.jpg" />
+    <Content Include="img\CanadaGooseDisease.jpg" />
     <Content Include="img\canetoad.jpg" />
     <Content Include="img\cat1.jpg" />
     <Content Include="img\cat2.jpg" />
     <Content Include="img\cat3.jpg" />
+    <Content Include="img\CatDisease.png" />
+    <Content Include="img\CatThreat1.jpg" />
     <Content Include="img\comment\comment_1.png" />
     <Content Include="img\comment\comment_2.png" />
     <Content Include="img\comment\comment_3.png" />
+    <Content Include="img\Damagecrop.jpg" />
     <Content Include="img\elements\a.jpg" />
     <Content Include="img\elements\a2.jpg" />
     <Content Include="img\elements\d.jpg" />
@@ -275,10 +281,14 @@
     <Content Include="img\elements\primary-radio.png" />
     <Content Include="img\elements\success-check.png" />
     <Content Include="img\elements\success-radio.png" />
+    <Content Include="img\Foot disease.jpg" />
     <Content Include="img\fox1.jpg" />
     <Content Include="img\fox2.jpg" />
     <Content Include="img\fox3.jpg" />
     <Content Include="img\fox4.jpg" />
+    <Content Include="img\Foxhunting.gif" />
+    <Content Include="img\FoxSmall.jpg" />
+    <Content Include="img\fox_rabbit.jpg" />
     <Content Include="img\gallery\1.png" />
     <Content Include="img\gallery\2.png" />
     <Content Include="img\gallery\3.png" />
@@ -288,6 +298,7 @@
     <Content Include="img\hourse2.jpg" />
     <Content Include="img\hourse3.jpg" />
     <Content Include="img\Jon.jpg" />
+    <Content Include="img\Land.jpeg" />
     <Content Include="img\Lei.jpg" />
     <Content Include="img\logo2.png" />
     <Content Include="img\logo3.png" />
@@ -303,6 +314,8 @@
     <Content Include="img\offers\2.png" />
     <Content Include="img\offers\3.png" />
     <Content Include="img\pig.jpg" />
+    <Content Include="img\PigFarm.jpg" />
+    <Content Include="img\Placenta.jpg" />
     <Content Include="img\post\next.png" />
     <Content Include="img\post\post_1.png" />
     <Content Include="img\post\post_10.png" />
@@ -331,6 +344,7 @@
     <Content Include="img\service\1.png" />
     <Content Include="img\service\2.png" />
     <Content Include="img\service\3.png" />
+    <Content Include="img\Snake 1.jpg" />
     <Content Include="img\snake.jpg" />
     <Content Include="img\team\1.png" />
     <Content Include="img\team\2.png" />
@@ -426,6 +440,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Home\Airport.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
