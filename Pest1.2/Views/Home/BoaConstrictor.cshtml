@@ -147,7 +147,7 @@
 
     <script>
         //Make sure the user has scrolled at least double the height of the browser
-        var toggleHeight = $(window).outerHeight() * 2;
+        var toggleHeight = $(window).outerHeight() * 0.8;
 
         $(window).scroll(function () {
             if ($(window).scrollTop() > toggleHeight) {
@@ -527,6 +527,7 @@
     </li>
 </ul>
 <!-- Pest list navigation end -->
+
 <!--Pest image and name-->
 <div class="pestname">
     <div class="container">
@@ -539,8 +540,10 @@
                     <div class="section_title mb-20px">
                         <h3>What is a <br />Boa Constrictor</h3>
                         <p><b>Common name:</b> Boa constrictor</p>
-                        <p>
-                            <b>Scientific name:</b> Boa constrictor <svg class="on" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 -5 95 95" onclick="sayItOutLoud()">
+                        <div style="display:flex;">
+                            <p>
+                                <b>Scientific name:</b> Boa Constrictor
+                            </p> <svg class="on" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 -5 95 95" onclick="sayItOutLoud()">
                                 <g fill="none" fill-rule="evenodd">
 
                                     <circle class="bg-button" cx="50.5" cy="42.5" r="33.5"></circle>
@@ -556,7 +559,9 @@
                                     </g>
                                 </g>
                             </svg>
-                        </p>
+
+                        </div>
+
                         <p><b>Taxonomy Class:</b> Reptilia</p>
                         <p><b>Taxonomy Family:</b> Boidae</p>
                         <p><b>Taxonomy Genus:</b> Boa</p>
