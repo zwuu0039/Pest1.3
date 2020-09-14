@@ -198,7 +198,7 @@
     <Content Include="img\about\WildCat.jpg" />
     <Content Include="img\about\WildPig.jpg" />
     <Content Include="img\Airport.jpg" />
-    <Content Include="img\AsianToad 1.jpg" />
+    <Content Include="img\AsianToad1.jpg" />
     <Content Include="img\banner\banner.png" />
     <Content Include="img\banner\banner2.png" />
     <Content Include="img\banner\banner3.png" />
@@ -230,7 +230,6 @@
     <Content Include="img\comment\comment_1.png" />
     <Content Include="img\comment\comment_2.png" />
     <Content Include="img\comment\comment_3.png" />
-    <Content Include="img\Damagecrop.jpg" />
     <Content Include="img\elements\a.jpg" />
     <Content Include="img\elements\a2.jpg" />
     <Content Include="img\elements\d.jpg" />
@@ -440,7 +439,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Views\Home\Airport.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
