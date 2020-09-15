@@ -198,6 +198,7 @@
     <Content Include="img\about\WildCat.jpg" />
     <Content Include="img\about\WildPig.jpg" />
     <Content Include="img\Airport.jpg" />
+    <Content Include="img\animaltrade.jpg" />
     <Content Include="img\AsianToad 1.jpg" />
     <Content Include="img\banner\banner.png" />
     <Content Include="img\banner\banner2.png" />
@@ -222,6 +223,7 @@
     <Content Include="img\CanadaGooseCom.jpg" />
     <Content Include="img\CanadaGooseDisease.jpg" />
     <Content Include="img\canetoad.jpg" />
+    <Content Include="img\caravans.jpg" />
     <Content Include="img\cat1.jpg" />
     <Content Include="img\cat2.jpg" />
     <Content Include="img\cat3.jpg" />
@@ -231,6 +233,7 @@
     <Content Include="img\comment\comment_2.png" />
     <Content Include="img\comment\comment_3.png" />
     <Content Include="img\Damagecrop.jpg" />
+    <Content Include="img\danger.png" />
     <Content Include="img\elements\a.jpg" />
     <Content Include="img\elements\a2.jpg" />
     <Content Include="img\elements\canetoad1.jpg" />
@@ -315,6 +318,7 @@
     <Content Include="img\Foxhunting.gif" />
     <Content Include="img\FoxSmall.jpg" />
     <Content Include="img\fox_rabbit.jpg" />
+    <Content Include="img\Fungi.jpg" />
     <Content Include="img\gallery\1.png" />
     <Content Include="img\gallery\2.png" />
     <Content Include="img\gallery\3.png" />
@@ -370,8 +374,10 @@
     <Content Include="img\service\1.png" />
     <Content Include="img\service\2.png" />
     <Content Include="img\service\3.png" />
+    <Content Include="img\shipping containers.jpg" />
     <Content Include="img\Snake 1.jpg" />
     <Content Include="img\snake.jpg" />
+    <Content Include="img\SnakeDisease.jpg" />
     <Content Include="img\team\1.png" />
     <Content Include="img\team\2.png" />
     <Content Include="img\team\3.png" />
