@@ -283,6 +283,7 @@
     <Content Include="img\elements\success-radio.png" />
     <Content Include="img\Foot disease.jpg" />
     <Content Include="img\fox1.jpg" />
+    <Content Include="img\fox1edited.jpg" />
     <Content Include="img\fox2.jpg" />
     <Content Include="img\fox3.jpg" />
     <Content Include="img\fox4.jpg" />
@@ -349,6 +350,7 @@
     <Content Include="img\team\1.png" />
     <Content Include="img\team\2.png" />
     <Content Include="img\team\3.png" />
+    <Content Include="img\teenslider.jpg" />
     <Content Include="img\testmonial\1.png" />
     <Content Include="img\us.jpg" />
     <Content Include="img\us1.jpg" />
