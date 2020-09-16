@@ -74,7 +74,6 @@
 <div id="map" style="height: 620px; position: relative; overflow: hidden;"></div>
 
 
-
 @section Scripts{
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 
@@ -224,7 +223,7 @@
 
         );
 
-        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.NavigationControl(),'bottom-right');
 
         map.addControl(
             new MapboxDirections({
@@ -244,9 +243,6 @@
         for (var i = 0; i < inputs.length; i++) {
             inputs[i].onclick = switchLayer;
         }
-
-
-
 
     </script>
 }
@@ -276,6 +272,7 @@
         padding: 10px;
         font-family: 'Open Sans', sans-serif;
     }
+
 </style>
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
