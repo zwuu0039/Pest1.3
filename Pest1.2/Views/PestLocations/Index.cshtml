@@ -1,4 +1,16 @@
-﻿@model IEnumerable<Pest1._2.Models.PestLocation>
+﻿<!-- bradcam_area_start -->
+<div class="bradcam_area breadcam_bg overlay">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>About the Pest</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- bradcam_area_end -->
+
+@model IEnumerable<Pest1._2.Models.PestLocation>
 
 @{
     ViewBag.Title = "Index";
@@ -30,29 +42,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Scientific_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Vernacular_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Event_Date__parsed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Latitude)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Longitude)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.column_0 }) |
-            @Html.ActionLink("Details", "Details", new { id=item.column_0 }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.column_0 })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scientific_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vernacular_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Event_Date__parsed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longitude)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.column_0 }) |
+                @Html.ActionLink("Details", "Details", new { id = item.column_0 }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.column_0 })
+            </td>
+        </tr>
+    }
 
 </table>
