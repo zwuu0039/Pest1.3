@@ -20,56 +20,9 @@
     <h4>Locate yourself and dicsover what pests lives near you<br></h4>
 </div>
 
-@*<div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="blog_right_sidebar">
-                    <aside class="single_sidebar_widget search_widget">
-                        <div class="section_title text-center mb-55">
-                            <form action="#">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="address" id="address" class="form-control" placeholder='Your Address...'
-                                               required oninvalid="this.setCustomValidity('Please input your Address here')" oninput="this.setCustomValidity('')"
-                                               onfocus="this.placeholder = ''"
-                                               onblur="this.placeholder = 'Your Address...'">
-                                        <div class="input-group-append">
-                                            <button class="btn" type="button"><i class="ti-search"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                        type="submit">
-                                    Find Pest near me
-                                </button>
-                            </form>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </div>
-    </div>*@
-
 <link rel="stylesheet"
       href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
       type="text/css" />
-
-@*<div id="menu" style="height: 30px;" class="section_title text-center mb-55">
-        <input id="streets-v11"
-               type="radio"
-               name="rtoggle"
-               value="streets"
-               checked="checked" />
-        <label for="streets-v11">streets</label>
-        <input id="light-v10" type="radio" name="rtoggle" value="light" />
-        <label for="light-v10">light</label>
-        <input id="dark-v10" type="radio" name="rtoggle" value="dark" />
-        <label for="dark-v10">dark</label>
-        <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" />
-        <label for="outdoors-v11">outdoors</label>
-        <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" />
-        <label for="satellite-v9">satellite</label>
-    </div>*@
 
 <div id="map" style="height: 620px; position: relative; overflow: hidden;"></div>
 
@@ -132,9 +85,6 @@
             style: 'mapbox://styles/nankie/ckf2hmfi92j8819pntf36jplr',
             center: [144.963058, -37.813629],
             zoom: 12,
-            //pitch: 45,
-            //bearing: -17.6,
-            //antialias: true
         });
 
 
@@ -225,13 +175,6 @@
 
         map.addControl(new mapboxgl.NavigationControl(),'bottom-right');
 
-        //map.addControl(
-        //    new MapboxDirections({
-        //        accessToken: mapboxgl.accessToken
-        //    }),
-        //    'top-left'
-        //);
-
         var layerList = document.getElementById('menu');
         var inputs = layerList.getElementsByTagName('input');
 
@@ -249,7 +192,6 @@
 
 <style>
     .marker {
-        /* background-image: url('../../img/marker2.png');*/
         background-size: cover;
         width: 40px;
         height: 40px;
@@ -276,7 +218,6 @@
 </style>
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-@*pk.eyJ1IjoibmFua2llIiwiYSI6ImNrMHlvbnN2ZzBoaHkzbW9iejRweGdxdjEifQ.W20SvnSB85WjL4ppoawrFg*@
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
@@ -326,11 +267,6 @@
             <td class="longitude">
                 @Html.DisplayFor(modelItem => item.Longitude)
             </td>
-            @*<td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.column_0 }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.column_0 }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.column_0 })
-                </td>*@
         </tr>
     }
 </table>
