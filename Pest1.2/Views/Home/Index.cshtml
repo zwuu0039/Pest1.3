@@ -1,4 +1,5 @@
-﻿@section scripts{
+﻿<!-- JS start-->
+@section scripts{
     <script type="text/javascript">
         (function ($) {
             $.fn.timeline = function () {
@@ -57,10 +58,9 @@
 
         $("#timeline-1").timeline();
 
-
     </script>
-
-    <!-- Scroll Down JavaScript -->
+    <!-- JS End-->
+    <!-- Scroll Down Function JavaScript -->
     <script type="text/javascript">
         $(function () {
             $('a[href*=#]').on('click', function (e) {
@@ -69,35 +69,36 @@
             });
         });
     </script>
-
-
+    <!-- Scroll Down Function JavaScript End-->
+    <!-- JS start-->
     <script>
-    //Make sure the user has scrolled at least double the height of the browser
-    var toggleHeight = $(window).outerHeight() * 0.8;
+        //Make sure the user has scrolled at least double the height of the browser
+        var toggleHeight = $(window).outerHeight() * 0.8;
 
-    $(window).scroll(function () {
-        if ($(window).scrollTop() > toggleHeight) {
-            //Adds active class to make button visible
-            $(".m-backtotop").addClass("active");
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > toggleHeight) {
+                //Adds active class to make button visible
+                $(".m-backtotop").addClass("active");
 
 
-        } else {
-            //Removes active class to make button visible
-            $(".m-backtotop").removeClass("active");
+            } else {
+                //Removes active class to make button visible
+                $(".m-backtotop").removeClass("active");
 
-        }
-    });
+            }
+        });
 
-    //Scrolls the user to the top of the page again
-    $(".m-backtotop").click(function () {
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
-    });
-</script>
-
+        //Scrolls the user to the top of the page again
+        $(".m-backtotop").click(function () {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
+    </script>
+    <!-- JS End-->
 }
 
-
+<!-- Home Page Body Start-->
+<!-- slider_area_start -->
 <div class="carocontainer">
     <div class="row">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -126,8 +127,8 @@
                             <p style="font-size:20px;font-style:italic;">Do you wanna know what pests are close to you ? </p><br>
                             <a href="~/Home/Location" class="boxed-btn3">Find Out</a>
                         </div>
-                     </div>
-                 </div>
+                    </div>
+                </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -231,128 +232,126 @@
         Back to Top
     </div>
 </div>
-
-
+<!-- Home Page Body End-->
 <!--BACK TO TOP CSS-->
 <style>
-        @@-webkit-keyframes AnimationName {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+    @@-webkit-keyframes AnimationName {
+        0% {
+            background-position: 0% 50%;
         }
 
-        @@-moz-keyframes AnimationName {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+        50% {
+            background-position: 100% 50%;
         }
 
-        @@keyframes AnimationName {
-            0% {
-                background-position: 0% 50%;
-            }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
 
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
+    @@-moz-keyframes AnimationName {
+        0% {
+            background-position: 0% 50%;
         }
 
-        .m-backtotop {
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @@keyframes AnimationName {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .m-backtotop {
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        position: fixed;
+        bottom: 0;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: #222;
+        border-radius: 25px;
+        text-align: center;
+        border: 2px solid #fff;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        overflow: hidden;
+        color: #fff;
+        z-index: 10001;
+    }
+
+        .m-backtotop.active {
+            bottom: 15px;
+            opacity: 1;
+        }
+
+        .m-backtotop > div {
             -webkit-transition: all 0.3s ease-in-out;
             -moz-transition: all 0.3s ease-in-out;
             -ms-transition: all 0.3s ease-in-out;
             -o-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
-            position: fixed;
-            bottom: 0;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: #222;
-            border-radius: 25px;
-            text-align: center;
-            border: 2px solid #fff;
-            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            overflow: hidden;
-            color: #fff;
-            z-index:10001;
         }
 
-            .m-backtotop.active {
-                bottom: 15px;
+            .m-backtotop > div.arrow {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
                 opacity: 1;
             }
 
-            .m-backtotop > div {
-                -webkit-transition: all 0.3s ease-in-out;
-                -moz-transition: all 0.3s ease-in-out;
-                -ms-transition: all 0.3s ease-in-out;
-                -o-transition: all 0.3s ease-in-out;
-                transition: all 0.3s ease-in-out;
+            .m-backtotop > div.text {
+                font-size: 5px;
+                font-size: 0.5rem;
+                line-height: 10px;
+                text-transform: uppercase;
+                font-weight: 900;
+                font-family: 'Open Sans', sans-serif;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateY(50%) translateX(-50%);
+                opacity: 0;
+                margin-top: 1px;
             }
 
-                .m-backtotop > div.arrow {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translateY(-50%) translateX(-50%);
-                    opacity: 1;
+        .m-backtotop:hover {
+            transform: scale(1.1);
+            bottom: 20px;
+            cursor: pointer;
+            background: #000;
+            box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+        }
 
-                }
-
-                .m-backtotop > div.text {
-                    font-size: 5px;
-                    font-size: 0.5rem;
-                    line-height: 10px;
-                    text-transform: uppercase;
-                    font-weight: 900;
-                    font-family: 'Open Sans', sans-serif;
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translateY(50%) translateX(-50%);
-                    opacity: 0;
-                    margin-top: 1px;
-                }
-
-            .m-backtotop:hover {
-                transform: scale(1.1);
-                bottom: 20px;
-                cursor: pointer;
-                background: #000;
-                box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
+            .m-backtotop:hover > div.arrow {
+                transform: translateY(-150%) translateX(-50%);
+                opacity: 0;
             }
 
-                .m-backtotop:hover > div.arrow {
-                    transform: translateY(-150%) translateX(-50%);
-                    opacity: 0;
-                }
-
-                .m-backtotop:hover > div.text {
-                    transform: translateY(-50%) translateX(-50%);
-                    opacity: 1;
-                }
+            .m-backtotop:hover > div.text {
+                transform: translateY(-50%) translateX(-50%);
+                opacity: 1;
+            }
 </style>
 
 

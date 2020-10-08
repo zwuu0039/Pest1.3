@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Pest1._2.Models.PestLocation>
 
 
-<!-- bradcam_area_start -->
+<!-- Header & Navigation bar -->
 <div class="bradcam_area breadcam_bg_1 overlay">
     <div class="container">
         <div class="row">
@@ -11,7 +11,8 @@
         </div>
     </div>
 </div>
-<!-- bradcam_area_end -->
+<!-- Header & Navigation bar end -->
+<!-- Body Start-->
 <br>
 <br>
 <br>
@@ -19,21 +20,16 @@
     <h3>Pests in Victoria</h3>
     <h4>Locate yourself and dicsover what pests lives near you<br></h4>
 </div>
-
+<!-- Body End-->
+<!-- Map Start-->
 <link rel="stylesheet"
       href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
       type="text/css" />
-
 <div id="map" style="height: 620px; position: relative; overflow: hidden;"></div>
-
-
 @section Scripts{
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 
-
     <script>
-
-
         var pointlist = [];
         $(".position").each(function () {
             var name1 = $(".name1", this).text().trim();
@@ -41,7 +37,6 @@
             var date = $(".date", this).text().trim();
             var latitude = $(".latitude", this).text().trim();
             var longitude = $(".longitude", this).text().trim();
-
 
             var point = {
                 "name1": name1,
@@ -173,7 +168,7 @@
 
         );
 
-        map.addControl(new mapboxgl.NavigationControl(),'bottom-right');
+        map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
 
         var layerList = document.getElementById('menu');
         var inputs = layerList.getElementsByTagName('input');
@@ -189,7 +184,8 @@
 
     </script>
 }
-
+<!-- Map End-->
+<!-- css Start-->
 <style>
     .marker {
         background-size: cover;
@@ -214,8 +210,9 @@
         padding: 10px;
         font-family: 'Open Sans', sans-serif;
     }
-
 </style>
+<!-- css end-->
+
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
@@ -226,9 +223,7 @@
       href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
       type="text/css" />
 
-
-
-
+<!-- Import fdata from database to the map-->
 <table class="table" style="display:none">
     <tr>
         <th>
@@ -270,3 +265,4 @@
         </tr>
     }
 </table>
+<!-- Import fdata from database to the map End-->
