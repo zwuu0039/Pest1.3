@@ -232,8 +232,8 @@
     <Content Include="img\comment\comment_1.png" />
     <Content Include="img\comment\comment_2.png" />
     <Content Include="img\comment\comment_3.png" />
-    <Content Include="img\Damagecrop.jpg" />
     <Content Include="img\danger.png" />
+    <Content Include="img\economicloss.jpg" />
     <Content Include="img\elements\a.jpg" />
     <Content Include="img\elements\a2.jpg" />
     <Content Include="img\elements\canetoad1.jpg" />
@@ -324,6 +324,7 @@
     <Content Include="img\gallery\3.png" />
     <Content Include="img\gallery\video.png" />
     <Content Include="img\goose.jpg" />
+    <Content Include="img\GooseWing.jpg" />
     <Content Include="img\hourse1.jpg" />
     <Content Include="img\hourse2.jpg" />
     <Content Include="img\hourse3.jpg" />
