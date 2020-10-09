@@ -302,8 +302,6 @@
     <Content Include="img\hourse2.jpg" />
     <Content Include="img\hourse3.jpg" />
     <Content Include="img\Jon.jpg" />
-    <Content Include="img\kan.jpg" />
-    <Content Include="img\kan2.jpg" />
     <Content Include="img\Land.jpeg" />
     <Content Include="img\Lei.jpg" />
     <Content Include="img\logo2.png" />
@@ -319,6 +317,7 @@
     <Content Include="img\pig.jpg" />
     <Content Include="img\PigFarm.jpg" />
     <Content Include="img\Placenta.jpg" />
+    <Content Include="img\rabbit.jpg" />
     <Content Include="img\rabbit2.jpg" />
     <Content Include="img\rabbit4.jpg" />
     <Content Include="img\Rui.jpg" />
