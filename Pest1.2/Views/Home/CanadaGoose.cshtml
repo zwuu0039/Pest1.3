@@ -67,16 +67,16 @@
             },
 
             done: function (datamap) {
-                datamap.svg.selectAll('.datamaps-subunit').on('click', function (geography) {
+                datamap.svg.selectAll('.datamaps-subunit').on('mouseover', function (geography) {
                     Popup.Show(geography, datamap.options.data[geography.id], this, d3.event);
                 });
             }
         });
 
-        $('body').on('click', function (e) {
+        $('body').on('mouseover', function (e) {
             Popup.Hide();
         })
-            .on('click', '.datamaps-subunit,.popup-card', function (e) {
+            .on('mouseover', '.datamaps-subunit,.popup-card', function (e) {
                 e.stopPropagation();
             });
 
@@ -659,7 +659,8 @@
 <div class="section_title2 text-center">
     <div class="pestorigin">
         <h3 class="mb-30">Where did they come from?</h3>
-        <p>The highlighted areas shows where the Canada goose originated from.<p>
+        <p style="font-style: italic;font-size:20px"><b>The Main Origin Area: Native to North America, the Bahamas and Greenland</b></p>
+        <p><b>*Mouse over the highlighted areas to see where the Asian Toad originated from.</b><p>
             <div id="map-container">
                 <div id="map">
                     <br />
