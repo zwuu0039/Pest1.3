@@ -314,6 +314,9 @@
     <Content Include="img\marker4.png" />
     <Content Include="img\me.jpg" />
     <Content Include="img\me1.jpg" />
+    <Content Include="img\news\foxabc.jpg" />
+    <Content Include="img\news\foxnew2.jpg" />
+    <Content Include="img\news\foxnew3.jpg" />
     <Content Include="img\pig.jpg" />
     <Content Include="img\PigFarm.jpg" />
     <Content Include="img\Placenta.jpg" />
@@ -470,6 +473,7 @@
     <Content Include="Views\Home\Pig.cshtml" />
     <Content Include="Views\Home\Rabbit.cshtml" />
     <Content Include="Views\Home\TestPage.cshtml" />
+    <Content Include="Views\Home\FoxDamage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -100,5 +100,12 @@ namespace Pest1._2.Controllers
 
             return View();
         }
+
+        public ActionResult FoxDamage()
+        {
+
+
+            return View();
+        }
     }
 }
