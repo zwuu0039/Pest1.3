@@ -199,6 +199,10 @@
     <Content Include="img\about\WildPig.jpg" />
     <Content Include="img\Airport.jpg" />
     <Content Include="img\animaltrade.jpg" />
+    <Content Include="img\appearance\goose1.jpg" />
+    <Content Include="img\appearance\goose2.jpg" />
+    <Content Include="img\appearance\goose3.jpg" />
+    <Content Include="img\appearance\goose4.jpg" />
     <Content Include="img\AsianToad 1.jpg" />
     <Content Include="img\CanadaGooseCom.jpg" />
     <Content Include="img\CanadaGooseDisease.jpg" />
@@ -314,9 +318,9 @@
     <Content Include="img\marker4.png" />
     <Content Include="img\me.jpg" />
     <Content Include="img\me1.jpg" />
-    <Content Include="img\news\foxabc.jpg" />
-    <Content Include="img\news\foxnew2.jpg" />
-    <Content Include="img\news\foxnew3.jpg" />
+    <Content Include="img\appearance\foxabc.jpg" />
+    <Content Include="img\appearance\foxnew2.jpg" />
+    <Content Include="img\appearance\foxnew3.jpg" />
     <Content Include="img\pig.jpg" />
     <Content Include="img\PigFarm.jpg" />
     <Content Include="img\Placenta.jpg" />
