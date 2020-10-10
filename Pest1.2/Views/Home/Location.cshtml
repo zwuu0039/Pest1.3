@@ -16,16 +16,27 @@
 <br>
 <br>
 <br>
-<div class="section_title text-center mb-55">
-    <h3>Pests in Victoria</h3>
-    <h4>Locate yourself and dicsover what pests lives near you<br></h4>
+
+<div class="col-lg-6">
+    <div class="section_title text-center mb-55">
+        <h3>Pests in Victoria</h3>
+        <h4>Locate yourself and dicsover what pests lives near you<br></h4>
+    </div>
+    <div id="map" style="height: 620px; position: relative; overflow: hidden;">
+        <nav id="filter-group" class="filter-group"></nav>
+    </div>
+    <br>
 </div>
+
 <!-- Body End-->
 <!-- Map Start-->
 <link rel="stylesheet"
       href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
       type="text/css" />
-<div id="map" style="height: 620px; position: relative; overflow: hidden;"></div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
 @section Scripts{
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 
@@ -48,6 +59,7 @@
 
             pointlist.push(point);
         })
+
         console.log(pointlist);
 
         var geodata = [];
@@ -69,74 +81,77 @@
 
         console.log(geodata);
 
-        var geojson = {
+        var records = {
             type: 'FeatureCollection',
             features: geodata
         };
 
         mapboxgl.accessToken = 'pk.eyJ1IjoibmFua2llIiwiYSI6ImNrMHlvbnN2ZzBoaHkzbW9iejRweGdxdjEifQ.W20SvnSB85WjL4ppoawrFg';
+
+        var filterGroup = document.getElementById('filter-group');
+
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/nankie/ckf2hmfi92j8819pntf36jplr',
+            style: 'mapbox://styles/mapbox/streets-v8',
             center: [144.963058, -37.813629],
             zoom: 12,
+            maxZoom: 13,
+            minZoom: 11
         });
 
 
-        // The 'building' layer in the mapbox-streets vector source contains building-height
-        // data from OpenStreetMap.
         map.on('load', function () {
-            // Insert the layer beneath any symbol layer.
-            var layers = map.getStyle().layers;
+            // Add a GeoJSON source containing place coordinates and information.
+            map.addSource('records', {
+                'type': 'geojson',
+                'data': records
+            });
 
-            var labelLayerId;
-            for (var i = 0; i < layers.length; i++) {
-                if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
-                    labelLayerId = layers[i].id;
-                    break;
+            records.features.forEach(function (feature) {
+                var symbol = feature.properties['name2'];
+                var layerID = 'poi-' + symbol;
+
+                // Add a layer for this symbol type if it hasn't been added already.
+                if (!map.getLayer(layerID)) {
+                    map.addLayer({
+                        'id': layerID,
+                        'type': 'symbol',
+                        'source': 'records',
+                        'layout': {
+                            'icon-image': 'marker-15',
+                            'icon-allow-overlap': true,
+                            'icon-size': 1.5
+                        },
+                        'filter': ['==', 'name2', symbol]
+                    });
+
+                    // Add checkbox and label elements for the layer.
+                    var input = document.createElement('input');
+                    input.type = 'checkbox';
+                    input.id = layerID;
+                    input.checked = true;
+                    filterGroup.appendChild(input);
+
+                    var label = document.createElement('label');
+                    label.setAttribute('for', layerID);
+                    label.textContent = symbol;
+                    filterGroup.appendChild(label);
+
+                    // When the checkbox changes, update the visibility of the layer.
+                    input.addEventListener('change', function (e) {
+                        map.setLayoutProperty(
+                            layerID,
+                            'visibility',
+                            e.target.checked ? 'visible' : 'none'
+                        );
+                    });
                 }
-            }
-
-            map.addLayer(
-                {
-                    'id': '3d-buildings',
-                    'source': 'composite',
-                    'source-layer': 'building',
-                    'filter': ['==', 'extrude', 'true'],
-                    'type': 'fill-extrusion',
-                    'minzoom': 15,
-                    'paint': {
-                        'fill-extrusion-color': '#aaa',
-
-                        // use an 'interpolate' expression to add a smooth transition effect to the
-                        // buildings as the user zooms in
-                        'fill-extrusion-height': [
-                            'interpolate',
-                            ['linear'],
-                            ['zoom'],
-                            15,
-                            0,
-                            15.05,
-                            ['get', 'height']
-                        ],
-                        'fill-extrusion-base': [
-                            'interpolate',
-                            ['linear'],
-                            ['zoom'],
-                            15,
-                            0,
-                            15.05,
-                            ['get', 'min_height']
-                        ],
-                        'fill-extrusion-opacity': 0
-                    }
-                },
-                labelLayerId
-            );
+            });
         });
+
 
         // Add markers to map
-        geojson.features.forEach(function (marker) {
+        records.features.forEach(function (marker) {
 
             // create a HTML element for each feature
             var el = document.createElement('div');
@@ -188,9 +203,10 @@
 <!-- css Start-->
 <style>
     .marker {
+        background-image: url('.png');
         background-size: cover;
-        width: 40px;
-        height: 40px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
         cursor: pointer;
     }
@@ -204,25 +220,55 @@
         font-family: 'Open Sans', sans-serif;
     }
 
-    .menu {
+    .filter-group {
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        font-weight: 600;
         position: absolute;
-        background: #fff;
-        padding: 10px;
-        font-family: 'Open Sans', sans-serif;
+        top: 10px;
+        left: 10px;
+        z-index: 1;
+        border-radius: 3px;
+        width: 120px;
+        color: #000;
     }
+
+        .filter-group input[type='checkbox']:first-child + label {
+            border-radius: 3px 3px 0 0;
+        }
+
+        .filter-group label:last-child {
+            border-radius: 0 0 3px 3px;
+            border: none;
+        }
+
+        .filter-group input[type='checkbox'] {
+            display: none;
+        }
+
+            .filter-group input[type='checkbox'] + label {
+                background-color: #FFFFFF;
+                display: block;
+                cursor: pointer;
+                padding: 10px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+            }
+
+            .filter-group input[type='checkbox'] + label {
+                background-color: #FFFFFF;
+                text-transform: capitalize;
+            }
+
+                .filter-group input[type='checkbox'] + label:hover,
+                .filter-group input[type='checkbox']:checked + label {
+                    background-color: #FFFFFF;
+                }
+
+                    .filter-group input[type='checkbox']:checked + label:before {
+                        content: '✔';
+                        margin-right: 5px;
+                    }
 </style>
 <!-- css end-->
-
-<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
-<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-<script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
-<link rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css"
-      type="text/css" />
-
 <!-- Import fdata from database to the map-->
 <table class="table" style="display:none">
     <tr>
