@@ -291,11 +291,14 @@
                     </div>
                     <div class="boards">
                         <div class="board">
-                            <div class="board-title">Population</div>
+                            <div class="board-title">Current Population</div>
                             <p>44</p>
                         </div>
                         <div class="board">
-                            <div class="board-title">Trend</div>
+                            <div class="board-title">
+                                Overall Trend
+                                (over 5 years)
+                            </div>
                             <p>Stable</p>
                         </div>
                     </div>
@@ -322,9 +325,9 @@
                             <span class="red">Population</span>
                         </div>
                         <div class="statistic">
-                            <div class="line-1"></div>
-                            <div class="line-2"></div>
-                            <div class="line-3">
+                            <div class="line-1"><p>50</p></div>
+                            <div class="line-2"><p>25</p></div>
+                            <div class="line-3"><p>0</p>
                             </div>
                             <div class="data red">
                                 <svg>
@@ -361,12 +364,15 @@
                     </div>
                     <div class="boards">
                         <div class="board">
-                            <div class="board-title">Population</div>
+                            <div class="board-title">Current Population</div>
                             <p>12</p>
                         </div>
                       
                         <div class="board">
-                            <div class="board-title">Trend</div>
+                            <div class="board-title">
+                                Overall Trend
+                                (over 5 years)
+                            </div>
                             <p>Decrease</p>
                         </div>
                     </div>
@@ -437,12 +443,12 @@
                     </div>
                     <div class="boards">
                         <div class="board">
-                            <div class="board-title">Population</div>
+                            <div class="board-title">Current Population</div>
                             <p>33</p>
                         </div>
                        
                         <div class="board">
-                            <div class="board-title">Trend</div>
+                            <div class="board-title">Overall Trend for past 5 years</div>
                             <p>44</p>
                         </div>
                     </div>
@@ -512,12 +518,12 @@
                     </div>
                     <div class="boards">
                         <div class="board">
-                            <div class="board-title">Population</div>
+                            <div class="board-title">Current Population</div>
                             <p>33</p>
                         </div>
                        
                         <div class="board">
-                            <div class="board-title">Trend</div>
+                            <div class="board-title">Overall Trend for past 5 years</div>
                             <p>44</p>
                         </div>
                     </div>
@@ -569,12 +575,12 @@
                     </div>
                     <div class="boards">
                         <div class="board">
-                            <div class="board-title">Population</div>
+                            <div class="board-title">Current Population</div>
                             <p>1</p>
                         </div>
                        
                         <div class="board">
-                            <div class="board-title">Trend</div>
+                            <div class="board-title">Overall Trend for past 5 years</div>
                             <p>Decrease</p>
                         </div>
                     </div>
@@ -645,12 +651,12 @@
                     </div>
                     <div class="boards">
                         <div class="board">
-                            <div class="board-title">Population</div>
+                            <div class="board-title">Current Population</div>
                             <p>33</p>
                         </div>
                        
                         <div class="board">
-                            <div class="board-title">Trend</div>
+                            <div class="board-title">Overall Trend for past 5 years</div>
                             <p>44</p>
                         </div>
                     </div>
@@ -1257,9 +1263,21 @@
   background: #f2f2f2;
 }
 
-.card .statistic .line-2 {
-  top: 40px;
-}
+    .card .statistic .line-1 p,
+    .card .statistic .line-2 p,
+    .card .statistic .line-3 p
+    {
+        font-size: 10px;
+        position: absolute;
+        top: -15px;
+        left: -25px;
+        color: #949494;
+    }
+
+
+    .card .statistic .line-2 {
+        top: 40px;
+    }
 
 .card .statistic .line-3 {
   top: inherit;
@@ -1430,6 +1448,7 @@
 }
 
 </style>
+
 <style>
     .info {
         position: absolute;
@@ -1451,10 +1470,14 @@
         border: 1px solid;
         width: 45%;
         background: #fff;
+        height:80px;
+     
     }
 
     .board-title {
         background: #7ba2ff;
+        font-size: 15px;
+        
     }
 
     .board p {
@@ -1464,6 +1487,8 @@
     .timeline-item--active .info {
         display: block;
     }
+
 </style>
+
 
 
