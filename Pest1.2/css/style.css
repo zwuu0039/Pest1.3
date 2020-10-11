@@ -1969,7 +1969,7 @@ h3 {
 /* line 49, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_testmonial.scss */
 .testimonial_area .owl-carousel .owl-nav div.owl-next {
     left: auto;
-    right: 98px;
+    right: 10px;
 }
 
 /* line 53, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_testmonial.scss */
@@ -1987,7 +1987,7 @@ h3 {
     background: #fff;
     font-size: 14px;
     color: #f39b80 !important;
-    left: 98px;
+    left: 10px;
     top: 20%;
     -webkit-transform: translateY(-80%);
     -ms-transform: translateY(-80%);
