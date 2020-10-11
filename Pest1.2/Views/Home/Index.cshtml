@@ -94,9 +94,120 @@
             return false;
         });
     </script>
+
+    <!--Bar Chart JS Start-->
+    <script>
+    var barChartData1 = {
+    labels: ['2016', '2017', '2018', '2019', '2020'],
+    datasets: [
+    {
+    fillColor: 'rgba(151,187,205,0.5)',
+    strokeColor: 'rgba(151,187,205,0.8)',
+    highlightFill: 'rgba(151,187,205,0.75)',
+    highlightStroke: 'rgba(151,187,205,1)',
+    data: [13, 31, 38, 28, 2],
+    },
+    ],
+    };
+    var barChartData2 = {
+    labels: ['2016', '2017', '2018', '2019', '2020'],
+    datasets: [
+    {
+    fillColor: 'rgba(151,187,205,0.5)',
+    strokeColor: 'rgba(151,187,205,0.8)',
+    highlightFill: 'rgba(151,187,205,0.75)',
+    highlightStroke: 'rgba(151,187,205,1)',
+    data: [12, 26, 44, 42, 12],
+    },
+    ],
+    };
+    var barChartData3 = {
+    labels: ['2016', '2017', '2018', '2019', '2020'],
+    datasets: [
+    {
+    fillColor: 'rgba(151,187,205,0.5)',
+    strokeColor: 'rgba(151,187,205,0.8)',
+    highlightFill: 'rgba(151,187,205,0.75)',
+    highlightStroke: 'rgba(151,187,205,1)',
+    data: [283, 321, 272, 349, 235],
+    },
+    ],
+    };
+    var barChartData4 = {
+    labels: ['2016', '2017', '2018', '2019', '2020'],
+    datasets: [
+    {
+    fillColor: 'rgba(151,187,205,0.5)',
+    strokeColor: 'rgba(151,187,205,0.8)',
+    highlightFill: 'rgba(151,187,205,0.75)',
+    highlightStroke: 'rgba(151,187,205,1)',
+    data: [87, 144, 114, 129, 61],
+    },
+    ],
+    };
+    var barChartData5 = {
+    labels: ['2004', '2008'],
+    datasets: [
+    {
+    fillColor: 'rgba(151,187,205,0.5)',
+    strokeColor: 'rgba(151,187,205,0.8)',
+    highlightFill: 'rgba(151,187,205,0.75)',
+    highlightStroke: 'rgba(151,187,205,1)',
+    data: [1, 1],
+    },
+    ],
+    };
+    var barChartData6 = {
+    labels: ['2014'],
+    datasets: [
+    {
+    fillColor: 'rgba(151,187,205,0.5)',
+    strokeColor: 'rgba(151,187,205,0.8)',
+    highlightFill: 'rgba(151,187,205,0.75)',
+    highlightStroke: 'rgba(151,187,205,1)',
+    data: [1],
+    },
+    ],
+    };
+    window.onload = function () {
+    var ctx1 = document.getElementById('barChart1').getContext('2d');
+    window.myBar1 = new Chart(ctx1).Bar(barChartData1, {
+    responsive: true,
+    });
+
+    var ctx2 = document.getElementById('barChart2').getContext('2d');
+    window.myBar2 = new Chart(ctx2).Bar(barChartData2, {
+    responsive: true,
+    });
+
+    var ctx3 = document.getElementById('barChart3').getContext('2d');
+    window.myBar3 = new Chart(ctx3).Bar(barChartData3, {
+    responsive: true,
+    });
+
+    var ctx4 = document.getElementById('barChart4').getContext('2d');
+    window.myBar4 = new Chart(ctx4).Bar(barChartData4, {
+    responsive: true,
+    });
+
+    var ctx5 = document.getElementById('barChart5').getContext('2d');
+    window.myBar5 = new Chart(ctx5).Bar(barChartData5, {
+    responsive: true,
+    });
+
+    var ctx6 = document.getElementById('barChart6').getContext('2d');
+    window.myBar6 = new Chart(ctx6).Bar(barChartData6, {
+    responsive: true,
+    });
+    };
+    </script>
+    <!--Bar Chart JS End-->
     <!-- JS End-->
 }
 
+<head>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85807/Chart.js"></script>
+</head>
 <!-- Home Page Body Start-->
 <!-- slider_area_start -->
 <div class="carocontainer">
@@ -250,60 +361,24 @@
                     Feral pigs were brought from Europe to Australia in 1788. They were initially imported as livestock. However, these pigs escaped and established wild populations across Australia.
                 </p>
 
-                <div class="info" style="left: 600px">
-                    <div class="card">
-                        <div class="header">
-                            <span class="title big">Feral pig Population</span>
-                            <span class="date small">2016 - 2020</span>
-                    
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="parameter">
-                            <span class="red">Population</span>
-                        </div>
-                        <div class="statistic">
-                            <div class="line-1"></div>
-                            <div class="line-2"></div>
-                            <div class="line-3"></div>
-                            <div class="data red">
-                                <svg>
-                                    <polyline points="60,65 180,65"></polyline>
-                                </svg>
-                                <div class="points">
-                                    <div class="point-1" style="top: 62px; left: 57px">
-                                        <div class="tooltip">1</div>
-                                    </div>
-                                    <div class="point-2" style="top: 62px; left: 177px">
-                                        <div class="tooltip">1</div>
-                                    </div>                                                                                                       
-                                    
+                <!--Bar Chart-->
+                <div class="info" style="left: 550px">
+                    <div class="statCont" id="bar_chart">
+                        <div class="barChartCont">
+                            <canvas id="barChart1" width="300px" height="200px"></canvas>
+                            <div class="legend">
+                                <div class="items block1">
+                                    <span style="font-size:14px">Current Number</span><span style="font-size:14px">2</span>
                                 </div>
-                               
+                                <div class="items block2">
+                                    <span style="font-size:14px">Overall Trend <br> (Past 5 years)</span><span style="font-size:14px">Decrease</span>
+                                </div>
                             </div>
-
-                        </div>
-                        <div class="days">
-                            <span class="day">2016</span>
-                            <span class="day">2017</span>
-                            <span class="day">2018</span>
-                            <span class="day">2019</span>
-                            <span class="day">2020</span>
-                        </div>
-                    </div>
-                    <div class="boards">
-                        <div class="board">
-                            <div class="board-title">Current Population</div>
-                            <p>44</p>
-                        </div>
-                        <div class="board">
-                            <div class="board-title">
-                                Overall Trend
-                                (over 5 years)
-                            </div>
-                            <p>Stable</p>
                         </div>
                     </div>
                 </div>
+                <!--Bar Chart End-->
+
             </div>
         </div>
         <div class="timeline-item" data-text="Feral cats">
@@ -315,69 +390,24 @@
                 <p class="timeline__content-desc">
                     Feral cats are established after arrival of European explorers and pastoralists. Now, they are found all over Australia in all habitats.
                 </p>
-                <div class="info" style="right: 600px">
-                    <div class="card">
-                        <div class="header">
-                            <span class="title big">Feral cat Population</span>
-                            <span class="date small">2016 - 2020</span>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="parameter">
-                            <span class="red">Population</span>
-                        </div>
-                        <div class="statistic">
-                            <div class="line-1"><p>50</p></div>
-                            <div class="line-2"><p>25</p></div>
-                            <div class="line-3"><p>0</p>
-                            </div>
-                            <div class="data red">
-                                <svg>
-                                    <polyline points="10,55 65,25 120,15 175,17 230,55"></polyline>
-                                </svg>
-                                <div class="points">
-                                    <div class="point-1" style=" top: 53px">
-                                        <div class="tooltip">12</div>
-                                    </div>
-                                    <div class="point-2" style=" top: 22px">
-                                        <div class="tooltip">26</div>
-                                    </div>
-                                    <div class="point-3" style="top: 12px">
-                                        <div class="tooltip">44</div>
-                                    </div>
-                                    <div class="point-4" style="top: 14px">
-                                        <div class="tooltip">42</div>
-                                    </div>
-                                    <div class="point-5" style="top: 52px">
-                                        <div class="tooltip">12</div>
-                                    </div>                                                                 
+
+                <!--Bar Chart-->
+                <div class="info" style="right: 550px">
+                    <div class="statCont" id="bar_chart">
+                        <div class="barChartCont">
+                            <canvas id="barChart2" width="300px" height="200px"></canvas>
+                            <div class="legend">
+                                <div class="items block1">
+                                    <span style="font-size:14px">Current Number</span><span style="font-size:14px">12</span>
+                                </div>
+                                <div class="items block2">
+                                    <span style="font-size:14px">Overall Trend <br> (Past 5 years)</span><span style="font-size:14px">Decrease</span>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="days" >
-                            <span class="day">2016</span>
-                            <span class="day">2017</span>
-                            <span class="day">2018</span>
-                            <span class="day">2019</span>
-                            <span class="day">2020</span>
-
-                        </div>
-                    </div>
-                    <div class="boards">
-                        <div class="board">
-                            <div class="board-title">Current Population</div>
-                            <p>12</p>
-                        </div>
-                      
-                        <div class="board">
-                            <div class="board-title">
-                                Overall Trend
-                                (over 5 years)
-                            </div>
-                            <p>Decrease</p>
                         </div>
                     </div>
                 </div>
+                <!--Bar Chart End-->
 
             </div>
         </div>
@@ -388,72 +418,23 @@
                 </a>
                 <h2 class="timeline__content-title">1850</h2>
                 <p class="timeline__content-desc">Foxes are introduced in the early 1850s for recreational hunting. However, they spread rapidly and are now considered as pests.</p>
-           
-                <div class="info" style="left: 600px">
-                    <div class="card">
-                        <div class="header">
-                            <span class="title big">Fox Population</span>
-                            <span class="date small">2016 - 2020</span>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="parameter">
-                            <span class="red">Population</span>
-                       
-                        </div>
-                        <div class="statistic">
-                            <div class="line-1"></div>
-                            <div class="line-2"></div>
-                            <div class="line-3"></div>
-                            <div class="data red">
-                                <svg>
-                                    <polyline points="9,46 50,12 90,23 130,11 171,38 211,48 251,19"></polyline>
-                                </svg>
-                                <div class="points">
-                                    <div class="point-1">
-                                        <div class="tooltip">458</div>
-                                    </div>
-                                    <div class="point-2">
-                                        <div class="tooltip">812</div>
-                                    </div>
-                                    <div class="point-3">
-                                        <div class="tooltip">746</div>
-                                    </div>
-                                    <div class="point-4">
-                                        <div class="tooltip">877</div>
-                                    </div>
-                                    <div class="point-5">
-                                        <div class="tooltip">517</div>
-                                    </div>
-                                    <div class="point-6">
-                                        <div class="tooltip">434</div>
-                                    </div>
-                                    <div class="point-7">
-                                        <div class="tooltip">458</div>
-                                    </div>
+                <!--Bar Chart-->
+                <div class="info" style="left: 550px">
+                    <div class="statCont" id="bar_chart">
+                        <div class="barChartCont">
+                            <canvas id="barChart3" width="300px" height="200px"></canvas>
+                            <div class="legend">
+                                <div class="items block1">
+                                    <span style="font-size:14px">Current Number</span><span style="font-size:14px">235</span>
+                                </div>
+                                <div class="items block2">
+                                    <span style="font-size:14px">Overall Trend <br> (Past 5 years)</span><span style="font-size:14px">Decrease</span>
                                 </div>
                             </div>
-                            
-                        </div>
-                        <div class="days">
-                            <span class="day">2016</span>
-                            <span class="day">2017</span>
-                            <span class="day">2018</span>
-                            <span class="day">2019</span>
-                            <span class="day">2020</span>
-                        </div>
-                    </div>
-                    <div class="boards">
-                        <div class="board">
-                            <div class="board-title">Current Population</div>
-                            <p>33</p>
-                        </div>
-                       
-                        <div class="board">
-                            <div class="board-title">Overall Trend for past 5 years</div>
-                            <p>44</p>
                         </div>
                     </div>
                 </div>
+                <!--Bar Chart End-->
             </div>
         </div>
         <div class="timeline-item" data-text="European rabbit">
@@ -463,72 +444,24 @@
                 </a>
                 <h2 class="timeline__content-title">1859</h2>
                 <p class="timeline__content-desc">European rabbits were introduced into Australia so that they can be hunted. Thomas Austin, a wealthy settler in Australia had 13 European rabbits imported to him and released into his estate.</p>
-            
-                <div class="info" style="right: 600px">
-                    <div class="card">
-                        <div class="header">
-                            <span class="title big">European rabbit Population</span>
-                            <span class="date small">2016 - 2020</span>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="parameter">
-                            <span class="red">Population</span>
-                           
-                        </div>
-                        <div class="statistic">
-                            <div class="line-1"></div>
-                            <div class="line-2"></div>
-                            <div class="line-3"></div>
-                            <div class="data red">
-                                <svg>
-                                    <polyline points="9,46 50,12 90,23 130,11 171,38 211,48 251,19"></polyline>
-                                </svg>
-                                <div class="points">
-                                    <div class="point-1">
-                                        <div class="tooltip">458</div>
-                                    </div>
-                                    <div class="point-2">
-                                        <div class="tooltip">812</div>
-                                    </div>
-                                    <div class="point-3">
-                                        <div class="tooltip">746</div>
-                                    </div>
-                                    <div class="point-4">
-                                        <div class="tooltip">877</div>
-                                    </div>
-                                    <div class="point-5">
-                                        <div class="tooltip">517</div>
-                                    </div>
-                                    <div class="point-6">
-                                        <div class="tooltip">434</div>
-                                    </div>
-                                    <div class="point-7">
-                                        <div class="tooltip">458</div>
-                                    </div>
+
+                <!--Bar Chart-->
+                <div class="info" style="right: 570px">
+                    <div class="statCont" id="bar_chart">
+                        <div class="barChartCont">
+                            <canvas id="barChart4" width="300px" height="200px"></canvas>
+                            <div class="legend">
+                                <div class="items block1">
+                                    <span style="font-size:14px">Current Number</span><span style="font-size:14px">61</span>
+                                </div>
+                                <div class="items block2">
+                                    <span style="font-size:14px">Overall Trend <br> (Past 5 years)</span><span style="font-size:14px">Decrease</span>
                                 </div>
                             </div>
-                            
-                        </div>
-                        <div class="days">
-                            <span class="day">2016</span>
-                            <span class="day">2017</span>
-                            <span class="day">2018</span>
-                            <span class="day">2019</span>
-                            <span class="day">2020</span>
-                        </div>
-                    </div>
-                    <div class="boards">
-                        <div class="board">
-                            <div class="board-title">Current Population</div>
-                            <p>33</p>
-                        </div>
-                       
-                        <div class="board">
-                            <div class="board-title">Overall Trend for past 5 years</div>
-                            <p>44</p>
                         </div>
                     </div>
                 </div>
+                <!--Bar Chart End-->
             </div>
         </div>
         <div class="timeline-item" data-text="Cane toads">
@@ -541,54 +474,27 @@
                     Cane toads expanded throughout northern Australia, but now located in Queensland, Northern Territory, New South Wales and north-west parts of Western Australia.
                 </p>
 
-                <div class="info" style="left: 600px">
-                    <div class="card">
-                        <div class="header">
-                            <span class="title big">Cane toad Population</span>
-                            <span class="date small">1990 & 2017</span>                      
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="parameter">
-                            <span class="red">Population</span>
-                         
-                        </div>
-                        <div class="statistic">
-                            <div class="line-1"></div>
-                            <div class="line-2"></div>
-                            <div class="line-3"></div>
-                            <div class="data red">
-                                
-                                <div class="points">
-                                    <div class="point-1" style="left: 57px; top: 62px">
-                                        <div class="tooltip">3</div>
-                                    </div>
-                                    <div class="point-2" style="left: 197px; top: 70px">
-                                        <div class="tooltip">1</div>
-                                    </div>   
+                <!--Bar Chart-->
+                <div class="info" style="left: 550px">
+                    <div class="statCont" id="bar_chart">
+                        <div class="barChartCont">
+                            <canvas id="barChart5" width="300px" height="200px"></canvas>
+                            <div class="legend">
+                                <div class="items block1">
+                                    <span style="font-size:14px">Current Number</span><span style="font-size:14px">1</span>
+                                </div>
+                                <div class="items block2">
+                                    <span style="font-size:14px">Overall Trend <br> (Past 5 years)</span><span style="font-size:14px">Decrease</span>
                                 </div>
                             </div>
-                  
-                        </div>
-                        <div class="days">
-                            <span class="day" style="width: 50%">1990</span>
-                            <span class="day" style="width: 50%">2017</span>
-                        </div>
-                    </div>
-                    <div class="boards">
-                        <div class="board">
-                            <div class="board-title">Current Population</div>
-                            <p>1</p>
-                        </div>
-                       
-                        <div class="board">
-                            <div class="board-title">Overall Trend for past 5 years</div>
-                            <p>Decrease</p>
                         </div>
                     </div>
                 </div>
+                <!--Bar Chart End-->
+
             </div>
         </div>
-        <div class="timeline-item" data-text="Asian black-spined toad">
+        <div class="timeline-item" data-text="Asian toad">
             <div class="timeline__content">
                 <a href="~/Home/AsianToad">
                     <img class="timeline__img" src="~/img/AsianToad 1.jpg" />
@@ -597,71 +503,24 @@
                 <p class="timeline__content-desc">
                     Asian black-spined toad first appeared in a small town 15 kilometres northwest of Melbourne airport.
                 </p>
-                <div class="info" style="right: 660px">
-                    <div class="card">
-                        <div class="header">
-                            <span class="title big">Asian toad Population</span>
-                            <span class="date small">2016 - 2020</span>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="parameter">
-                            <span class="red">Population</span>
-                       
-                        </div>
-                        <div class="statistic">
-                            <div class="line-1"></div>
-                            <div class="line-2"></div>
-                            <div class="line-3"></div>
-                            <div class="data red">
-                                <svg>
-                                    <polyline points="9,46 50,12 90,23 130,11 171,38 211,48 251,19"></polyline>
-                                </svg>
-                                <div class="points">
-                                    <div class="point-1">
-                                        <div class="tooltip">458</div>
-                                    </div>
-                                    <div class="point-2">
-                                        <div class="tooltip">812</div>
-                                    </div>
-                                    <div class="point-3">
-                                        <div class="tooltip">746</div>
-                                    </div>
-                                    <div class="point-4">
-                                        <div class="tooltip">877</div>
-                                    </div>
-                                    <div class="point-5">
-                                        <div class="tooltip">517</div>
-                                    </div>
-                                    <div class="point-6">
-                                        <div class="tooltip">434</div>
-                                    </div>
-                                    <div class="point-7">
-                                        <div class="tooltip">458</div>
-                                    </div>
+
+                <!--Bar Chart-->
+                <div class="info" style="right: 550px">
+                    <div class="statCont" id="bar_chart">
+                        <div class="barChartCont">
+                            <canvas id="barChart6" width="300px" height="200px"></canvas>
+                            <div class="legend">
+                                <div class="items block1">
+                                    <span style="font-size:14px">Current Number</span><span style="font-size:14px">235</span>
+                                </div>
+                                <div class="items block2">
+                                    <span style="font-size:14px">Overall Trend <br> (Past 5 years)</span><span style="font-size:14px">Decrease</span>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="days">
-                            <span class="day">2016</span>
-                            <span class="day">2017</span>
-                            <span class="day">2018</span>
-                            <span class="day">2019</span>
-                            <span class="day">2020</span>
-                        </div>
-                    </div>
-                    <div class="boards">
-                        <div class="board">
-                            <div class="board-title">Current Population</div>
-                            <p>33</p>
-                        </div>
-                       
-                        <div class="board">
-                            <div class="board-title">Overall Trend for past 5 years</div>
-                            <p>44</p>
                         </div>
                     </div>
                 </div>
+                <!--Bar Chart End-->
             </div>
         </div>
     </div>
@@ -803,7 +662,6 @@
 <!-- Scroll Down button CSS -->
 <style>
     .carocontainer {
-
     }
 
         .carocontainer img {
@@ -1162,334 +1020,77 @@
         margin-bottom: 41px;
         margin-top: 22px;
     }
-
- @@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
-
-.card {
-  width: 350px;
-  height: 250px;
-  background: #fff;
-  border-radius: 3px;
-  box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-}
-
-.card .header {
-  position: relative;
-  height: 60px;
-  width: 100%;
-  background: #f1ba64;
-  color: #fff;
-}
-
-.card .header .big {
-  position: absolute;
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-
-.card .header .small {
-  position: absolute;
-  font-weight: 400;
-  font-size: 11px;
-}
-
-.card .header .title {
-  top: 12px;
-  left: 15px;
-}
-
-.card .header .date {
-  top: 30px;
-  left: 15px;
-}
-
-.card .header .type {
-  top: 14px;
-  right: 15px;
-}
-
-.card .header .value {
-  top: 28px;
-  right: 15px;
-}
-
-.card .parameter {
-  text-align: right;
-  padding: 10px 0 14px 0;
-}
-
-.card .parameter span {
-  position: relative;
-  font-size: 9px;
-  color: #606060;
-  line-height: 13px;
-  padding: 0 10px 0 25px;
-}
-
-.card .parameter span:before {
-  position: absolute;
-  left: 6px;
-  top: 6px;
-  display: block;
-  content: '';
-  width: 11px;
-  height: 3px;
-  border-radius: 3px;
-}
-
-.card .parameter .red:before {
-  background: #fa7373;
-}
-
-.card .parameter .blue:before {
-  background: #7ba2ff;
-}
-
-.card .statistic {
-  position: relative;
-  height: 80px;
-  width: 260px;
-  margin: 0 auto;
-}
-
-.card .statistic .line-1,
-.card .statistic .line-2,
-.card .statistic .line-3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: #f2f2f2;
-}
-
-    .card .statistic .line-1 p,
-    .card .statistic .line-2 p,
-    .card .statistic .line-3 p
-    {
-        font-size: 10px;
-        position: absolute;
-        top: -15px;
-        left: -25px;
-        color: #949494;
-    }
-
-
-    .card .statistic .line-2 {
-        top: 40px;
-    }
-
-.card .statistic .line-3 {
-  top: inherit;
-  bottom: 0;
-}
-
-.card .statistic .data svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width:100%;
-}
-
-.card .statistic .data polyline {
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-}
-
-.card .statistic .data.red polyline {
-  stroke: #fa7373;
-}
-
-.card .statistic .data.blue polyline {
-  stroke: #7ba2ff;
-}
-
-.card .statistic .data .tooltip {
-  position: absolute;
-  bottom: 13px;
-  left: 50%;
-  transform: translate3d(-50%, 10px, 0);
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 11px;
-  color: #fff;
-  padding: 8px 6px;
-  border-radius: 3px;
-  visibility: hidden;
-  opacity: 0;
-  transition: transform 0.4s ease-out 0s, opacity 0.4s ease-out 0s;
-}
-
-.card .statistic .data .tooltip:after {
-  position: absolute;
-  display: block;
-  content: '';
-  height: 6px;
-  width: 6px;
-  left: 50%;
-  margin-left: -3px;
-  bottom: -3px;
-  transform: rotate(45deg);
-}
-
-.card .statistic .data [class^='point-'] {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 3px;
-  z-index: 10;
-}
-
-.card .statistic .data [class^='point-']:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-  transform: translate3d(-50%, 0, 0);
-}
-
-.card .statistic .data.red [class^='point-'],
-.card .statistic .data.red .tooltip,
-.card .statistic .data.red .tooltip:after {
-  background: #fa7373;
-}
-
-.card .statistic .data.red .point-1 {
-  left: 7px;
-  top: 43px;
-}
-
-.card .statistic .data.red .point-2 {
-  left: 62px;
-  top: 9px;
-}
-
-.card .statistic .data.red .point-3 {
-  left: 117px;
-  top: 20px;
-}
-
-.card .statistic .data.red .point-4 {
-  left: 172px;
-  top: 8px;
-}
-
-.card .statistic .data.red .point-5 {
-  left: 227px;
-  top: 35px;
-}
-
-.card .statistic .data.red .point-6 {
-  left: 209px;
-  top: 45px;
-}
-
-.card .statistic .data.red .point-7 {
-  left: 249px;
-  top: 16px;
-}
-
-.card .statistic .data.blue [class^='point-'],
-.card .statistic .data.blue .tooltip,
-.card .statistic .data.blue .tooltip:after {
-  background: #7ba2ff;
-}
-
-.card .statistic .data.blue .point-1 {
-  left: 7px;
-  top: 58px;
-}
-
-.card .statistic .data.blue .point-2 {
-  left: 62px;
-  top: 47px;
-}
-
-.card .statistic .data.blue .point-3 {
-  left: 117px;
-  top: 62px;
-}
-
-.card .statistic .data.blue .point-4 {
-  left: 172px;
-  top: 52px;
-}
-
-.card .statistic .data.blue .point-5 {
-  left: 227px;
-  top: 58px;
-}
-
-.card .statistic .data.blue .point-6 {
-  left: 209px;
-  top: 71px;
-}
-
-.card .statistic .data.blue .point-7 {
-  left: 249px;
-  top: 61px;
-}
-
-.card .days {
-  width: 280px;
-  margin: 0 auto;
-}
-
-.card .days .day {
-  display: block;
-  float: left;
-  width: 19.2857142857%;
-  font-size: 10px;
-  color: #949494;
-  line-height: 30px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
 </style>
 
 <style>
     .info {
         position: absolute;
         top: 0;
-        display: none;
-    }
-
-    .boards {
-        display: flex;
-        justify-content: space-between;
-        height: 60px;
-        text-align: center;
-        margin-top: 5px;
-        padding-left:40px;
-        padding-right:40px;
-    }
-
-    .board {
-        border: 1px solid;
-        width: 45%;
-        background: #fff;
-        height:80px;
-     
-    }
-
-    .board-title {
-        background: #7ba2ff;
-        font-size: 15px;
-        
-    }
-
-    .board p {
-        margin-top: 5px;
-    }
-
-    .timeline-item--active .info {
+        visibility: hidden;
+        width: 500px;
+        height: 280px;
         display: block;
     }
 
+    .timeline-item--active .info {
+        visibility: visible;
+    }
+
+    .statCont {
+        width: 100%;
+        background: #fff;
+        padding: 10px 0;
+        border: solid 1px #e0e0e0;
+        position: relative;
+        box-sizing: border-box;
+        height: 100%;
+    }
+
+    #bar_chart .barChartCont {
+        width: 75%;
+        padding-left: 10px;
+        box-sizing: border-box;
+    }
+
+    #bar_chart .legend {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 25%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    #bar_chart h6 {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    #bar_chart .items {
+        width: 100%;
+        float: left;
+        border-radius: 3px;
+        padding: 12px 0;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+        #bar_chart .items span {
+            width: 100%;
+            display: inline-block;
+            font-size: 10px;
+        }
+
+    #bar_chart .block1 {
+        background: rgba(220, 220, 220, 0.5);
+        border: solid 2px rgba(220, 220, 220, 0.8);
+    }
+
+    #bar_chart .block2 {
+        background: rgba(151, 187, 205, 0.5);
+        border: solid 2px rgba(151, 187, 205, 0.8);
+    }
 </style>
 
 
