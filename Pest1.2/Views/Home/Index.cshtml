@@ -84,7 +84,7 @@
             } else {
                 //Removes active class to make button visible
                 $(".m-backtotop").removeClass("active");
-                 
+
             }
         });
 
@@ -97,109 +97,109 @@
 
     <!--Bar Chart JS Start-->
     <script>
-    var barChartData1 = {
-    labels: ['2016', '2017', '2018', '2019', '2020'],
-    datasets: [
-    {
-    fillColor: 'rgba(151,187,205,0.5)',
-    strokeColor: 'rgba(151,187,205,0.8)',
-    highlightFill: 'rgba(151,187,205,0.75)',
-    highlightStroke: 'rgba(151,187,205,1)',
-    data: [13, 31, 38, 28, 2],
-    },
-    ],
-    };
-    var barChartData2 = {
-    labels: ['2016', '2017', '2018', '2019', '2020'],
-    datasets: [
-    {
-    fillColor: 'rgba(151,187,205,0.5)',
-    strokeColor: 'rgba(151,187,205,0.8)',
-    highlightFill: 'rgba(151,187,205,0.75)',
-    highlightStroke: 'rgba(151,187,205,1)',
-    data: [12, 26, 44, 42, 12],
-    },
-    ],
-    };
-    var barChartData3 = {
-    labels: ['2016', '2017', '2018', '2019', '2020'],
-    datasets: [
-    {
-    fillColor: 'rgba(151,187,205,0.5)',
-    strokeColor: 'rgba(151,187,205,0.8)',
-    highlightFill: 'rgba(151,187,205,0.75)',
-    highlightStroke: 'rgba(151,187,205,1)',
-    data: [283, 321, 272, 349, 235],
-    },
-    ],
-    };
-    var barChartData4 = {
-    labels: ['2016', '2017', '2018', '2019', '2020'],
-    datasets: [
-    {
-    fillColor: 'rgba(151,187,205,0.5)',
-    strokeColor: 'rgba(151,187,205,0.8)',
-    highlightFill: 'rgba(151,187,205,0.75)',
-    highlightStroke: 'rgba(151,187,205,1)',
-    data: [87, 144, 114, 129, 61],
-    },
-    ],
-    };
-    var barChartData5 = {
-    labels: ['2004', '2008'],
-    datasets: [
-    {
-    fillColor: 'rgba(151,187,205,0.5)',
-    strokeColor: 'rgba(151,187,205,0.8)',
-    highlightFill: 'rgba(151,187,205,0.75)',
-    highlightStroke: 'rgba(151,187,205,1)',
-    data: [1, 1],
-    },
-    ],
-    };
-    var barChartData6 = {
-    labels: ['2014'],
-    datasets: [
-    {
-    fillColor: 'rgba(151,187,205,0.5)',
-    strokeColor: 'rgba(151,187,205,0.8)',
-    highlightFill: 'rgba(151,187,205,0.75)',
-    highlightStroke: 'rgba(151,187,205,1)',
-    data: [1],
-    },
-    ],
-    };
-    window.onload = function () {
-    var ctx1 = document.getElementById('barChart1').getContext('2d');
-    window.myBar1 = new Chart(ctx1).Bar(barChartData1, {
-    responsive: true,
-    });
+        var barChartData1 = {
+            labels: ['2016', '2017', '2018', '2019', '2020'],
+            datasets: [
+                {
+                    fillColor: 'rgba(151,187,205,0.5)',
+                    strokeColor: 'rgba(151,187,205,0.8)',
+                    highlightFill: 'rgba(151,187,205,0.75)',
+                    highlightStroke: 'rgba(151,187,205,1)',
+                    data: [13, 31, 38, 28, 2],
+                },
+            ],
+        };
+        var barChartData2 = {
+            labels: ['2016', '2017', '2018', '2019', '2020'],
+            datasets: [
+                {
+                    fillColor: 'rgba(151,187,205,0.5)',
+                    strokeColor: 'rgba(151,187,205,0.8)',
+                    highlightFill: 'rgba(151,187,205,0.75)',
+                    highlightStroke: 'rgba(151,187,205,1)',
+                    data: [12, 26, 44, 42, 12],
+                },
+            ],
+        };
+        var barChartData3 = {
+            labels: ['2016', '2017', '2018', '2019', '2020'],
+            datasets: [
+                {
+                    fillColor: 'rgba(151,187,205,0.5)',
+                    strokeColor: 'rgba(151,187,205,0.8)',
+                    highlightFill: 'rgba(151,187,205,0.75)',
+                    highlightStroke: 'rgba(151,187,205,1)',
+                    data: [283, 321, 272, 349, 235],
+                },
+            ],
+        };
+        var barChartData4 = {
+            labels: ['2016', '2017', '2018', '2019', '2020'],
+            datasets: [
+                {
+                    fillColor: 'rgba(151,187,205,0.5)',
+                    strokeColor: 'rgba(151,187,205,0.8)',
+                    highlightFill: 'rgba(151,187,205,0.75)',
+                    highlightStroke: 'rgba(151,187,205,1)',
+                    data: [87, 144, 114, 129, 61],
+                },
+            ],
+        };
+        var barChartData5 = {
+            labels: ['2004', '2008'],
+            datasets: [
+                {
+                    fillColor: 'rgba(151,187,205,0.5)',
+                    strokeColor: 'rgba(151,187,205,0.8)',
+                    highlightFill: 'rgba(151,187,205,0.75)',
+                    highlightStroke: 'rgba(151,187,205,1)',
+                    data: [1, 1],
+                },
+            ],
+        };
+        var barChartData6 = {
+            labels: ['2014'],
+            datasets: [
+                {
+                    fillColor: 'rgba(151,187,205,0.5)',
+                    strokeColor: 'rgba(151,187,205,0.8)',
+                    highlightFill: 'rgba(151,187,205,0.75)',
+                    highlightStroke: 'rgba(151,187,205,1)',
+                    data: [1],
+                },
+            ],
+        };
+        window.onload = function () {
+            var ctx1 = document.getElementById('barChart1').getContext('2d');
+            window.myBar1 = new Chart(ctx1).Bar(barChartData1, {
+                responsive: true,
+            });
 
-    var ctx2 = document.getElementById('barChart2').getContext('2d');
-    window.myBar2 = new Chart(ctx2).Bar(barChartData2, {
-    responsive: true,
-    });
+            var ctx2 = document.getElementById('barChart2').getContext('2d');
+            window.myBar2 = new Chart(ctx2).Bar(barChartData2, {
+                responsive: true,
+            });
 
-    var ctx3 = document.getElementById('barChart3').getContext('2d');
-    window.myBar3 = new Chart(ctx3).Bar(barChartData3, {
-    responsive: true,
-    });
+            var ctx3 = document.getElementById('barChart3').getContext('2d');
+            window.myBar3 = new Chart(ctx3).Bar(barChartData3, {
+                responsive: true,
+            });
 
-    var ctx4 = document.getElementById('barChart4').getContext('2d');
-    window.myBar4 = new Chart(ctx4).Bar(barChartData4, {
-    responsive: true,
-    });
+            var ctx4 = document.getElementById('barChart4').getContext('2d');
+            window.myBar4 = new Chart(ctx4).Bar(barChartData4, {
+                responsive: true,
+            });
 
-    var ctx5 = document.getElementById('barChart5').getContext('2d');
-    window.myBar5 = new Chart(ctx5).Bar(barChartData5, {
-    responsive: true,
-    });
+            var ctx5 = document.getElementById('barChart5').getContext('2d');
+            window.myBar5 = new Chart(ctx5).Bar(barChartData5, {
+                responsive: true,
+            });
 
-    var ctx6 = document.getElementById('barChart6').getContext('2d');
-    window.myBar6 = new Chart(ctx6).Bar(barChartData6, {
-    responsive: true,
-    });
-    };
+            var ctx6 = document.getElementById('barChart6').getContext('2d');
+            window.myBar6 = new Chart(ctx6).Bar(barChartData6, {
+                responsive: true,
+            });
+        };
     </script>
     <!--Bar Chart JS End-->
     <!-- JS End-->
@@ -259,14 +259,56 @@
     </section>
 </div>
 <!-- slider_area_end -->
+
+<!-- title with image   -->
+<style>
+    timeline {
+        position: relative;
+        width: auto;
+        height:auto;
+        margin: 0;
+        padding: 0;
+        margin-left: 10px;
+        font-family: "Montserrat",sans-serif;
+        background: #333;
+    }
+
+    h1 {
+        width: auto;
+        height: auto;
+        font-size: 200px;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin: 0;
+        background: url(../img/tree.jpg) 100%,100%;
+        background-size: cover;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+</style>
+
+<div class="testimonial_area" style="margin-bottom:10px; margin-top:300px">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <h1 calss="timeline">History</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- title with image   -->
+
 <!-- Description of history  -->
 <div class="testimonial_area" style="height:500px">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
                 <div class="section_title mb-40 text-center">
-                    <br>
-                    <br>
                     <br>
                     <br>
                     <h3>
@@ -282,12 +324,12 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-7 col-md-10">
                                 <div class="single_testmonial text-center">
-                                    <p>Story begin.</p>
+                                    <p>During his first Pacific voyage, Lieutenant James Cook claimed possession of the east coast of Australia for the British Crown. Hogs came to the country with The First Fleet, making them one of the first invasive species in Australia and so began a long battle against the pests</p>
                                     <div class="testmonial_author">
                                         <div class="thumb">
                                             <img src="#" alt="">
                                         </div>
-                                        <h3>1900</h3>
+                                        <h3>1770</h3>
                                     </div>
                                 </div>
                             </div>
@@ -297,12 +339,13 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-7 col-md-10">
                                 <div class="single_testmonial text-center">
-                                    <p>Some thing happen.</p>
+                                    <p>Introduced to Australia in an attempt to control the native-to-Australia cane beetle that was killing the sugar cane crops, the cane toad arrived from South America via Hawaii. Becoming an extreme threat due to no ‘natural predator or parasite,’ cane toads are breeding rapidly and carry bufotoxin that kills Australia’s native animals.
+                                    </p>
                                     <div class="testmonial_author">
                                         <div class="thumb">
                                             <img src="#" alt="">
                                         </div>
-                                        <h3>1920</h3>
+                                        <h3>1935</h3>
                                     </div>
                                 </div>
                             </div>
@@ -312,12 +355,15 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-7 col-md-10">
                                 <div class="single_testmonial text-center">
-                                    <p>Bush fire.</p>
+                                    <p>In this year, the
+                                        production loss costs of foxes, rabbits, wild dogs
+                                        and feral pigs to be $285 million.
+                                    </p>
                                     <div class="testmonial_author">
                                         <div class="thumb">
                                             <img src="#" alt="">
                                         </div>
-                                        <h3>2019</h3>
+                                        <h3>2009</h3>
                                     </div>
                                 </div>
                             </div>
@@ -327,7 +373,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-7 col-md-10">
                                 <div class="single_testmonial text-center">
-                                    <p>Covid-19.</p>
+                                    <p>More than 3,000 non-native species have arrived in Australia since 1770. These include birds, plants, insects and invertebrates. Depending on how they behave, they can disrupt their local ecosystem.</p>
                                     <div class="testmonial_author">
                                         <div class="thumb">
                                             <img src="#" alt="">
@@ -344,7 +390,7 @@
     </div>
 </div>
 <!-- / Description of history   -->
-
+<!-- timeline   -->
 <div class="timeline-container" id="timeline-1">
     <div class="timeline-header">
         <h2 class="timeline-header__title">History of pest in Victoria</h2>
