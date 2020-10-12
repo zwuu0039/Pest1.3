@@ -206,7 +206,7 @@
             new mapboxgl.Marker(el)
                 .setLngLat(marker.geometry.coordinates)
                 .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                    .setHTML('<h3>' + marker.properties.name2 + '</h3><h5>Date of Apperance:<h5><p>' + marker.properties.date + '</p><h5 style="color:DodgerBlue;"><a href="About">Read More</a></h5>'))
+                    .setHTML('<h3>' + marker.properties.name2 + '</h3><h5>Date of Apperance:<h5><p>' + marker.properties.date + '</p><h5 style="color:DodgerBlue;"><a href="'+ marker.properties.name2 +'">Read More</a></5>'))
                 .addTo(map);
         });
 
