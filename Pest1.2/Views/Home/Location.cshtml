@@ -32,19 +32,21 @@
         <div class="col-lg-4">
             <div class="section_title text-center mb-55">
                 <h3>Report a pest</h3>
-                <br><br><br>
+                <br><br>
                 <h4>Seen a pest recently ? Report now !<br></h4>
-                <h5>Your sighting reports will help the community</h5>
-
+                <h5>
+                    Your sighting reports will be validated <br>
+                    before they will appear on the map.
+                </h5>
                 <div class="popup_box ">
                     <div class="popup_inner">
                         <form action="#">
                             <div class="row">
                                 <div class="col-xl-10 col-md-10">
-                                    <input id="datepicker" placeholder="Date">
+                                    <input id="datepicker" placeholder="Date" required>
                                 </div>
                                 <div class="col-xl-10 col-md-10">
-                                    <select class="form-select wide" id="default-select" class="">
+                                    <select class="form-select wide" id="default-select" class="" required>
                                         <option data-display="Choose pest">Asian Toad</option>
                                         <option value="1">Boa Constrictor</option>
                                         <option value="2">Canada Goose</option>
@@ -55,14 +57,40 @@
                                         <option value="7">Red Fox</option>
                                     </select>
                                 </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-10 col-md-10 reverse-geo-controls">
+                            <div class="form-group" style="flex-grow: 1; margin-right: 8px;">
+                                <input id="reverse-geo-lat" class="form-control" placeholder="Latitude" required />
+                            </div>
+                            <div class="form-group" style="flex-grow: 1; margin-left: 8px; margin-right: 8px;">
+                                <input id="reverse-geo-lng" class="form-control" placeholder="Longitude" required />
+                            </div>
+                            <div class="form-group" style="margin-left: 8px;">
+                                <button id="reverse-locate-me" class="btn btn-warning" style="width: 150px;">Locate me</button>
+                            </div>
+                        </div>
+                        <form action="/locate" class="form col-xl-10 col-md-10">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reverse-address" placeholder="Street number and name" required />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reverse-town" placeholder="City" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="reverse-zip" placeholder="ZIP code" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="popup_inner">
+                        <form action="#">
+                            <div class="row">
                                 <div class="col-xl-10 col-md-10">
-                                    <input type="number" step="any" placeholder="Location (longitude)">
-                                </div>
-                                <div class="col-xl-10 col-md-10">
-                                    <input type="number" step="any" placeholder="Location (latitude)">
-                                </div>
-                                <div class="col-xl-10 col-md-10">
-                                    <button type="submit" class="boxed-btn3">Submit</button>
+                                    <button type="submit" class="boxed-btn3" onclick="alert('Thank you for your report! We will update the database in a week.')">
+                                        Submit
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -78,13 +106,84 @@
 <link rel="stylesheet"
       href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
       type="text/css" />
-
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 
 @section Scripts{
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3.31/algoliasearchLite.min.js"></script>
+    <script>
+        (function () {
+            var places = algoliasearch.initPlaces('plA7KPZMVOB3', 'dbfd369505723c5306b4b3b0f5f84cb0');
 
+            function updateForm(response) {
+                var hits = response.hits;
+                var suggestion = hits[0];
+
+                if (suggestion && suggestion.locale_names && suggestion.city) {
+                    document.querySelector('#reverse-address').value = suggestion.locale_names.default[0] || '';
+                    document.querySelector('#reverse-town').value = suggestion.city.default[0] || '';
+                    document.querySelector('#reverse-zip').value = (suggestion.postcode || [])[0] || '';
+                }
+            }
+
+            var lat, lng;
+
+            var $button = document.querySelector('#reverse-locate-me');
+            var $latInput = document.querySelector('#reverse-geo-lat');
+            var $lngInput = document.querySelector('#reverse-geo-lng');
+
+            $latInput.addEventListener('change', function (e) {
+                try {
+                    lat = parseFloat(e.target.value);
+
+                    if (typeof lat !== 'undefined' && typeof lng !== 'undefined') {
+                        places.reverse({
+                            aroundLatLng: lat + ',' + lng,
+                            hitsPerPage: 1,
+                        }).then(updateForm);
+                    }
+                } catch (e) {
+                    lat = undefined;
+                }
+            });
+
+            $lngInput.addEventListener('change', function (e) {
+                try {
+                    lng = parseFloat(e.target.value);
+
+                    if (typeof lat !== 'undefined' && typeof lng !== 'undefined') {
+                        places.reverse({
+                            aroundLatLng: lat + ',' + lng,
+                            hitsPerPage: 1,
+                        }).then(updateForm);
+                    }
+                } catch (e) {
+                    lng = undefined;
+                }
+            });
+
+            $button.addEventListener('click', function () {
+                $button.textContent = 'Locating...';
+
+                navigator.geolocation.getCurrentPosition(function (response) {
+                    var coords = response.coords;
+                    lat = coords.latitude.toFixed(6);
+                    lng = coords.longitude.toFixed(6);
+
+                    $latInput.value = lat;
+                    $lngInput.value = lng;
+
+                    $button.textContent = 'Locate me';
+
+                    places.reverse({
+                        aroundLatLng: lat + ',' + lng,
+                        hitsPerPage: 1
+                    }).then(updateForm);
+                });
+            });
+        })();
+    </script>
     <script>
         var pointlist = [];
         $(".position").each(function () {
@@ -206,7 +305,7 @@
             new mapboxgl.Marker(el)
                 .setLngLat(marker.geometry.coordinates)
                 .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                    .setHTML('<h3>' + marker.properties.name2 + '</h3><h5>Date of Apperance:<h5><p>' + marker.properties.date + '</p><h5 style="color:DodgerBlue;"><a href="'+ marker.properties.name2 +'">Read More</a></5>'))
+                    .setHTML('<h3>' + marker.properties.name2 + '</h3><h5>Date of Apperance:<h5><p>' + marker.properties.date + '</p><h5 style="color:DodgerBlue;"><a href="' + marker.properties.name2 + '">Read More</a></5>'))
                 .addTo(map);
         });
 
@@ -246,6 +345,14 @@
 }
 <!-- Map End-->
 <!-- css Start-->
+<style>
+    .reverse-geo-controls {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+</style>
 <style>
     .marker {
         background-image: url('.png');
