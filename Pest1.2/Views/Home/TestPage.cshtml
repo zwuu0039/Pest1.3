@@ -1,517 +1,187 @@
-﻿<!-- Java Script Part -->
-@section scripts{
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35376/topojson.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35376/datamaps.world.min.js"></script>
-    <script type="text/javascript">
-        var Popup = {
-            Show: function (geography, data, element, e) {
-                e.stopPropagation();
-
-                var el = '<div class="popup-card"> \ <span class="country">' + geography.properties.name + '</span>\ </div>';
-
-                var $el = $(el).css({
-                    top: e.pageY - 10,
-                    left: e.pageX
-                });
-
-                Popup.Hide();
-                $('body').append($el);
-            },
-
-            Hide: function () {
-                $('body .popup-card').remove();
-            }
-        };
-
-        var dataMap = new Datamap({
-            element: document.getElementById('map'),
-            scope: 'world',
-            projection: 'mercator',
-            geographyConfig: {
-                highlightBorderColor: '#fff',
-                highlightBorderWidth: 1,
-                highlightFillColor: '#f75455',
-                popupOnHover: false
-            },
-
-            fills: {
-                defaultFill: '#eff0f2',
-                gt: '#ed1f24'
-            },
-            data: {
-                AFG: { fillKey: 'gt' },
-                BGD: { fillKey: 'gt' },
-                BTN: { fillKey: 'gt' },
-                IND: { fillKey: 'gt' },
-                MDV: { fillKey: 'gt' },
-                NPL: { fillKey: 'gt' },
-                PAK: { fillKey: 'gt' },
-                LKA: { fillKey: 'gt' },
-                LAO: { fillKey: 'gt' },
-                MMR: { fillKey: 'gt' },
-                SGP: { fillKey: 'gt' },
-                CHN: { fillKey: 'gt' },
-                IDN: { fillKey: 'gt' }
-            },
-
-            done: function (datamap) {
-                datamap.svg.selectAll('.datamaps-subunit').on('click', function (geography) {
-                    Popup.Show(geography, datamap.options.data[geography.id], this, d3.event);
-                });
-            }
-        });
-
-        $('body').on('click', function (e) {
-            Popup.Hide();
-        })
-            .on('click', '.datamaps-subunit,.popup-card', function (e) {
-                e.stopPropagation();
-            });
-
-        function sayItOutLoud() {
-            const message = 'Duttaphrynus melanostictus';
-            var speech = new SpeechSynthesisUtterance();
-            speech.lang = "en-US";
-            speech.text = message;
-            speech.volume = 1;
-            speech.rate = 1;
-            speech.pitch = 1;
-
-            window.speechSynthesis.speak(speech);
-        }
-
-        $(document).ready(function () {
-            slide("#move-navigation", 35, 20, 150, 1);
-        });
-
-        function slide(navigation_id, pad_out, pad_in, time, multiplier) {
-            // creates the target paths
-            var list_elements = navigation_id + " li.move-element";
-            var link_elements = list_elements + " a";
-
-            // initiates the timer used for the move animation
-            var timer = 0;
-
-            // creates the slide animation for all list elements
-            $(list_elements).each(function (i) {
-                // margin left = - ([width of element] + [total vertical padding of element])
-                $(this).css("margin-left", "-180px");
-                // updates timer
-                timer = (timer * multiplier + time);
-                $(this).animate({ marginLeft: "0" }, timer);
-                $(this).animate({ marginLeft: "15px" }, timer);
-                $(this).animate({ marginLeft: "0" }, timer);
-            });
-
-            // creates the hover-slide effect for all link elements
-            $(link_elements).each(function (i) {
-                $(this).hover(function () {
-                    $(this).stop().animate({ paddingLeft: pad_out }, 150);
-                }, function () {
-                    $(this).stop().animate({ paddingLeft: pad_in }, 150);
-                });
-            });
-        }
-
-    </script>
-}
-
-
-<!-- Header&Footer_area_start, Don't change it. -->
-<div class="bradcam_area breadcam_bg_10 overlay">
+﻿<!-- Header & Navigation bar  -->
+<div class="bradcam_area breadcam_bg overlay">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h3> &nbsp;Asian Toad</h3>
+                <h3>About the Pest</h3>
             </div>
         </div>
     </div>
 </div>
+<!-- Header & Navigation bar End -->
 
-
-<!-- CSS Part -->
 <style>
-    #map-container {
-        width: 100%;
-        height: auto;
-        max-width: 800px;
-        max-height: 600px;
-        position: relative;
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: "montserrat";
+    }
+
+    body {
+        background: #FFFFFF;
+    }
+
+    .middle {
+        position: absolute;
         top: 50%;
         left: 50%;
-        margin: 0 0 0 -400px;
+        transform: translate(-50%,-50%);
     }
 
-    #map {
+    .card {
+        cursor: pointer;
+        width: 340px;
+        height: 480px;
+    }
+
+    .front, .back {
         width: 100%;
-        height: 600px;
+        height: 100%;
+        overflow: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        transition: transform .6s linear;
     }
 
-    .popup-card {
-        background-color: rgba(43,43,43,0.9);
-        border-bottom: 2px solid #2b2b2b;
-        border-radius: 3px;
-        padding: 15px 15px 10px;
-        position: absolute;
-        opacity: 0;
-        width: 120px;
-        margin-left: -65px;
-        text-transform: uppercase;
+        .front img {
+            height: 100%;
+        }
+
+    .front {
+        transform: perspective(600px) rotateY(0deg);
+    }
+
+    .back {
+        background: #f1f1f1;
+        transform: perspective(600px) rotateY(180deg);
+    }
+
+    .back-content {
+        color: #2c3e50;
         text-align: center;
-        font-family: "Montserrat";
-        font-size: 12px;
-        line-height: 16px;
-        -webkit-transform-style: preserve-3d;
-        -webkit-backface-visibility: hidden;
-        animation: fadeUp 500ms cubic-bezier(0.51,0.01,0.37,0.98);
-        animation-fill-mode: forwards;
+        width: 100%;
     }
 
-        .popup-card:after, .popup-card:before {
-            top: 100%;
-            border: solid transparent;
-            content: " ";
-            height: 0;
-            width: 0;
-            position: absolute;
-            pointer-events: none;
-            margin-top: 2px;
+    .sm {
+        margin: 20px 0;
+    }
+
+        .sm a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            color: #2c3e50;
+            font-size: 18px;
+            transition: 0.4s;
+            border-radius: 50%
         }
 
-        .popup-card:after {
-            border-color: transparent;
-            border-top-color: #2b2b2b;
-            border-width: 6px;
-            left: 50%;
-            margin-left: -6px;
-        }
-
-        .popup-card:before {
-            border-color: transparent;
-            border-top-color: #2b2b2b;
-            border-width: 9px;
-            left: 50%;
-            margin-left: -9px;
-        }
-
-        .popup-card span {
-            display: block;
-            color: #d4dbe2;
-        }
-
-            .popup-card span.country {
-                font-size: 14px;
-                margin-bottom: 8px;
-                color: #fff;
+            .sm a:hover {
+                background: #2c3e50;
+                color: white;
             }
 
-        .popup-card em {
-            font-style: normal;
-            display: inline-block;
-            color: #a3b1bf;
-            margin-right: 3px;
-        }
-
-    @@keyframes fadeUp {
-        0% {
-            opacity: 0;
-            transform: translateY(-80%);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(-100%);
-        }
+    .card:hover > .front {
+        transform: perspective(600px) rotateY(-180deg);
     }
 
-
-    .pestname {
-        padding-top: 75px;
-        padding-bottom: 75px;
-        background: #FDF9F6
+    .card:hover > .back {
+        transform: perspective(600px) rotateY(0deg);
     }
-
-        .pestname img {
-            width: 450px;
-            height: auto;
-        }
-
-    .pestdescription {
-        padding-top: 75px;
-        padding-bottom: 75px;
-    }
-
-        .pestdescription img {
-            width: 450px;
-            height: auto;
-        }
-
-    .pestorigin {
-        padding-top: 75px;
-        padding-bottom: 75px;
-    }
-
-    .pesthalf {
-    }
-
-    #navigation_block {
-        position: relative;
-        top: 200px;
-        left: 200px;
-    }
-
-    #hide {
-        position: absolute;
-        top: 30px;
-        left: -190px;
-    }
-
-    ul#move-navigation {
-        position: fixed;
-        top: 175px;
-        list-style: none;
-        font-size: 0.85em;
-        margin: 30px 0;
-        padding: 0;
-    }
-
-        ul#move-navigation li.move-element h3,
-        ul#move-navigation li.move-element a {
-            display: block;
-            width: 150px;
-            padding: 5px 18px;
-            margin: 0;
-            margin-bottom: 5px;
-        }
-
-        ul#move-navigation li.move-element h3 {
-            color: #fff;
-            background-color: #b5b5b5;
-            font-weight: initial;
-        }
-
-        ul#move-navigation li.move-element a {
-            color: #d4dbe2;
-            background-color: #808080;
-            text-decoration: none;
-        }
-
-            ul#move-navigation li.move-element a:hover {
-                color: #fff;
-            }
-
-
-.bg-button {
-  fill: orange;
-}
-.speaker-icon {
-  fill: white;
-}
-
 </style>
 
-<!--Pest list navigation start-->
-<ul id="move-navigation">
-<li class="move-element">
-    <h3>Pest List</h3>
-</li>
-<li class="move-element">
-    <a href="~/Home/AsianToad">Asian Toad</a>
-</li>
-<li class="move-element">
-    <a href="~/Home/BoaConstrictor">Boa Constrictor</a>
-</li>
-<li class="move-element">
-    <a href="~/Home/CanadaGoose">Canada Goose</a>
-</li>
-<li class="move-element">
-    <a href="~/Home/CaneToad">Cane Toad</a>
-</li>
-<li class="move-element">
-    <a href="~/Home/Cat">Feral Cat</a>
-</li>
-<li class="move-element">
-    <a href="~/Home/Pig">Feral Pig</a>
-</li>
-<li class="move-element">
-    <a href="~/Home/Rabbit">Rabbit</a>
-</li>
-<li class="move-element">
-    <a href="~/Home/Fox">Red Fox</a>
-</li>
-</ul>
-<!--Pest list navigation end-->
 
-<!--Pest image and name-->
-<div class="pestname">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <img src="~/img/elements/easiantoad.jpg" alt="" />
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="about_info">
-                    <div class="section_title mb-20px">
-                        <h3>What is an <br />Asian Toad?</h3>
-                        <p><b>Common name:</b> Asian black-spined toad</p>
-                        <p>
-                            <b>Scientific name:</b> Duttaphrynus melanostictus <svg class="on" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 -5 95 95" onclick="sayItOutLoud()">
-                                <g fill="none" fill-rule="evenodd">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+</head>
+<body>
+    <div class="testimonial_area" style="margin-top:200px;margin-bottom:100px">
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="section_title text-center mb-55">
+                            <div class="card middle">
+                                <div class="front">
+                                    <img src="~/img/appearance/foxcard.jpg" alt="">
+                                </div>
+                                <div class="back">
+                                    <div class="back-content middle">
+                                        <h2>DarkCode</h2>
+                                        <span>Youtube Channel</span>
+                                        <div class="sm">
+                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="section_title text-center mb-55">
+                            <h3>Pests in Victoria</h3>
+                            <h4>Locate yourself and dicsover what pests lives near you<br></h4>
+                            <div class="card middle">
+                                <div class="front">
+                                    <img src="~/img/appearance/possumcard.jpg" alt="">
+                                </div>
+                                <div class="back">
+                                    <div class="back-content middle">
+                                        <h2>DarkCode</h2>
+                                        <span>Youtube Channel</span>
+                                        <div class="sm">
+                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                    <circle class="bg-button" cx="50.5" cy="42.5" r="33.5"></circle>
-                                    <g class="speaker-icon">
-                                        <path d="M49.97 30.043c-.343 0-.64.125-.89.374l-6.583 6.549h-5.18c-.343 0-.639.124-.89.373-.25.25-.375.545-.375.885v7.552c0 .34.125.636.376.885.25.249.547.374.89.374h5.179l6.583 6.549c.25.248.547.373.89.373.342 0 .639-.125.89-.373.25-.25.375-.545.375-.885V31.302c0-.341-.125-.636-.376-.885a1.22 1.22 0 0 0-.89-.374zM57.986 44.782a5.047 5.047 0 0 0 0-5.576c-.56-.865-1.301-1.474-2.224-1.828a1.108 1.108 0 0 0-.494-.099c-.343 0-.64.122-.89.364-.25.243-.376.541-.376.895 0 .275.08.508.238.698.158.19.349.354.573.492.224.137.448.288.672.452.224.164.415.397.574.698.157.302.237.676.237 1.122 0 .445-.08.819-.237 1.12-.159.302-.35.535-.574.699-.224.164-.448.315-.672.452a2.308 2.308 0 0 0-.573.492c-.158.19-.238.423-.238.698 0 .354.126.652.376.895s.547.364.89.364c.197 0 .362-.033.494-.098.923-.368 1.664-.98 2.224-1.84z"></path>
-                                        <path d="M62.207 47.556c1.12-1.698 1.68-3.55 1.68-5.556 0-2.006-.56-3.858-1.68-5.556-1.12-1.698-2.604-2.934-4.448-3.707a1.43 1.43 0 0 0-.514-.098c-.343 0-.64.124-.89.373-.25.25-.375.544-.375.885 0 .512.257.898.77 1.16.739.38 1.24.67 1.503.866a7.437 7.437 0 0 1 2.283 2.665 7.385 7.385 0 0 1 .82 3.412 7.385 7.385 0 0 1-.82 3.412 7.434 7.434 0 0 1-2.283 2.664c-.264.197-.764.486-1.502.866-.514.262-.771.649-.771 1.16 0 .341.125.636.375.885.25.25.553.374.91.374.158 0 .323-.033.494-.098 1.844-.774 3.328-2.01 4.448-3.707z"></path>
-                                        <path d="M66.437 33.691c-1.673-2.523-3.9-4.382-6.682-5.575a1.43 1.43 0 0 0-.514-.098c-.342 0-.639.125-.89.374-.25.249-.375.544-.375.885 0 .472.257.858.771 1.16.093.052.24.12.445.206.204.085.352.154.445.206.606.328 1.146.663 1.621 1.003a12.553 12.553 0 0 1 3.796 4.464A12.337 12.337 0 0 1 66.418 42c0 2.006-.455 3.9-1.364 5.684a12.551 12.551 0 0 1-3.796 4.464c-.475.34-1.015.675-1.621 1.003a4.57 4.57 0 0 1-.445.206 4.37 4.37 0 0 0-.445.206c-.514.302-.77.688-.77 1.16 0 .341.124.636.375.885.25.25.547.374.89.374.17 0 .342-.033.513-.098 2.781-1.193 5.009-3.052 6.682-5.576 1.674-2.523 2.51-5.293 2.51-8.308 0-3.016-.836-5.785-2.51-8.309z"></path>
-                                    </g>
-                                    <g class="curved-arrow" stroke="#FFF" stroke-linecap="round" stroke-width="3">
-                                        <circle cx="51.512" cy="42.512" r="42.512"
-                                                transform="rotate(-90 51.512 42.512)"></circle>
-                                        <path class="arrow-tip" d="M.338 46L9.5 52.5M17.5 46l-7 6.5"></path>
-                                    </g>
-                                </g>
-                            </svg>
-                        </p>
-                        <p><b>Common name:</b> Asian black-spined toad</p>
-                        <p><b>Common name:</b> Asian black-spined toad</p>
+                    <div class="col-lg-4">
+                        <div class="section_title text-center mb-55">
+                            <h3>Pests in Victoria</h3>
+                            <h4>Locate yourself and dicsover what pests lives near you<br></h4>
+                            <div class="card middle">
+                                <div class="front">
+                                    <img src="~/img/appearance/rabbitcard.jpg" alt="">
+                                </div>
+                                <div class="back">
+                                    <div class="back-content middle">
+                                        <h2>DarkCode</h2>
+                                        <span>Youtube Channel</span>
+                                        <div class="sm">
+                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Pest image and name end-->
 
-<!--Pest pyhsical description start-->
-<div class="pestdescription">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="section_title2 text-center">
-                    <h3>What does it look like?</h3>
-                    <p>
-                        Raised, black bony ridges over eyes meeting at nose.<br>
-                        Skin is dry and rough, not moist and slippery.<br>
-                        Short hind limb with pimple-like warts on feet and toes.<br>
-                        White, cream or pale brown underside with black-brown spots.<br>
-                        Prominent black rim on upper lip.<br>
-                        Black tipped, hooked toes.
-                    <p>
                 </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <img src="~/img/elements/easiantoad.jpg" alt="" />
             </div>
         </div>
     </div>
-</div>
-<!--Pest physical description end-->
 
-<!--Pest danger start-->
-<div class="service_area">
-    <div class="container">
-        <div class="row justify-content-center ">
-            <div class="col-lg-6 col-md-10">
-                <div class="section_title text-center mb-55">
-                    <h3>What do they harm?</h3>
-                    <p>What dangers and damages does Asian Toad cause?</p>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6">
-                <div class="single_service">
-                    <div class="service_thumb">
-                        <img src="~/img/elements/easiantoad.jpg" alt="">
-                    </div>
-                    <div class="service_content text-center">
-                        <h3>Poisonous</h3>
-                        <p>The Asian Toad has poison gland. Secretion may cause itching in the nose and eyes when handled by humans.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_service">
-                    <div class="service_thumb">
-                        <img src="~/img/elements/easiantoad.jpg" alt="">
-                    </div>
-                    <div class="service_content text-center">
-                        <h3>Lethal</h3>
-                        <p>Consumption of Asian Toad skin or eggs can cause serious illness or even death.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_service">
-                    <div class="service_thumb">
-                        <img src="~/img/elements/easiantoad.jpg" alt="">
-                    </div>
-                    <div class="service_content text-center">
-                        <h3>Biodiversity</h3>
-                        <p>Asian Toad competes with native frogs and toads for food and suitable habitats</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Pest danger end-->
-<!--Pest origin start-->
-<div class="section_title2 text-center">
-    <div class="pestorigin">
-        <h3 class="mb-30">Where did they come from?</h3>
-        <p>The highlighted areas shows where the Asian Toad originated from.<p>
-            <div id="map-container">
-                <div id="map">
-                    <div class="datamaps-hoverover" style="z-index: 10001; position: absolute; display: none;"></div>
-                </div>
-            </div>
-    </div>
-</div>
-<!--Pest origin end-->
-<!--How they spread + what can you do-->
-<div class="pestname">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="about_info">
-                    <div class="section_title mb-20px text-center">
-                        <h3>How did they <br />spread?</h3>
-                        <p>
-                            Usually detected in international vessels, shipping containers and machinery. <br>
-                            They have been detected at least three times in the wild in Australia.<br>
-                            The most recent sighting is in 2014 - in suburban Melbrourne.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <img src="~/img/elements/easiantoad.jpg" alt="">
-            </div>
-        </div>
-    </div>
-</div>
-<!--How they spread + what can you do end-->
-<div class="pestdescription">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <img src="~/img/elements/easiantoad.jpg" alt="">
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="about_info">
-                    <div class="section_title2 text-center">
-                        <h3>What can you do?</h3>
-                        <p class="text-left">
-                            <br>
-                            Report confirmed sighting to Agriculture Victoria. <br>
-                            <b>Email:</b> highrisk.invasiveanimals@agriculture.vic.gov.au <br>
-                            <b>Call: </b> Call the Agriculture Victoria Customer Service Centre 136 186
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+</body>
+</html>

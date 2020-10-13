@@ -317,6 +317,152 @@
     </div>
 </div>
 <!-- / Description of history   -->
+
+<style>
+    card {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: "montserrat";
+    }
+
+    body {
+        background: #FFFFFF;
+    }
+
+    .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .card {
+        cursor: pointer;
+        width: 340px;
+        height: 480px;
+    }
+
+    .front, .back {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        transition: transform .6s linear;
+    }
+
+        .front img {
+            height: 100%;
+        }
+
+    .front {
+        transform: perspective(600px) rotateY(0deg);
+    }
+
+    .back {
+        background: #f1f1f1;
+        transform: perspective(600px) rotateY(180deg);
+    }
+
+    .back-content {
+        color: #2c3e50;
+        text-align: center;
+        width: 100%;
+    }
+
+    .sm {
+        margin: 20px 0;
+    }
+
+        .sm a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            color: #2c3e50;
+            font-size: 18px;
+            transition: 0.4s;
+            border-radius: 50%
+        }
+
+            .sm a:hover {
+                background: #2c3e50;
+                color: white;
+            }
+
+    .card:hover > .front {
+        transform: perspective(600px) rotateY(-180deg);
+    }
+
+    .card:hover > .back {
+        transform: perspective(600px) rotateY(0deg);
+    }
+</style>
+
+
+<!--Card-->>
+
+<div class="testimonial_area" style="margin-top:100px;margin-bottom:200px">
+    <div class="container">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section_title text-center mb-55">
+                        <div class="card middle">
+                            <div class="front">
+                                <img src="~/img/appearance/foxcard.jpg" alt="">
+                            </div>
+                            <div class="back">
+                                <div class="back-content middle">
+                                    <h2 calss="card">Yes!</h2>
+                                    <a href="~/Home/Fox"><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="section_title text-center mb-55">
+                        <div class="card middle">
+                            <div class="front">
+                                <img src="~/img/appearance/possumcard.jpg" alt="">
+                            </div>
+                            <div class="back">
+                                <div class="back-content middle">
+                                    <h2>No!</h2>
+                                    <a href="https://www.wildlife.vic.gov.au/managing-wildlife/possums" target=blank><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="section_title text-center mb-55">
+                        <div class="card middle">
+                            <div class="front">
+                                <img src="~/img/appearance/rabbitcard.jpg" alt="">
+                            </div>
+                            <div class="back">
+                                <div class="back-content middle">
+                                    <h2>Yes!</h2>
+                                    <a href="~/Home/Rabbit"><span>Read More</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Card end-->>
+
+
 <!-- timeline   -->
 <div class="timeline-container" id="timeline-1">
     <div class="timeline-header">
