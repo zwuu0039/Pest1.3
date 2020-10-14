@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Yeseva+One&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Oswald:wght@400;600;700&display=swap");
 /* line 1, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_extend.scss */
 .flex-center-start {
     display: -webkit-box;
@@ -464,20 +464,20 @@ h3 {
         }
 
 /* line 92, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_btn.scss */
-.book_now {
+/*.book_now {
     display: inline-block;
     font-size: 14px;
     color: #009DFF;
     border: 1px solid #009DFF;
     text-transform: capitalize;
     padding: 10px 25px;
-}
+}*/
 
     /* line 99, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_btn.scss */
-    .book_now:hover {
+    /*.book_now:hover {
         background: #009DFF;
         color: #fff;
-    }
+    }*/
 
 /* line 2, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_section_title.scss */
 .section_title h3 {
@@ -909,24 +909,24 @@ h3 {
 }
 
     /* line 53, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_header.scss */
-    .header-area .main-header-area .book_room .socail_links ul li {
+    /*.header-area .main-header-area .book_room .socail_links ul li {
         display: inline-block;
-    }
+    }*/
 
         /* line 56, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_header.scss */
-        .header-area .main-header-area .book_room .socail_links ul li a {
+        /*.header-area .main-header-area .book_room .socail_links ul li a {
             color: #A8A7A0;
             margin: 0 10px;
             font-size: 15px;
-        }
+        }*/
 
             /* line 60, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_header.scss */
-            .header-area .main-header-area .book_room .socail_links ul li a:hover {
+            /*.header-area .main-header-area .book_room .socail_links ul li a:hover {
                 color: #fff;
-            }
+            }*/
 
     /* line 68, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_header.scss */
-    .header-area .main-header-area .book_room .book_btn a {
+    /*.header-area .main-header-area .book_room .book_btn a {
         background: #eb592d;
         font-size: 16px;
         font-weight: 400;
@@ -936,14 +936,14 @@ h3 {
         font-family: "Lato", sans-serif;
         display: inline-block;
         line-height: 1;
-    }
+    }*/
 
         /* line 78, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_header.scss */
-        .header-area .main-header-area .book_room .book_btn a:hover {
+        /*.header-area .main-header-area .book_room .book_btn a:hover {
             background: transparent;
             color: #eb592d;
             border: 1px solid #eb592d;
-        }
+        }*/
 
 /* line 86, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu {
@@ -6355,3 +6355,6 @@ h6 {
     }
 
 /*# sourceMappingURL=style.css.map */
+
+/*# new try  */
+
