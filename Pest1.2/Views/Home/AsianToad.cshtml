@@ -577,19 +577,19 @@
                 <img src="~/img/asiantoadmap.jpg" usemap="#image-map">
 
                 <map name="image-map">
-                    <area target="" alt="" title=""  coords="384,130,366,119,332,109,306,107,265,116,258,130,272,145,291,162,302,172,306,155,303,135,321,129,343,133,358,141,379,144" shape="poly"                           
+                    <area target="" alt="" title="" coords="384,130,366,119,332,109,306,107,265,116,258,130,272,145,291,162,302,172,306,155,303,135,321,129,343,133,358,141,379,144" shape="poly"
                           onmouseover="writeText('Raised, black bony ridges over eyes meeting at nose')"
                           onmouseout="writeText(' Description will be updated based on position of mouse')" />
-                    <area target="" alt="" title=""  coords="259,137,226,149,190,170,153,198,133,218,158,246,170,276,173,299,204,309,198,279,211,268,240,232,264,219,281,205,281,171" shape="poly"
+                    <area target="" alt="" title="" coords="259,137,226,149,190,170,153,198,133,218,158,246,170,276,173,299,204,309,198,279,211,268,240,232,264,219,281,205,281,171" shape="poly"
                           onmouseover="writeText('Skin is dry and rough, not moist and slippery')"
                           onmouseout="writeText(' Description will be updated based on position of mouse')" />
-                    <area target="" alt="" title=""  coords="129,218,148,237,162,261,167,283,155,307,125,304,149,313,191,324,208,329,204,335,163,328,149,330,147,342,135,341,116,321,94,300,86,282,87,262,89,243,108,232,125,236" shape="poly"                           
+                    <area target="" alt="" title="" coords="129,218,148,237,162,261,167,283,155,307,125,304,149,313,191,324,208,329,204,335,163,328,149,330,147,342,135,341,116,321,94,300,86,282,87,262,89,243,108,232,125,236" shape="poly"
                           onmouseover="writeText('Short hind limb with pimple-like warts on feet and toes')"
                           onmouseout="writeText(' Description will be updated based on position of mouse')" />
-                    <area target="" alt="" title=""  coords="288,185,283,199,289,208,312,207,338,196,362,185,375,174,389,165,395,146,382,146,348,161,330,167,305,176" shape="poly"                           
+                    <area target="" alt="" title="" coords="288,185,283,199,289,208,312,207,338,196,362,185,375,174,389,165,395,146,382,146,348,161,330,167,305,176" shape="poly"
                           onmouseover="writeText('Prominent black rim on upper lip')"
                           onmouseout="writeText(' Description will be updated based on position of mouse')" />
-                    <area target="" alt="" title=""  coords="318,237,335,250,354,269,354,292,355,327,336,367,305,392,263,382,245,372,236,343,273,304,278,289,285,269,298,258,308,248" shape="poly"                           
+                    <area target="" alt="" title="" coords="318,237,335,250,354,269,354,292,355,327,336,367,305,392,263,382,245,372,236,343,273,304,278,289,285,269,298,258,308,248" shape="poly"
                           onmouseover="writeText('Black tipped, hooked toes')"
                           onmouseout="writeText(' Description will be updated based on position of mouse')" />
                 </map>
@@ -614,53 +614,143 @@
     </div>
 </div>
 <!--Pest origin end-->
+
+<style>
+
+
+
+
+    .box {
+        position: relative;
+        width: 300px;
+        height: 350px;
+        background: #000;
+        box-shadow: 0 30px 30px rgba(0,0,0,.5);
+    }
+
+        .box .imgBx {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+            .box .imgBx img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.5s;
+            }
+
+        .box:hover .imgBx img {
+            opacity: 0;
+        }
+
+        .box .content {
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+            width: 80%;
+            height: 60px;
+            background: #fff;
+            transition: 0.5s;
+            overflow: hidden;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .box:hover .content {
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+        }
+
+        .box .content h3 {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        .box .content p {
+            margin: 10px 0 0;
+            padding: 0;
+            opacity: 0;
+            line-height: 1.2em;
+            transition: 0.5s;
+            text-align: justify;
+        }
+
+        .box:hover .content p {
+            opacity: 1;
+            transition-delay: 0.5s;
+        }
+
+
+
+    </style>
+
 <!-- New Slide  -->
-<div class="service_area" style="height:600px ; margin-top:20px;">
+<div class="service_area" style="height:650px ; margin-top:2px;">
     <div class="row" style="margin:0">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width:100%">
             <div class="carousel-inner" style="padding: 0 200px">
                 <div class="carousel-item active">
                     <div style="display:flex; justify-content:space-between">
-                        <img src="~/img/shipping containers.jpg" alt="" style="width: 450px; height: 300px; margin-bottom:50px; margin-left:300px">
+                        <img src="~/img/shipping containers.jpg" alt="" style="width: 450px; height: 300px; margin-bottom:50px; margin-left:100px">
                         <div class="about_info">
-                            <div class="section_title2 text-center" style="margin-right: 200px">
+                            <div class="section_title2 text-center" style="margin-right: 50px">
                                 <h3>How did they spread?</h3>
-                                <p class="text-left" style="margin-left: 50px; ">
-                                    Usually detected in international vessels, shipping containers and machinery.
-                                    They have been detected at least three times in the wild in Australia.
-                                    The most recent sighting is in 2014 - in suburban Melbrourne.
+                                <p class="text-left" style="margin-left: 100px; ">
+                                    &#8226;Usually detected in international vessels, shipping containers and machinery. The movement from one region to another through human trade.<br>
+                                    &#8226;They have been detected at least three times in the wild in Australia.                                                     <br>
+                                    &#8226;The most recent sighting is in 2014 - in suburban Melbrourne.<br>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item ">
-                    <div style="display:flex; justify-content:space-between">
-                        <img src="~/img/elements/human.jpg" alt="" style="width: 450px; height: 300px; margin-bottom:50px; margin-left:300px">
-                        <div class="about_info">
-                            <div class="section_title2 text-center" style="margin-right: 200px">
-                                <h3 style="margin-top:5px">What do they harm?</h3>
-                                <p class="text-left" style="margin-left: 50px; ">
-                                    &#8226; Physical handling of Asian Toad is still relatively safe for humans (only if you need to – or else do not make contact with the Asian Toad)<br>
-                                    &#8226; Practice good hygiene after handling them such as washing hands and other exposed body parts with soap and running water<br>
-                                    <br>
-                                    &#8226; Report confirmed sighting to Agriculture Victoria. <br>
-                                </p>
+                <div class="carousel-item">
+                    <div class="section_title text-center mb-55" style="margin-bottom:1px; margin-top:1px">
+                    <h3 style="color:tomato">What do they harm?</h3>
+                        </div>
+                    <div class="container" style="width:1000px; display:flex; flex-wrap:wrap; justify-content:space-between;">
+                        <div class="box" style="margin-left: 150px">
+                            <div class="imgBx">
+                                <img src="~/img/elements/human.jpg" >
+                            </div>
+                            <div class="content">
+                                <h3>Poisonous</h3>
+                                <p>Asian Toad has poisonous gland which may cause itching in the nose and eyes when handled by humans. Consumption of Asian Toad skin or eggs can cause serious illness or even death..</p>
+                            </div>
+                        </div>
+                        <div class="box" style="margin-right: 150px">
+                            <div class="imgBx">
+                                <img src="~/img/elements/frog.jpg">
+                            </div>
+                            <div class="content">
+                                <h3>Biodiversity</h3>
+                                <p>The Asian Toad competes with native frogs and toads for food and suitable habitats. </p>
                             </div>
                         </div>
                     </div>
+
                 </div>
+
 
                 <div class="carousel-item ">
                     <div style="display:flex; justify-content:space-between">
-                        <img src="~/img/elements/s7.jpg" alt="" style="width: 450px; height: 300px; margin-bottom:50px; margin-left:300px">
+                        <img src="~/img/elements/s7.jpg" alt="" style="width: 450px; height: 300px; margin-bottom:50px; margin-left:100px">
                         <div class="about_info">
-                            <div class="section_title2 text-center" style="margin-right: 200px">
+                            <div class="section_title2 text-center" style="margin-right: 50px">
                                 <h3 style="margin-top:5px">What can you do?</h3>
                                 <p class="text-left" style="margin-left: 50px;">
                                     &#8226; Physical handling of Asian Toad is still relatively safe for humans (only if you need to – or else do not make contact with the Asian Toad)<br>
                                     &#8226; Practice good hygiene after handling them such as washing hands and other exposed body parts with soap and running water<br>
-                                    <br>
                                     &#8226; Report confirmed sighting to Agriculture Victoria. <br>
                                     <b>Email:</b> highrisk.invasiveanimals@agriculture.vic.gov.au <br>
                                     <b>Call: </b> Agriculture Victoria Customer Service Centre:<b>136 186</b>
@@ -669,6 +759,9 @@
                         </div>
                     </div>
                 </div>
+
+
+
 
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
