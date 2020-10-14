@@ -473,7 +473,7 @@
     <Content Include="Views\Home\Pig.cshtml" />
     <Content Include="Views\Home\Rabbit.cshtml" />
     <Content Include="Views\Home\TestPage.cshtml" />
-    <Content Include="Views\Home\FoxDamage.cshtml" />
+    <Content Include="Views\Home\Damage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
