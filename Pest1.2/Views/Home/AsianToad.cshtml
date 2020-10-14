@@ -7,24 +7,19 @@
         var Popup = {
             Show: function (geography, data, element, e) {
                 e.stopPropagation();
-
                 var el =
                     '<div class="popup-card"> \<span class="country">' + geography.properties.name + '</span>\</div>';
-
                 var $el = $(el).css({
                     top: e.pageY - 10,
                     left: e.pageX
                 });
-
                 Popup.Hide();
                 $('body').append($el);
             },
-
             Hide: function () {
                 $('body .popup-card').remove();
             }
         };
-
         var dataMap = new Datamap({
             element: document.getElementById('map'),
             scope: 'world',
@@ -35,7 +30,6 @@
                 highlightFillColor: '#f75455',
                 popupOnHover: false
             },
-
             fills: {
                 defaultFill: '#eff0f2',
                 gt: '#ed1f24'
@@ -55,21 +49,18 @@
                 CHN: { fillKey: 'gt' },
                 IDN: { fillKey: 'gt' }
             },
-
             done: function (datamap) {
                 datamap.svg.selectAll('.datamaps-subunit').on('mouseover', function (geography) {
                     Popup.Show(geography, datamap.options.data[geography.id], this, d3.event);
                 });
             }
         });
-
         $('body').on('mouseover', function (e) {
             Popup.Hide();
         })
             .on('mouseover', '.datamaps-subunit,.popup-card', function (e) {
                 e.stopPropagation();
             });
-
         function sayItOutLoud() {
             const message = 'Duttaphrynus melanostictus';
             var speech = new SpeechSynthesisUtterance();
@@ -78,31 +69,23 @@
             speech.volume = 1;
             speech.rate = 1;
             speech.pitch = 1;
-
             window.speechSynthesis.speak(speech);
         }
-
-
         function writeText(txt) {
             document.getElementById("desc").innerHTML = txt;
         }
-
-
     </script>
 
     <script>
         $(document).ready(function () {
             slide("#move-navigation", 35, 20, 150, 1);
         });
-
         function slide(navigation_id, pad_out, pad_in, time, multiplier) {
             // creates the target paths
             var list_elements = navigation_id + " li.move-element";
             var link_elements = list_elements + " a";
-
             // initiates the timer used for the move animation
             var timer = 0;
-
             // creates the slide animation for all list elements
             $(list_elements).each(function (i) {
                 // margin left = - ([width of element] + [total vertical padding of element])
@@ -113,7 +96,6 @@
                 $(this).animate({ marginLeft: "15px" }, timer);
                 $(this).animate({ marginLeft: "0" }, timer);
             });
-
             // creates the hover-slide effect for all link elements
             $(link_elements).each(function (i) {
                 $(this).hover(function () {
@@ -129,20 +111,15 @@
     <script>
         //Make sure the user has scrolled at least double the height of the browser
         var toggleHeight = $(window).outerHeight() * 0.8;
-
         $(window).scroll(function () {
             if ($(window).scrollTop() > toggleHeight) {
                 //Adds active class to make button visible
                 $(".m-backtotop").addClass("active");
-
-
             } else {
                 //Removes active class to make button visible
                 $(".m-backtotop").removeClass("active");
-
             }
         });
-
         //Scrolls the user to the top of the page again
         $(".m-backtotop").click(function () {
             $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -334,7 +311,6 @@
             ul#move-navigation li.move-element a:hover {
                 color: #fff;
             }
-
 
     .bg-button {
         fill: orange;
@@ -577,19 +553,19 @@
                 <img src="~/img/asiantoadmap.jpg" usemap="#image-map">
 
                 <map name="image-map">
-                    <area target="" alt="" title="" coords="443,142,417,130,390,126,359,125,319,137,321,164,335,182,351,198,372,197,358,172,374,153,396,154,424,164,442,166,456,163,454,150,449,147" shape="poly"                           
+                    <area target="" alt="" title="" coords="443,142,417,130,390,126,359,125,319,137,321,164,335,182,351,198,372,197,358,172,374,153,396,154,424,164,442,166,456,163,454,150,449,147" shape="poly"
                           onmouseover="writeText('Raised, black bony ridges over eyes meeting at nose')"
                           onmouseout="writeText(' Description will be updated based on position of mouse')" />
-                    <area target="" alt="" title="" coords="314,149,265,179,175,238,163,249,180,279,198,313,235,319,265,296,299,255,326,241,344,226,363,216,332,190,319,176" shape="poly"                          
+                    <area target="" alt="" title="" coords="314,149,265,179,175,238,163,249,180,279,198,313,235,319,265,296,299,255,326,241,344,226,363,216,332,190,319,176" shape="poly"
                           onmouseover="writeText('Skin is dry and rough, not moist and slippery')"
                           onmouseout="writeText(' Description will be updated based on position of mouse')" />
                     <area target="" alt="" title="" coords="159,253,152,283,128,274,114,281,107,302,110,338,117,362,135,373,153,378,164,403,175,404,175,392,195,390,230,396,245,395,181,371,196,352,205,332" shape="poly"
                           onmouseover="writeText('Short hind limb with pimple-like warts on feet and toes')"
                           onmouseout="writeText(' Description will be updated based on position of mouse')" />
-                    <area target="" alt="" title="" coords="352,247,344,233,355,222,374,209,392,203,408,193,429,186,450,181,457,191,454,203,432,217,406,227,388,239,372,244" shape="poly"                           
+                    <area target="" alt="" title="" coords="352,247,344,233,355,222,374,209,392,203,408,193,429,186,450,181,457,191,454,203,432,217,406,227,388,239,372,244" shape="poly"
                           onmouseover="writeText('Prominent black rim on upper lip')"
                           onmouseout="writeText(' Description will be updated based on position of mouse')" />
-                    <area target="" alt="" title=""  coords="329,307,367,290,394,298,430,338,422,431,370,466,293,454,284,423" shape="poly"                           
+                    <area target="" alt="" title="" coords="329,307,367,290,394,298,430,338,422,431,370,466,293,454,284,423" shape="poly"
                           onmouseover="writeText('Black tipped, hooked toes')"
                           onmouseout="writeText(' Description will be updated based on position of mouse')" />
                 </map>
