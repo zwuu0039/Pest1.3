@@ -215,6 +215,7 @@
     <Content Include="img\cat1.jpg" />
     <Content Include="img\cat2.jpg" />
     <Content Include="img\cat3.jpg" />
+    <Content Include="img\catbackground.png" />
     <Content Include="img\CatDisease.png" />
     <Content Include="img\CatThreat1.jpg" />
     <Content Include="img\danger.png" />
@@ -300,6 +301,7 @@
     <Content Include="img\fox2.jpg" />
     <Content Include="img\fox3.jpg" />
     <Content Include="img\fox4.jpg" />
+    <Content Include="img\foxbackground.png" />
     <Content Include="img\Foxhunting.gif" />
     <Content Include="img\FoxSmall.jpg" />
     <Content Include="img\fox_rabbit.jpg" />
