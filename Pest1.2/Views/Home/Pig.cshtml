@@ -158,6 +158,15 @@
 
             window.speechSynthesis.speak(speech);
         }
+
+        $('[data-toggle="tooltip"]').tooltip({
+        })
+
+        $(document).mousemove(function (e) {
+            var mouseX = e.pageX - $('#image-map-process-map').offset().left + 550;
+            var mouseY = e.pageY - $('#image-map-process-map').offset().top + 195;
+            $('.tooltip').css({ 'top': mouseY, 'left': mouseX }).fadeIn('slow');
+        });
     </script>
 
     <script>
@@ -228,7 +237,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h3> &nbsp;&nbsp; Pig</h3>
+                <h3> &nbsp;&nbsp; Feral Pig</h3>
             </div>
         </div>
     </div>
@@ -346,7 +355,7 @@
     }
 
         .pestdescription img {
-            width: 450px;
+            width: 550px;
             height: auto;
         }
 
@@ -590,26 +599,26 @@
                         <h3>What is a <br />Feral Pig?</h3>
                         <p><b>Common name:</b> Feral Pig</p>
                         <div style="display:flex;">
-                        <p>
-                            <b>Scientific name:</b> Sus scrofa
-                        </p> <svg class="on" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 -5 95 95" onclick="sayItOutLoud()">
-                            <g fill="none" fill-rule="evenodd">
+                            <p>
+                                <b>Scientific name:</b> Sus scrofa
+                            </p> <svg class="on" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 -5 95 95" onclick="sayItOutLoud()">
+                                <g fill="none" fill-rule="evenodd">
 
-                                <circle class="bg-button" cx="50.5" cy="42.5" r="33.5"></circle>
-                                <g class="speaker-icon">
-                                    <path d="M49.97 30.043c-.343 0-.64.125-.89.374l-6.583 6.549h-5.18c-.343 0-.639.124-.89.373-.25.25-.375.545-.375.885v7.552c0 .34.125.636.376.885.25.249.547.374.89.374h5.179l6.583 6.549c.25.248.547.373.89.373.342 0 .639-.125.89-.373.25-.25.375-.545.375-.885V31.302c0-.341-.125-.636-.376-.885a1.22 1.22 0 0 0-.89-.374zM57.986 44.782a5.047 5.047 0 0 0 0-5.576c-.56-.865-1.301-1.474-2.224-1.828a1.108 1.108 0 0 0-.494-.099c-.343 0-.64.122-.89.364-.25.243-.376.541-.376.895 0 .275.08.508.238.698.158.19.349.354.573.492.224.137.448.288.672.452.224.164.415.397.574.698.157.302.237.676.237 1.122 0 .445-.08.819-.237 1.12-.159.302-.35.535-.574.699-.224.164-.448.315-.672.452a2.308 2.308 0 0 0-.573.492c-.158.19-.238.423-.238.698 0 .354.126.652.376.895s.547.364.89.364c.197 0 .362-.033.494-.098.923-.368 1.664-.98 2.224-1.84z"></path>
-                                    <path d="M62.207 47.556c1.12-1.698 1.68-3.55 1.68-5.556 0-2.006-.56-3.858-1.68-5.556-1.12-1.698-2.604-2.934-4.448-3.707a1.43 1.43 0 0 0-.514-.098c-.343 0-.64.124-.89.373-.25.25-.375.544-.375.885 0 .512.257.898.77 1.16.739.38 1.24.67 1.503.866a7.437 7.437 0 0 1 2.283 2.665 7.385 7.385 0 0 1 .82 3.412 7.385 7.385 0 0 1-.82 3.412 7.434 7.434 0 0 1-2.283 2.664c-.264.197-.764.486-1.502.866-.514.262-.771.649-.771 1.16 0 .341.125.636.375.885.25.25.553.374.91.374.158 0 .323-.033.494-.098 1.844-.774 3.328-2.01 4.448-3.707z"></path>
-                                    <path d="M66.437 33.691c-1.673-2.523-3.9-4.382-6.682-5.575a1.43 1.43 0 0 0-.514-.098c-.342 0-.639.125-.89.374-.25.249-.375.544-.375.885 0 .472.257.858.771 1.16.093.052.24.12.445.206.204.085.352.154.445.206.606.328 1.146.663 1.621 1.003a12.553 12.553 0 0 1 3.796 4.464A12.337 12.337 0 0 1 66.418 42c0 2.006-.455 3.9-1.364 5.684a12.551 12.551 0 0 1-3.796 4.464c-.475.34-1.015.675-1.621 1.003a4.57 4.57 0 0 1-.445.206 4.37 4.37 0 0 0-.445.206c-.514.302-.77.688-.77 1.16 0 .341.124.636.375.885.25.25.547.374.89.374.17 0 .342-.033.513-.098 2.781-1.193 5.009-3.052 6.682-5.576 1.674-2.523 2.51-5.293 2.51-8.308 0-3.016-.836-5.785-2.51-8.309z"></path>
+                                    <circle class="bg-button" cx="50.5" cy="42.5" r="33.5"></circle>
+                                    <g class="speaker-icon">
+                                        <path d="M49.97 30.043c-.343 0-.64.125-.89.374l-6.583 6.549h-5.18c-.343 0-.639.124-.89.373-.25.25-.375.545-.375.885v7.552c0 .34.125.636.376.885.25.249.547.374.89.374h5.179l6.583 6.549c.25.248.547.373.89.373.342 0 .639-.125.89-.373.25-.25.375-.545.375-.885V31.302c0-.341-.125-.636-.376-.885a1.22 1.22 0 0 0-.89-.374zM57.986 44.782a5.047 5.047 0 0 0 0-5.576c-.56-.865-1.301-1.474-2.224-1.828a1.108 1.108 0 0 0-.494-.099c-.343 0-.64.122-.89.364-.25.243-.376.541-.376.895 0 .275.08.508.238.698.158.19.349.354.573.492.224.137.448.288.672.452.224.164.415.397.574.698.157.302.237.676.237 1.122 0 .445-.08.819-.237 1.12-.159.302-.35.535-.574.699-.224.164-.448.315-.672.452a2.308 2.308 0 0 0-.573.492c-.158.19-.238.423-.238.698 0 .354.126.652.376.895s.547.364.89.364c.197 0 .362-.033.494-.098.923-.368 1.664-.98 2.224-1.84z"></path>
+                                        <path d="M62.207 47.556c1.12-1.698 1.68-3.55 1.68-5.556 0-2.006-.56-3.858-1.68-5.556-1.12-1.698-2.604-2.934-4.448-3.707a1.43 1.43 0 0 0-.514-.098c-.343 0-.64.124-.89.373-.25.25-.375.544-.375.885 0 .512.257.898.77 1.16.739.38 1.24.67 1.503.866a7.437 7.437 0 0 1 2.283 2.665 7.385 7.385 0 0 1 .82 3.412 7.385 7.385 0 0 1-.82 3.412 7.434 7.434 0 0 1-2.283 2.664c-.264.197-.764.486-1.502.866-.514.262-.771.649-.771 1.16 0 .341.125.636.375.885.25.25.553.374.91.374.158 0 .323-.033.494-.098 1.844-.774 3.328-2.01 4.448-3.707z"></path>
+                                        <path d="M66.437 33.691c-1.673-2.523-3.9-4.382-6.682-5.575a1.43 1.43 0 0 0-.514-.098c-.342 0-.639.125-.89.374-.25.249-.375.544-.375.885 0 .472.257.858.771 1.16.093.052.24.12.445.206.204.085.352.154.445.206.606.328 1.146.663 1.621 1.003a12.553 12.553 0 0 1 3.796 4.464A12.337 12.337 0 0 1 66.418 42c0 2.006-.455 3.9-1.364 5.684a12.551 12.551 0 0 1-3.796 4.464c-.475.34-1.015.675-1.621 1.003a4.57 4.57 0 0 1-.445.206 4.37 4.37 0 0 0-.445.206c-.514.302-.77.688-.77 1.16 0 .341.124.636.375.885.25.25.547.374.89.374.17 0 .342-.033.513-.098 2.781-1.193 5.009-3.052 6.682-5.576 1.674-2.523 2.51-5.293 2.51-8.308 0-3.016-.836-5.785-2.51-8.309z"></path>
+                                    </g>
+                                    <g class="curved-arrow" stroke="#FFF" stroke-linecap="round" stroke-width="3">
+                                        <circle cx="51.512" cy="42.512" r="42.512"
+                                                transform="rotate(-90 51.512 42.512)"></circle>
+                                        <path class="arrow-tip" d="M.338 46L9.5 52.5M17.5 46l-7 6.5"></path>
+                                    </g>
                                 </g>
-                                <g class="curved-arrow" stroke="#FFF" stroke-linecap="round" stroke-width="3">
-                                    <circle cx="51.512" cy="42.512" r="42.512"
-                                            transform="rotate(-90 51.512 42.512)"></circle>
-                                    <path class="arrow-tip" d="M.338 46L9.5 52.5M17.5 46l-7 6.5"></path>
-                                </g>
-                            </g>
-                        </svg>
+                            </svg>
 
-                    </div>
+                        </div>
                         <p><b>Taxonomy Class:</b> Mammalia</p>
                         <p><b>Taxonomy Family:</b> Suidae</p>
                         <p><b>Taxonomy Genus:</b> Sus</p>
@@ -621,69 +630,40 @@
     </div>
 </div>
 <!--Pest image and name end-->
-<!--Pest physical description start-->
+<!--Pest pyhsical description start-->
 <div class="pestdescription">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="section_title2 text-center">
                     <h3>What does it look like?</h3>
+                    <br>
+                </div>
+                <div class="section_title text-center">
+                    <h3 style="font-size: 20px">Mouse over image !</h3>
                     <p>
-                        Feral pigs are smaller, leaner and more muscular than domestic pigs.<br>
-                        Feral pigs have longer, larger snouts and tusks, <br>smaller ear and much narrower backs.<br>
-                        Tails of feral pigs are usually straight with a bushy tip as compared <br>to curly tails that domestic pigs often have.
-                    <p>
+                        Description will be updated based on position of mouse
+                    </p>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6">
-                <img src="~/img/elements/epig2.jpg" alt="" />
+                <!-- Image Map Generated by http://www.image-map.net/ -->
+                <img src="~/img/pigmap.jpg" usemap="#image-map">
+
+                <map name="image-map" id="image-map-process-map">
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Longer, larger snouts and tusks" coords="30,328,26,342,23,354,18,362,16,374,15,390,8,398,20,402,32,404,38,402,46,402,52,400,59,397,64,389,70,385,74,380,82,374,86,366,88,353,91,350,88,353" shape="poly" />
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Smaller ear"coords="76,233,80,227,88,217,99,207,104,209,107,216,109,227,109,233,105,243,99,247,92,247,84,243" shape="poly" />
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Narrower backs" coords="100,166,98,143,127,117,142,102,161,86,182,76,198,66,217,56,233,50,258,38,287,33,310,28,334,27,360,27,396,32,408,35,416,38,437,46,450,53,465,62,477,73,482,80,489,92,493,96,468,95,444,94,422,92,411,90,400,88,380,86,372,86,351,86,315,86,305,85,281,88,266,88,254,88,232,91,217,94,195,103,178,109,167,111,145,130,122,149" shape="poly" />
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Tails of feral pigs are usually straight with a bushy tip as compared" coords="508,136,512,143,517,161,512,152,518,177,518,188,518,198,518,207,518,218,518,227,518,234,514,250,510,256,517,242,524,223,525,210,527,202,528,193,526,178,526,163,528,154,527,142,522,137" shape="poly" />
+
+                </map>
             </div>
         </div>
     </div>
 </div>
 <!--Pest physical description end-->
-<!--Pest danger start-->
-<div class="service_area">
-    <div class="container">
-        <div class="row justify-content-center ">
-            <div class="col-lg-6 col-md-10">
-                <div class="section_title text-center mb-55">
-                    <h3>What do they harm?</h3>
-                    <p>What dangers and damages does Feral Pig cause?</p>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6">
-                <div class="single_service">
-                    <div class="service_thumb">
-                        <img src="~/img/PigFarm.jpg" alt="">
-                    </div>
-                    <div class="service_content text-center">
-                        <h3>Destruction of agriculture</h3>
-                        <p>Prey on newborn lambs, compete with livestock and damage infrastructure such as fencing and water facilities.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single_service">
-                    <div class="service_thumb">
-                        <img src="~/img/Foot disease.jpg" alt="">
-                    </div>
-                    <div class="service_content text-center">
-                        <h3>Transmit Virus </h3>
-                        <p>
-                            Spread serious endemic and exotic diseases that affects commercial pig operations. These diseases also spread to other animal and humans:<br>
-                            1. Foot and mouth disease virus<br>
-                            2. African swine fever
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Pest danger end-->
+
+
 <!--Pest origin start-->
 <div class="section_title2 text-center">
     <div class="pestorigin">
@@ -699,50 +679,177 @@
     </div>
 </div>
 
-<!--How they spread + what can you do-->
-<div class="pestname">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="about_info">
-                    <div class="section_title mb-20px text-center">
-                        <h3>How did they <br />spread?</h3>
-                        <p>
-                            Present since early European settlement.<br>
-                            Since then, have spread across 45% of the mainland<br> and several offshore island.<br>
-                            Spread by natural dispersal, accidental escape and deliberate release.
-                        </p>
+
+
+<style>
+
+
+    .box {
+        position: relative;
+        width: 300px;
+        height: 275px;
+        background: #000;
+        box-shadow: 0 30px 30px rgba(0,0,0,.5);
+    }
+
+        .box .imgBx {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+            .box .imgBx img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.5s;
+            }
+
+        .box:hover .imgBx img {
+            opacity: 0;
+        }
+
+        .box .content {
+            position: absolute;
+            bottom: 20px;
+            left: 10%;
+            width: 80%;
+            height: 60px;
+            background: #fff;
+            transition: 0.5s;
+            overflow: hidden;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .box:hover .content {
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+        }
+
+        .box .content h3 {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        .box .content p {
+            margin: 10px 0 0;
+            padding: 0;
+            opacity: 0;
+            line-height: 1.2em;
+            transition: 0.5s;
+            text-align: justify;
+        }
+
+        .box:hover .content p {
+            opacity: 1;
+            transition-delay: 0.5s;
+        }
+</style>
+
+<!-- New Slide  -->
+<div class="service_area" style="height:550px ; margin-top:-40px;">
+    <div class="row" style="margin:0">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width:100%">
+            <div class="carousel-inner" style="padding: 0 200px">
+                <div class="carousel-item active">
+                    <div style="display:flex; justify-content:space-between">
+                        <img src="~/img/elements/m4.jpg" alt="" style="width: 450px; height: 300px; margin-bottom:50px; margin-left:100px">
+                        <div class="about_info">
+                            <div class="section_title2 text-center" style="margin-right: 50px">
+                                <h3>How did they spread?</h3>
+                                <p class="text-left" style="margin-left: 100px; ">
+                                    &#8226;Present since early European settlement.<br>
+                                    &#8226;Since then, have spread across 45% of the mainland<br> and several offshore island.<br>
+                                    &#8226;Spread by natural dispersal, accidental escape and deliberate release.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <div class="carousel-item">
+                    <div class="section_title text-center mb-55" style="margin-bottom:1px; margin-top:1px">
+                        <h3 style="color: #EB592D">What do they harm?</h3>
+                    </div>
+                    <div class="container" style="width:1000px; display:flex; flex-wrap:wrap; justify-content:space-between;">
+                        <div class="box" style="margin-left: 150px">
+                            <div class="imgBx">
+                                <img src="~/img/Foot disease.jpg">
+                            </div>
+                            <div class="content">
+                                <h3 style="font-size:30px">Diseases</h3>
+                                <p style="color:black;font-size:18px">
+                                    Spread serious endemic and exotic diseases that affects commercial pig operations. These diseases also spread to other animal and humans:<br>
+                                    1. Foot and mouth disease virus<br>
+                                    2. African swine fever
+                                </p>
+                            </div>
+                        </div>
+                        <div class="box" style="margin-right: 150px">
+                            <div class="imgBx">
+                                <img src="~/img/PigFarm.jpg">
+                            </div>
+                            <div class="content">
+                                <h3 style="font-size:30px">Agricultural Damage</h3>
+                                <p style="color:black;font-size:18px">Feral pigs can damage agricultural crops by eating or trampling them. They may prey on livestock, especially newborn lambs, goats or calves. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item ">
+                    <div style="display:flex; justify-content:space-between">
+                        <img src="~/img/elements/s1.jpg" alt="" style="width: 450px; height: 300px; margin-bottom:50px; margin-left:100px">
+                        <div class="about_info">
+                            <div class="section_title2 text-center" style="margin-right: 50px">
+                                <h3 style="margin-top:5px">What can you do?</h3>
+                                <p class="text-left" style="margin-left: 50px;">
+                                    &#8226;Do not approach the feral pig as they are dangerous.<br>
+                                    &#8226;Refrain from feeding them under any circumstances.<br>
+                                    &#8226;Remain calm, keep a safe distance.<br>
+                                    &#8226;Slowly back away from the wild boar.<br>
+                                    &#8226;When attacked, try to sidestep quickly to avoid being attacked by its tusks .<br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <img src="~/img/elements/m4.jpg" alt="">
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="margin-left: 150px"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true" style=""></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
 </div>
-<!--How they spread + what can you do end-->
-<div class="pestdescription">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <img src="~/img/elements/s1.jpg" alt="">
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6">
-                <div class="about_info">
-                    <div class="section_title2 text-center">
-                        <h3>What can you do?</h3>
-                        <p class="text-left">
-                            <br>
-                            1. Do not approach the feral pig as they are dangerous.<br>
-                            2. Refrain from feeding them under any circumstances.<br>
-                            3. Remain calm, keep a safe distance.<br>
-                            4. Slowly back away from the wild boar.<br>
-                            5. When attacked, try to sidestep quickly to avoid being attacked by its tusks .<br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+<style>
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        height: 20px;
+        width: 20px;
+        outline: black;
+        background-color: #EB592D;
+        background-size: 100%, 100%;
+    }
+
+    .tooltip {
+        pointer-events: none;
+    }
+</style>
+
+<!-- New Slide end -->

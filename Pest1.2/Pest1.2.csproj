@@ -325,10 +325,13 @@
     <Content Include="img\Orange.png" />
     <Content Include="img\pig.jpg" />
     <Content Include="img\PigFarm.jpg" />
+    <Content Include="img\pigmap.jpg" />
     <Content Include="img\Placenta.jpg" />
     <Content Include="img\rabbit.jpg" />
     <Content Include="img\rabbit2.jpg" />
     <Content Include="img\rabbit4.jpg" />
+    <Content Include="img\rabbitmap.jpg" />
+    <Content Include="img\redfoxmap.jpg" />
     <Content Include="img\Rui.jpg" />
     <Content Include="img\shipping containers.jpg" />
     <Content Include="img\Snake 1.jpg" />
