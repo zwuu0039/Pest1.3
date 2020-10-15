@@ -46,7 +46,7 @@
                                     <input id="datepicker" placeholder="Date" required>
                                 </div>
                                 <div class="col-xl-10 col-md-10">
-                                    <select class="form-select wide" id="default-select" >
+                                    <select class="form-select wide" id="default-select">
                                         <option data-display="Choose pest">Asian Toad</option>
                                         <option value="1">Boa Constrictor</option>
                                         <option value="2">Canada Goose</option>
@@ -305,7 +305,7 @@
             new mapboxgl.Marker(el)
                 .setLngLat(marker.geometry.coordinates)
                 .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                    .setHTML('<h3>' + marker.properties.name2 + '</h3><h5>Date of Apperance:<h5><p>' + marker.properties.date + '</p><h5 style="color:DodgerBlue;"><a href="' + marker.properties.name2 + '">Read More</a></5>'))
+                    .setHTML('<h3 style="color:DodgerBlue;"><a href="' + marker.properties.name2 + '">' + marker.properties.name2 + '</a></h3>'+'<h5>Date of Apperance:<h5><p>' + marker.properties.date + '</p>'))
                 .addTo(map);
         });
 
