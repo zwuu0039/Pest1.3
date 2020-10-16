@@ -1,6 +1,5 @@
 ﻿<!-- Java Script Part -->
 @section scripts{
-
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35376/topojson.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35376/datamaps.world.min.js"></script>
@@ -10,7 +9,7 @@
                 e.stopPropagation();
 
                 var el =
-                    '<div class="popup-card"> \<span class="country">' + geography.properties.name + '</span>\ </div>';
+                    '<div class="popup-card"> \<span class="country">' + geography.properties.name + '</span>\</div>';
 
                 var $el = $(el).css({
                     top: e.pageY - 10,
@@ -42,25 +41,13 @@
                 gt: '#ed1f24'
             },
             data: {
-                ARG: { fillKey: 'gt' },
-                BOL: { fillKey: 'gt' },
-                BRA: { fillKey: 'gt' },
-                CHL: { fillKey: 'gt' },
-                COL: { fillKey: 'gt' },
-                ECU: { fillKey: 'gt' },
-                GUY: { fillKey: 'gt' },
-                PAN: { fillKey: 'gt' },
-                PRY: { fillKey: 'gt' },
-                PER: { fillKey: 'gt' },
-                SUR: { fillKey: 'gt' },
-                TTO: { fillKey: 'gt' },
-                URY: { fillKey: 'gt' },
-                VEN: { fillKey: 'gt' },
+                CAN: { fillKey: 'gt' },
+                MEX: { fillKey: 'gt' },
+                USA: { fillKey: 'gt' },
                 ATG: { fillKey: 'gt' },
                 BHS: { fillKey: 'gt' },
                 BRB: { fillKey: 'gt' },
                 BLZ: { fillKey: 'gt' },
-                CAN: { fillKey: 'gt' },
                 CRI: { fillKey: 'gt' },
                 CUB: { fillKey: 'gt' },
                 DMA: { fillKey: 'gt' },
@@ -71,13 +58,12 @@
                 HTI: { fillKey: 'gt' },
                 HND: { fillKey: 'gt' },
                 JAM: { fillKey: 'gt' },
-                MEX: { fillKey: 'gt' },
                 NIC: { fillKey: 'gt' },
                 PAN: { fillKey: 'gt' },
                 KNA: { fillKey: 'gt' },
-                LCA: { fillKey: 'gt' },
-                TTO: { fillKey: 'gt' },
-                USA: { fillKey: 'gt' }
+                VCT: { fillKey: 'gt' },
+                BHS: { fillKey: 'gt' },
+                TTO: { fillKey: 'gt' }
             },
 
             done: function (datamap) {
@@ -95,7 +81,7 @@
             });
 
         function sayItOutLoud() {
-            const message = 'Boa Constrictor';
+            const message = 'Branta canadensis';
             var speech = new SpeechSynthesisUtterance();
             speech.lang = "en-US";
             speech.text = message;
@@ -106,9 +92,15 @@
             window.speechSynthesis.speak(speech);
         }
 
-        function writeText(txt) {
-            document.getElementById("desc").innerHTML = txt;
-        }
+
+        $('[data-toggle="tooltip"]').tooltip({
+        })
+
+        $(document).mousemove(function (e) {
+            var mouseX = e.pageX - $('#image-map-process-map').offset().left + 450;
+            var mouseY = e.pageY - $('#image-map-process-map').offset().top + 150;
+            $('.tooltip').css({ 'top': mouseY, 'left': mouseX }).fadeIn('slow');
+        });
 
     </script>
 
@@ -147,6 +139,7 @@
         }
     </script>
 
+
     <script>
         //Make sure the user has scrolled at least double the height of the browser
         var toggleHeight = $(window).outerHeight() * 0.8;
@@ -171,19 +164,22 @@
         });
     </script>
 
+
 }
 
 
+
 <!-- Header&Footer_area_start, Don't change it. -->
-<div class="bradcam_area breadcam_bg_6 overlay">
+<div class="bradcam_area breadcam_bg_7 overlay">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h3> &nbsp;Boa Constrictor</h3>
+                <h3> &nbsp;Canada Goose</h3>
             </div>
         </div>
     </div>
 </div>
+
 
 
 <!-- CSS Part -->
@@ -302,6 +298,17 @@
             height: auto;
         }
 
+    .pestdescription1 {
+        padding-top: 75px;
+        padding-bottom: 75px;
+        background: #FDF9F6
+    }
+
+        .pestdescription1 img {
+            width: 600px;
+            height: auto;
+        }
+
     .pestorigin {
         padding-top: 75px;
         padding-bottom: 75px;
@@ -364,6 +371,16 @@
         fill: white;
     }
 </style>
+
+<!--BACK TO TOP BUTTON-->
+<div class="m-backtotop" aria-hidden="true">
+    <div class="arrow">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+    <div class="text">
+        Back to Top
+    </div>
+</div>
 
 
 <!--BACK TO TOP CSS-->
@@ -487,16 +504,6 @@
             }
 </style>
 
-<!--BACK TO TOP BUTTON-->
-<div class="m-backtotop" aria-hidden="true">
-    <div class="arrow">
-        <i class="fa fa-arrow-up"></i>
-    </div>
-    <div class="text">
-        Back to Top
-    </div>
-</div>
-
 
 <!-- Pest list navigation start -->
 <ul id="move-navigation">
@@ -534,16 +541,16 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-xl-6 col-lg-6 col-md-6">
-                <img src="~/img/elements/esnake.jpg" alt="" />
+                <img src="~/img/elements/egoose1.jpg" alt="" />
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6">
                 <div class="about_info">
                     <div class="section_title mb-20px">
-                        <h3>What is a <br />Boa Constrictor?</h3>
-                        <p><b>Common name:</b> Boa constrictor</p>
+                        <h3>What is a <br />Canada goose?</h3>
+                        <p><b>Common name:</b> Canada goose</p>
                         <div style="display:flex;">
                             <p>
-                                <b>Scientific name:</b> Boa Constrictor
+                                <b>Scientific name:</b> Branta canadensis
                             </p> <svg class="on" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 -5 95 95" onclick="sayItOutLoud()">
                                 <g fill="none" fill-rule="evenodd">
 
@@ -562,11 +569,10 @@
                             </svg>
 
                         </div>
-
-                        <p><b>Taxonomy Class:</b> Reptilia</p>
-                        <p><b>Taxonomy Family:</b> Boidae</p>
-                        <p><b>Taxonomy Genus:</b> Boa</p>
-                        <p><b>Diet:</b> Carnivore</p>
+                        <p><b>Taxonomy Class:</b> Aves</p>
+                        <p><b>Taxonomy Family:</b> Anatidae</p>
+                        <p><b>Taxonomy Genus:</b> Branta</p>
+                        <p><b>Diet:</b> Herbivores</p>
                     </div>
                 </div>
             </div>
@@ -585,33 +591,107 @@
                 </div>
                 <div class="section_title text-center">
                     <h3 style="font-size: 20px">Mouse over image !</h3>
-                    <p style="font-size:20px" id="desc">
-                        Description will be updated based on position of mouse
                     <p>
+                        Description will be updated based on position of mouse
+                    </p>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6">
                 <!-- Image Map Generated by http://www.image-map.net/ -->
-                <img src="~/img/Snake 1.jpg" usemap="#image-map">
+                <img src="~/img/GooseWing.jpg" usemap="#image-map">
 
                 <map name="image-map">
-                    <area target="" alt="" title="" href="" coords="279,134,254,125,232,125,204,121,179,117,152,116,128,118,114,126,114,140,122,156,131,165,154,177,174,183,196,192,214,200,232,208,261,179,281,176,296,172,304,159,298,146" shape="poly"
-                          onmouseover="writeText('Distinctive pattern of jagged lines, ovals, diamonds and circles and most have a mid-dorsal head-stripe.')"
-                          onmouseout="writeText(' Description will be updated based on position of mouse')" />
-                    <area target="" alt="" title="" href="" coords="410,185,380,189,344,185,300,188,265,181,247,191,234,209,228,228,201,218,168,208,131,213,76,219,34,231,17,264,22,295,25,331,73,335,158,334,246,336,314,337,387,334,426,326,443,331,448,279,445,222,447,192" shape="poly"
-                          onmouseover="writeText('Wide range of colour variation – tan, green, red and yellow.')"
-                          onmouseout="writeText(' Description will be updated based on position of mouse')" />
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Distinctive white patch on their cheeks and chin" coords="232,56,233,62,237,68,241,72,254,70,248,64,239,55" shape="poly" />
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Have long black neck and head" coords="256,70,260,68,260,60,258,53,250,50,241,48,235,52,248,65" shape="poly" />
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Have long black neck and head" coords="229,58,226,71,224,86,224,99,229,111,238,119,246,118,254,115,249,107,243,99,241,88,242,77,246,73,236,69" shape="poly" />
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Bill, tail, legs and feet are also black" coords="145,228,138,231,130,236,125,243,127,248,134,251,141,254,152,254,161,253,167,248,156,242,148,240,142,233" shape="poly" />
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Bill, tail, legs and feet are also black" coords="157,211,164,225,167,239,165,256,162,270,174,270,182,269,177,258,176,248,176,239,170,229,166,216,162,209" shape="poly" />
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Bill, tail, legs and feet are also black" coords="235,226,242,234,247,243,252,251,257,260,252,272,263,276,273,276,284,272,269,268,264,264,259,254,256,246,254,238,252,229,252,219,244,220" shape="poly" />
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Underwings are dark" coords="208,125,193,114,185,105,169,92,151,72,139,64,129,58,120,52,110,51,101,51,83,48,63,43,25,34,20,51,23,80,28,105,44,120,62,135,85,146,104,172,119,184,138,204,157,209,173,172,192,153,206,139" shape="poly" />
+                    <area target="_self" style="outline:none;" alt="" data-toggle="tooltip" title="Underwings are dark" coords="254,105,274,85,287,80,313,73,326,70,349,68,384,67,421,59,424,73,422,92,411,107,391,121,372,130,354,142,337,147,323,152,310,156,295,161,280,143,274,126,265,115" shape="poly" />
                 </map>
             </div>
         </div>
     </div>
 </div>
 <!--Pest physical description end-->
+<!--Pest danger start-->
+@* <div class="service_area">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section_title text-center mb-55">
+                        <h3>What do they harm?</h3>
+                        <p>What dangers and damages does Canada goose cause?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_thumb">
+                            <img src="~/img/CanadaGooseCom.jpg" alt="">
+                        </div>
+                        <div class="service_content text-center">
+                            <h3>Biodiversity</h3>
+                            <p>Competes with native waterfowl species for nesting sites and food.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_thumb">
+                            <img src="~/img/CanadaGooseDisease.jpg" alt="">
+                        </div>
+                        <div class="service_content text-center">
+                            <h3>Disease</h3>
+                            <p>Have Potentially spreading parasites and disease.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_thumb">
+                            <img src="~/img/economicloss.jpg" alt="">
+                        </div>
+                        <div class="service_content text-center">
+                            <h3>Economic</h3>
+                            <p>Considered moderate pest of agriculture as they damage crops.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_thumb">
+                            <img src="~/img/elements/goose.jpg" alt="">
+                        </div>
+                        <div class="service_content text-center">
+                            <h3>Environment</h3>
+                            <p>Their droppings contaminate waterways and land.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_service">
+                        <div class="service_thumb">
+                            <img src="~/img/Airport.jpg" alt="">
+                        </div>
+                        <div class="service_content text-center">
+                            <h3>Security Risk</h3>
+                            <p> Have caused serious aeroplane crashes when they fly in flocks over or near airpots.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> *@
+
+<!--Pest danger end-->
 <!--Pest origin start-->
 <div class="section_title2 text-center">
     <div class="pestorigin">
-        <h3 style=" color:black" class="mb-30">Where did they come from?</h3>
-        <p style="font-style: italic;font-size:20px"><b>The Main Origin Area: <br>Native to Central and South America</b></p>
+        <h3 class="mb-30">Where did they come from?</h3>
+        <p style="font-style: italic;font-size:20px"><b>The Main Origin Area: <br>Native to North America, the Bahamas and Greenland</b></p>
         <p><b>*Mouse over the highlighted areas to see where the Asian Toad originated from.</b><p>
             <div id="map-container">
                 <div id="map">
@@ -626,7 +706,7 @@
     .box {
         position: relative;
         width: 300px;
-        height: 350px;
+        height: 275px;
         background: #000;
         box-shadow: 0 30px 30px rgba(0,0,0,.5);
     }
@@ -694,7 +774,6 @@
         }
 </style>
 
-
 <!-- New Slide  -->
 <div class="service_area" style="height:650px ; margin-top:2px;">
     <div class="row" style="margin:0">
@@ -702,13 +781,12 @@
             <div class="carousel-inner" style="padding: 0 200px">
                 <div class="carousel-item active">
                     <div style="display:flex; justify-content:space-between">
-                        <img src="~/img/animaltrade.jpg" alt="" style="width: 450px; height: 300px; margin-bottom:50px; margin-left:100px">
+                        <img src="~/img/elements/l3.jpg" alt="" style="width: 450px; height: 300px; margin-bottom:50px; margin-left:100px">
                         <div class="about_info">
                             <div class="section_title2 text-center" style="margin-right: 50px">
                                 <h3>How did they spread?</h3>
                                 <p class="text-left" style="margin-left: 100px; ">
-                                    &#8226;Usually they illegally bred and sold as illegal pets.<br>
-                                    &#8226;They typically escapees or deliberately released animals from illegal pet trade.<br>
+                                    &#8226;As of now, they have not spread across Australia.<br>
                                 </p>
                             </div>
                         </div>
@@ -716,25 +794,25 @@
                 </div>
                 <div class="carousel-item">
                     <div class="section_title text-center mb-55" style="margin-bottom:1px; margin-top:1px">
-                        <h3 style="color:tomato">What do they harm?</h3>
+                        <h3 style="color:#EB592D">What do they harm?</h3>
                     </div>
                     <div class="container" style="width:1000px; display:flex; flex-wrap:wrap; justify-content:space-between;">
                         <div class="box" style="margin-left: 150px">
                             <div class="imgBx">
-                                <img src="~/img/elements/esnake2.jpg">
+                                <img src="~/img/CanadaGooseCom.jpg">
                             </div>
                             <div class="content">
                                 <h3 style="font-size:30px">Biodiversity</h3>
-                                <p style="color:black;font-size:18px">Impacts on native species through predation as it has a broad diet of many food types.</p>
+                                <p style="color:black;font-size:18px">Competes with native waterfowl species for nesting sites and food.</p>
                             </div>
                         </div>
                         <div class="box" style="margin-right: 150px">
                             <div class="imgBx">
-                                <img src="~/img/SnakeDisease.jpg">
+                                <img src="~/img/CanadaGooseDisease.jpg">
                             </div>
                             <div class="content">
-                                <h3 style="font-size:30px">Diseases</h3>
-                                <p style="color:black;font-size:18px">Have potential to carry exotic diseases and parasites which could be transmitted to native wildlife. </p>
+                                <h3 style="font-size:30px">Disease</h3>
+                                <p style="color:black;font-size:18px">Have Potentially spreading parasites and disease. </p>
                             </div>
                         </div>
                     </div>
@@ -744,15 +822,19 @@
 
                 <div class="carousel-item ">
                     <div style="display:flex; justify-content:space-between">
-                        <img src="~/img/elements/s6.jpg" alt="" style="width: 450px; height: 300px; margin-bottom:50px; margin-left:100px">
+                        <img src="~/img/elements/s4.jpg" alt="" style="width: 450px; height: 300px; margin-bottom:50px; margin-left:100px">
                         <div class="about_info">
                             <div class="section_title2 text-center" style="margin-right: 50px">
                                 <h3 style="margin-top:5px">What can you do?</h3>
                                 <p class="text-left" style="margin-left: 50px;">
-                                    &#8226; Never attempt to approach or handle a snake.<br>
-                                    &#8226; All snakes should be considered venomous and highly dangerous.<br>
-                                    &#8226; If bitten by a snake dial <b>000</b> immediately. <br>
-                                    <b>Call: </b> Agriculture Victoria Customer Service Centre:<b>136 186</b>
+                                    &#8226; Do not approach nests – geese aggressively defend nests and can inflict injury with their beak and wings.<br>
+                                    &#8226; Watch for warning signs – geese will pump their heads up and down as a sign of aggression.<br>
+                                    &#8226; Remain calm if you are faced with an aggressive goose. It is best to remain calm, stand straight, maintain eye contact and slowly back away.<br>
+                                    &#8226; Never feed them as supplementing them with food will increase their numbers and reduce their fear of humans.<br>
+                                    &#8226; Any unwanted Canada goose should be surrendered to the authorities or a responsible organisation, not released into the wild. <br>
+                                    &#8226;Report confirmed sighting to Agriculture Victoria. <br>
+                                    <b>Email:</b> highrisk.invasiveanimals@agriculture.vic.gov.au <br>
+                                    <b>Call: </b> Agriculture Victoria Customer Service Centre<b>136 186</b>
                                 </p>
                             </div>
                         </div>
@@ -782,6 +864,10 @@
         outline: black;
         background-color: #EB592D;
         background-size: 100%, 100%;
+    }
+
+    .tooltip {
+        pointer-events: none;
     }
 </style>
 <!-- New Slide end -->
