@@ -49,16 +49,16 @@
             },
 
             done: function (datamap) {
-                datamap.svg.selectAll('.datamaps-subunit').on('click', function (geography) {
+                datamap.svg.selectAll('.datamaps-subunit').on('mouseover', function (geography) {
                     Popup.Show(geography, datamap.options.data[geography.id], this, d3.event);
                 });
             }
         });
 
-        $('body').on('click', function (e) {
+        $('body').on('mouseover', function (e) {
             Popup.Hide();
         })
-            .on('click', '.datamaps-subunit,.popup-card', function (e) {
+            .on('mouseover', '.datamaps-subunit,.popup-card', function (e) {
                 e.stopPropagation();
             });
 
