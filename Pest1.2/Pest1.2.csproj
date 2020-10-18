@@ -327,6 +327,7 @@
     <Content Include="img\appearance\foxabc.jpg" />
     <Content Include="img\appearance\foxnew2.jpg" />
     <Content Include="img\appearance\foxnew3.jpg" />
+    <Content Include="img\newgoosemap.png" />
     <Content Include="img\Orange.png" />
     <Content Include="img\pig.jpg" />
     <Content Include="img\PigFarm.jpg" />
