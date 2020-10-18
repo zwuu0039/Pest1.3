@@ -208,17 +208,20 @@
     <Content Include="img\appearance\rabbitcard.jpg" />
     <Content Include="img\AsianToad 1.jpg" />
     <Content Include="img\asiantoadmap.jpg" />
+    <Content Include="img\Asiantoadmap.png" />
     <Content Include="img\autumn.jpg" />
     <Content Include="img\black.png" />
     <Content Include="img\CanadaGooseCom.jpg" />
     <Content Include="img\CanadaGooseDisease.jpg" />
     <Content Include="img\canetoad.jpg" />
+    <Content Include="img\canetoadmap.png" />
     <Content Include="img\caravans.jpg" />
     <Content Include="img\cat1.jpg" />
     <Content Include="img\cat2.jpg" />
     <Content Include="img\cat3.jpg" />
     <Content Include="img\catback.png" />
     <Content Include="img\CatDisease.png" />
+    <Content Include="img\catmap.png" />
     <Content Include="img\CatThreat1.jpg" />
     <Content Include="img\danger.png" />
     <Content Include="img\economicloss.jpg" />
@@ -305,10 +308,12 @@
     <Content Include="img\fox4.jpg" />
     <Content Include="img\foxback.png" />
     <Content Include="img\Foxhunting.gif" />
+    <Content Include="img\foxmap.png" />
     <Content Include="img\FoxSmall.jpg" />
     <Content Include="img\fox_rabbit.jpg" />
     <Content Include="img\Fungi.jpg" />
     <Content Include="img\goose.jpg" />
+    <Content Include="img\goosemap.png" />
     <Content Include="img\GooseWing.jpg" />
     <Content Include="img\Jon.jpg" />
     <Content Include="img\Land.jpeg" />
@@ -326,10 +331,12 @@
     <Content Include="img\pig.jpg" />
     <Content Include="img\PigFarm.jpg" />
     <Content Include="img\pigmap.jpg" />
+    <Content Include="img\pigmap.png" />
     <Content Include="img\Placenta.jpg" />
     <Content Include="img\rabbit.jpg" />
     <Content Include="img\rabbit2.jpg" />
     <Content Include="img\rabbit4.jpg" />
+    <Content Include="img\rabbitimgmap.png" />
     <Content Include="img\rabbitmap.jpg" />
     <Content Include="img\redfoxmap.jpg" />
     <Content Include="img\Rui.jpg" />
@@ -337,6 +344,7 @@
     <Content Include="img\Snake 1.jpg" />
     <Content Include="img\snake.jpg" />
     <Content Include="img\SnakeDisease.jpg" />
+    <Content Include="img\snakemap.png" />
     <Content Include="img\teenslider.jpg" />
     <Content Include="img\tree.jpg" />
     <Content Include="img\us.jpg" />
@@ -425,6 +433,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Home\Asiantoadmap.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
