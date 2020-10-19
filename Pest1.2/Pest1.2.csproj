@@ -206,7 +206,7 @@
     <Content Include="img\appearance\goose4.jpg" />
     <Content Include="img\appearance\possumcard.jpg" />
     <Content Include="img\appearance\rabbitcard.jpg" />
-    <Content Include="img\AsianToad 1.jpg" />
+    <Content Include="img\AsianToad_1.jpg" />
     <Content Include="img\asiantoadmap.jpg" />
     <Content Include="img\Asiantoadmap.png" />
     <Content Include="img\autumn.jpg" />
@@ -327,7 +327,6 @@
     <Content Include="img\appearance\foxabc.jpg" />
     <Content Include="img\appearance\foxnew2.jpg" />
     <Content Include="img\appearance\foxnew3.jpg" />
-    <Content Include="img\newgoosemap.png" />
     <Content Include="img\Orange.png" />
     <Content Include="img\pig.jpg" />
     <Content Include="img\PigFarm.jpg" />

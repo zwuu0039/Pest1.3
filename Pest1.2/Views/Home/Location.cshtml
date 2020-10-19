@@ -32,22 +32,24 @@
         <div class="col-lg-4">
             <div class="section_title text-center mb-55">
                 <h3>Report a pest</h3>
-                <br><br>
+                <br>
                 <h4>Seen a pest recently ? Report now !<br></h4>
                 <h5>
                     Your sighting reports will be validated <br>
                     before they will appear on the map.
                 </h5>
-                <div class="popup_box ">
+                <br>
+                <div class="popup_box2" style="margin-left:70px">
                     <div class="popup_inner">
                         <form action="#">
                             <div class="row">
                                 <div class="col-xl-10 col-md-10">
-                                    <input id="datepicker" placeholder="Date" required>
+                                    <input type="date" id="txtDate" placeholder="Date" min="2020-09-01" required>
                                 </div>
                                 <div class="col-xl-10 col-md-10">
                                     <select class="form-select wide" id="default-select">
-                                        <option data-display="Choose pest">Asian Toad</option>
+                                        <option data-display="Choose pest">Choose pest</option>
+                                        <option value="0">Asian Toad</option>
                                         <option value="1">Boa Constrictor</option>
                                         <option value="2">Canada Goose</option>
                                         <option value="3">Cane Toad</option>
@@ -60,46 +62,49 @@
                             </div>
                         </form>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-10 col-md-10 reverse-geo-controls">
-                            <div class="form-group" style="flex-grow: 1; margin-right: 8px;">
-                                <input id="reverse-geo-lat" class="form-control" placeholder="Latitude" required />
-                            </div>
-                            <div class="form-group" style="flex-grow: 1; margin-left: 8px; margin-right: 8px;">
-                                <input id="reverse-geo-lng" class="form-control" placeholder="Longitude" required />
-                            </div>
-                            <div class="form-group" style="margin-left: 8px;">
-                                <button id="reverse-locate-me" class="btn btn-warning" style="width: 150px;">Locate me</button>
-                            </div>
-                        </div>
-                        <form action="/locate" class="form col-xl-10 col-md-10">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="reverse-address" placeholder="Street number and name" required />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="reverse-town" placeholder="City" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="reverse-zip" placeholder="ZIP code" required>
-                            </div>
-                        </form>
-                    </div>
                     <div class="popup_inner">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-xl-10 col-md-10">
-                                    <button type="submit" class="boxed-btn3" onclick="alert('Thank you for your report! We will update the database in a week.')">
-                                        Submit
-                                    </button>
+                        <div class="row">
+                            <div class="col-xl-10 col-md-10 reverse-geo-controls">
+                                <div class="form-group" style="flex-grow: 1; margin-right: 8px;">
+                                    <input id="reverse-geo-lat" class="form-control" placeholder="Latitude" required />
+                                </div>
+                                <div class="form-group" style="flex-grow: 1; margin-left: 8px; margin-right: 8px;">
+                                    <input id="reverse-geo-lng" class="form-control" placeholder="Longitude" required />
+                                </div>
+                                <div class="form-group" style="margin-left: 8px;">
+                                    <button id="reverse-locate-me" class="boxed-btn3" style="width: 150px;height:50px">Locate</button>
                                 </div>
                             </div>
-                        </form>
+                            <form action="/locate" class="form col-xl-10 col-md-10">
+                                <div class="form-group" style="margin-top:-15px">
+                                    <input type="text" class="form-control" id="reverse-address" placeholder="Street number and name" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="reverse-town" placeholder="City" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="reverse-zip" placeholder="ZIP code" required>
+                                </div>
+                            </form>
+                        </div>
+                    
+                        <div class="popup_inner">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-xl-10 col-md-10">
+                                        <button type="submit" class="boxed-btn3" onclick="alert('Thank you for your report! We will update the database in a week.')">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </div>
+    </div>
 
 <!-- Body End-->
 <!-- Map Start-->
@@ -113,6 +118,24 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <script src="https://cdn.jsdelivr.net/algoliasearch/3.31/algoliasearchLite.min.js"></script>
     <script>
+
+        $(function () {
+            var dtToday = new Date();
+
+            var month = dtToday.getMonth() + 1;
+            var day = dtToday.getDate();
+            var year = dtToday.getFullYear();
+
+            if (month < 10)
+                month = '0' + month.toString();
+            if (day < 10)
+                day = '0' + day.toString();
+
+            var maxDate = year + '-' + month + '-' + day;
+            $('#txtDate').attr('max', maxDate);
+        });
+
+
         (function () {
             var places = algoliasearch.initPlaces('plA7KPZMVOB3', 'dbfd369505723c5306b4b3b0f5f84cb0');
 
@@ -174,7 +197,7 @@
                     $latInput.value = lat;
                     $lngInput.value = lng;
 
-                    $button.textContent = 'Locate me';
+                    $button.textContent = 'Locate';
 
                     places.reverse({
                         aroundLatLng: lat + ',' + lng,
@@ -350,7 +373,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-end;
     }
 </style>
 <style>
@@ -464,3 +486,58 @@
     }
 </table>
 <!-- Import fdata from database to the map End-->
+
+<style>
+
+    .popup_box2 {
+        background: #fff;
+        z-index: 9;
+    }
+
+    .popup_box2 h3 {
+        text-align: center;
+        font-size: 22px;
+        color: #1F1F1F;
+    }
+
+    .popup_box2 .boxed-btn3 {
+        width: 100%;
+        text-transform: capitalize;
+    }
+
+    .popup_box2 .nice-select {
+        -webkit-tap-highlight-color: transparent;
+        background-color: #fff;
+        /* border-radius: 5px; */
+        border: solid 1px #E2E2E2;
+        box-sizing: border-box;
+        clear: both;
+        cursor: pointer;
+        display: block;
+        float: left;
+        font-family: "Lato", sans-serif;
+        font-weight: normal;
+        width: 100% !important;
+        /* height: 42px; */
+        line-height: 50px;
+        outline: none;
+        padding-left: 18px;
+        padding-right: 30px;
+        position: relative;
+        text-align: left !important;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        white-space: nowrap;
+        width: auto;
+        border-radius: 0;
+        margin-bottom: 30px;
+        height: 50px !important;
+        font-size: 16px;
+        font-weight: 400;
+        color: #919191;
+    }
+</style>
