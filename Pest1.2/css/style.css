@@ -2794,7 +2794,7 @@ h3 {
 }
 
 .breadcam_bg_10 {
-    background-image: url(../img/AsianToad1.jpg);
+    background-image: url(../img/AsianToad_1.jpg);
 }
 
 .breadcam_bg_11 {
@@ -2848,26 +2848,7 @@ h3 {
 /* line 35, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_bradcam.scss */
 .popup_box {
     background: #fff;
-    display: inline-block;
     z-index: 9;
-    width: 681px;
-    padding: 60px 40px;
-}
-
-@media (max-width: 767px) {
-    /* line 35, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_bradcam.scss */
-    .popup_box {
-        width: 320px;
-        padding: 45px 30px;
-    }
-}
-
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-    /* line 35, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_bradcam.scss */
-    .popup_box {
-        width: 420px !important;
-        padding: 45px 30px;
-    }
 }
 
 /* line 54, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_bradcam.scss */
@@ -2875,7 +2856,6 @@ h3 {
     text-align: center;
     font-size: 22px;
     color: #1F1F1F;
-    margin-bottom: 46px;
 }
 
 /* line 60, ../../Arafath/CL/january 2020/238. Barber/HTML/scss/_bradcam.scss */
