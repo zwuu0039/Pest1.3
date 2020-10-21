@@ -200,10 +200,6 @@
     <Content Include="img\Airport.jpg" />
     <Content Include="img\animaltrade.jpg" />
     <Content Include="img\appearance\foxcard.jpg" />
-    <Content Include="img\appearance\goose1.jpg" />
-    <Content Include="img\appearance\goose2.jpg" />
-    <Content Include="img\appearance\goose3.jpg" />
-    <Content Include="img\appearance\goose4.jpg" />
     <Content Include="img\appearance\possumcard.jpg" />
     <Content Include="img\appearance\rabbitcard.jpg" />
     <Content Include="img\AsianToad_1.jpg" />
@@ -257,24 +253,7 @@
     <Content Include="img\elements\esnake.jpg" />
     <Content Include="img\elements\esnake1.jpg" />
     <Content Include="img\elements\esnake2.jpg" />
-    <Content Include="img\elements\f1.jpg" />
-    <Content Include="img\elements\f2.jpg" />
-    <Content Include="img\elements\f3.jpg" />
-    <Content Include="img\elements\f4.jpg" />
-    <Content Include="img\elements\f5.jpg" />
-    <Content Include="img\elements\f6.jpg" />
-    <Content Include="img\elements\f7.jpg" />
-    <Content Include="img\elements\f8.jpg" />
-    <Content Include="img\elements\false.png" />
     <Content Include="img\elements\frog.jpg" />
-    <Content Include="img\elements\g1.jpg" />
-    <Content Include="img\elements\g2.jpg" />
-    <Content Include="img\elements\g3.jpg" />
-    <Content Include="img\elements\g4.jpg" />
-    <Content Include="img\elements\g5.jpg" />
-    <Content Include="img\elements\g6.jpg" />
-    <Content Include="img\elements\g7.jpg" />
-    <Content Include="img\elements\g8.jpg" />
     <Content Include="img\elements\goose.jpg" />
     <Content Include="img\elements\human.jpg" />
     <Content Include="img\elements\l1.jpg" />
@@ -324,9 +303,6 @@
     <Content Include="img\marker3.png" />
     <Content Include="img\marker4.png" />
     <Content Include="img\me1.jpg" />
-    <Content Include="img\appearance\foxabc.jpg" />
-    <Content Include="img\appearance\foxnew2.jpg" />
-    <Content Include="img\appearance\foxnew3.jpg" />
     <Content Include="img\Orange.png" />
     <Content Include="img\pig.jpg" />
     <Content Include="img\PigFarm.jpg" />
@@ -445,7 +421,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="scss\style.scss" />
     <Content Include="scss\_about.scss" />
@@ -473,10 +448,6 @@
     <Content Include="scss\_testmonial.scss" />
     <Content Include="scss\_varriable.scss" />
     <Content Include="Views\Home\Location.cshtml" />
-    <Content Include="Views\PestLocations\Create.cshtml" />
-    <Content Include="Views\PestLocations\Delete.cshtml" />
-    <Content Include="Views\PestLocations\Details.cshtml" />
-    <Content Include="Views\PestLocations\Edit.cshtml" />
     <Content Include="Views\PestLocations\Index.cshtml" />
     <Content Include="Views\Home\Fox.cshtml" />
     <Content Include="Views\Home\AsianToad.cshtml" />
@@ -486,8 +457,6 @@
     <Content Include="Views\Home\CaneToad.cshtml" />
     <Content Include="Views\Home\Pig.cshtml" />
     <Content Include="Views\Home\Rabbit.cshtml" />
-    <Content Include="Views\Home\TestPage.cshtml" />
-    <Content Include="Views\Home\Damage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

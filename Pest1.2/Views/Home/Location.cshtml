@@ -16,7 +16,6 @@
 <br>
 <br>
 <br>
-
 <div class="col-lg-12">
     <div class="row">
         <div class="col-lg-8">
@@ -87,7 +86,7 @@
                                 </div>
                             </form>
                         </div>
-                    
+
                         <div class="popup_inner">
                             <form action="#">
                                 <div class="row">
@@ -101,11 +100,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </div>
 </div>
-    </div>
-
 <!-- Body End-->
 <!-- Map Start-->
 <link rel="stylesheet"
@@ -318,10 +316,10 @@
                         'type': 'symbol',
                         'source': 'records',
                         'layout': {
-                            'icon-image': ['get','icon'],
+                            'icon-image': ['get', 'icon'],
                             'icon-allow-overlap': true,
                             'icon-size': 1.5,
-                            'icon-allow-overlap' :false
+                            'icon-allow-overlap': false
                         },
                         'filter': ['==', 'name2', symbol]
                     });
@@ -362,7 +360,7 @@
             new mapboxgl.Marker(el)
                 .setLngLat(marker.geometry.coordinates)
                 .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                    .setHTML('<h3 style="color:DodgerBlue;"><a href="' + marker.properties.name2 + '">' + marker.properties.name2 + '</a></h3>'+'<h5>Date of Apperance:<h5><p>' + marker.properties.date + '</p>'))
+                    .setHTML('<h3 style="color:DodgerBlue;"><a href="' + marker.properties.name2 + '">' + marker.properties.name2 + '</a></h3>' + '<h5>Date of Apperance:<h5><p>' + marker.properties.date + '</p>'))
                 .addTo(map);
         });
 
@@ -401,6 +399,49 @@
     </script>
 }
 <!-- Map End-->
+<!-- Import fdata from database to the map-->
+<table class="table" style="display:none">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Scientific_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vernacular_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Event_Date__parsed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="position">
+            <td class="name1">
+                @Html.DisplayFor(modelItem => item.Scientific_Name)
+            </td>
+            <td class="name2">
+                @Html.DisplayFor(modelItem => item.Vernacular_name)
+            </td>
+            <td class="date">
+                @Html.DisplayFor(modelItem => item.Event_Date__parsed)
+            </td>
+            <td class="latitude">
+                @Html.DisplayFor(modelItem => item.Latitude)
+            </td>
+            <td class="longitude">
+                @Html.DisplayFor(modelItem => item.Longitude)
+            </td>
+        </tr>
+    }
+</table>
+<!-- Import data from database to the map End-->
 <!-- css Start-->
 <style>
     .reverse-geo-controls {
@@ -476,50 +517,6 @@
                         margin-right: 5px;
                     }
 </style>
-<!-- css end-->
-<!-- Import fdata from database to the map-->
-<table class="table" style="display:none">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Scientific_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Vernacular_name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Event_Date__parsed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Latitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Longitude)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr class="position">
-            <td class="name1">
-                @Html.DisplayFor(modelItem => item.Scientific_Name)
-            </td>
-            <td class="name2">
-                @Html.DisplayFor(modelItem => item.Vernacular_name)
-            </td>
-            <td class="date">
-                @Html.DisplayFor(modelItem => item.Event_Date__parsed)
-            </td>
-            <td class="latitude">
-                @Html.DisplayFor(modelItem => item.Latitude)
-            </td>
-            <td class="longitude">
-                @Html.DisplayFor(modelItem => item.Longitude)
-            </td>
-        </tr>
-    }
-</table>
-<!-- Import fdata from database to the map End-->
 
 <style>
 
@@ -528,50 +525,51 @@
         z-index: 9;
     }
 
-    .popup_box2 h3 {
-        text-align: center;
-        font-size: 22px;
-        color: #1F1F1F;
-    }
+        .popup_box2 h3 {
+            text-align: center;
+            font-size: 22px;
+            color: #1F1F1F;
+        }
 
-    .popup_box2 .boxed-btn3 {
-        width: 100%;
-        text-transform: capitalize;
-    }
+        .popup_box2 .boxed-btn3 {
+            width: 100%;
+            text-transform: capitalize;
+        }
 
-    .popup_box2 .nice-select {
-        -webkit-tap-highlight-color: transparent;
-        background-color: #fff;
-        /* border-radius: 5px; */
-        border: solid 1px #E2E2E2;
-        box-sizing: border-box;
-        clear: both;
-        cursor: pointer;
-        display: block;
-        float: left;
-        font-family: "Lato", sans-serif;
-        font-weight: normal;
-        width: 100% !important;
-        /* height: 42px; */
-        line-height: 50px;
-        outline: none;
-        padding-left: 18px;
-        padding-right: 30px;
-        position: relative;
-        text-align: left !important;
-        -webkit-transition: all 0.2s ease-in-out;
-        transition: all 0.2s ease-in-out;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        white-space: nowrap;
-        width: auto;
-        border-radius: 0;
-        margin-bottom: 30px;
-        height: 50px !important;
-        font-size: 16px;
-        font-weight: 400;
-        color: #919191;
-    }
+        .popup_box2 .nice-select {
+            -webkit-tap-highlight-color: transparent;
+            background-color: #fff;
+            /* border-radius: 5px; */
+            border: solid 1px #E2E2E2;
+            box-sizing: border-box;
+            clear: both;
+            cursor: pointer;
+            display: block;
+            float: left;
+            font-family: "Lato", sans-serif;
+            font-weight: normal;
+            width: 100% !important;
+            /* height: 42px; */
+            line-height: 50px;
+            outline: none;
+            padding-left: 18px;
+            padding-right: 30px;
+            position: relative;
+            text-align: left !important;
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            white-space: nowrap;
+            width: auto;
+            border-radius: 0;
+            margin-bottom: 30px;
+            height: 50px !important;
+            font-size: 16px;
+            font-weight: 400;
+            color: #919191;
+        }
 </style>
+<!-- css end-->
