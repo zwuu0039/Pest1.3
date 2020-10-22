@@ -16,6 +16,7 @@
 <br>
 <br>
 <br>
+
 <div class="col-lg-12">
     <div class="row">
         <div class="col-lg-8">
@@ -38,65 +39,65 @@
                     before they will appear on the map.
                 </h5>
                 <br>
+
+                <form id="Form1" action="#" method="post" onsubmit="submitFunction()"></form>
+                <form id="Form2" action="/locate" method="post"></form>
+
                 <div class="popup_box2" style="margin-left:70px">
                     <div class="popup_inner">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-xl-10 col-md-10">
-                                    <input type="date" id="txtDate" placeholder="Date" min="2020-09-01" required>
-                                </div>
-                                <div class="col-xl-10 col-md-10">
-                                    <select class="form-select wide" id="default-select">
-                                        <option data-display="Choose pest">Choose pest</option>
-                                        <option value="0">Asian Toad</option>
-                                        <option value="1">Boa Constrictor</option>
-                                        <option value="2">Canada Goose</option>
-                                        <option value="3">Cane Toad</option>
-                                        <option value="4">Feral Cat</option>
-                                        <option value="5">Feral Pig</option>
-                                        <option value="6">Rabbit</option>
-                                        <option value="7">Red Fox</option>
-                                    </select>
-                                </div>
+                        <div class="row">
+                            <div class="col-xl-10 col-md-10">
+                                <input type="date" id="txtDate" placeholder="Date" min="2020-09-01" required form="Form1">
                             </div>
-                        </form>
+                            <div class="col-xl-10 col-md-10">
+                                <select class="form-select wide" id="default-select" form="Form1" required>
+                                    <option data-display="Choose pest" value="">Choose pest</option>
+                                    <option value="0">Asian Toad</option>
+                                    <option value="1">Boa Constrictor</option>
+                                    <option value="2">Canada Goose</option>
+                                    <option value="3">Cane Toad</option>
+                                    <option value="4">Feral Cat</option>
+                                    <option value="5">Feral Pig</option>
+                                    <option value="6">Rabbit</option>
+                                    <option value="7">Red Fox</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="popup_inner">
                         <div class="row">
                             <div class="col-xl-10 col-md-10 reverse-geo-controls">
                                 <div class="form-group" style="flex-grow: 1; margin-right: 8px;">
-                                    <input id="reverse-geo-lat" class="form-control" placeholder="Latitude" required />
+                                    <input id="reverse-geo-lat" class="form-control" placeholder="Latitude" type="number" step="any" required form="Form1" />
                                 </div>
                                 <div class="form-group" style="flex-grow: 1; margin-left: 8px; margin-right: 8px;">
-                                    <input id="reverse-geo-lng" class="form-control" placeholder="Longitude" required />
+                                    <input id="reverse-geo-lng" class="form-control" placeholder="Longitude" type="number" step="any" required form="Form1" />
                                 </div>
                                 <div class="form-group" style="margin-left: 8px;">
                                     <button id="reverse-locate-me" class="boxed-btn3" style="width: 150px;height:50px">Locate</button>
                                 </div>
                             </div>
-                            <form action="/locate" class="form col-xl-10 col-md-10">
+                            <div class="form col-xl-10 col-md-10">
                                 <div class="form-group" style="margin-top:-15px">
-                                    <input type="text" class="form-control" id="reverse-address" placeholder="Street number and name" required />
+                                    <input type="text" class="form-control" id="reverse-address" placeholder="Street number and name" required form="Form1" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="reverse-town" placeholder="City" required>
+                                    <input type="text" pattern="[a-zA-Z]*" class="form-control" id="reverse-town" placeholder="City" required form="Form1">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="reverse-zip" placeholder="ZIP code" required>
+                                    <input type="number" class="form-control" id="reverse-zip" placeholder="ZIP code" required form="Form1">
                                 </div>
-                            </form>
+                            </div>
                         </div>
 
                         <div class="popup_inner">
-                            <form action="#">
-                                <div class="row">
-                                    <div class="col-xl-10 col-md-10">
-                                        <button type="submit" class="boxed-btn3" onclick="alert('Thank you for your report! We will update the database in a week.')">
-                                            Submit
-                                        </button>
-                                    </div>
+                            <div class="row">
+                                <div class="col-xl-10 col-md-10">
+                                    <button type="submit" class="boxed-btn3" form="Form1">
+                                        Submit
+                                    </button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -104,6 +105,7 @@
         </div>
     </div>
 </div>
+
 <!-- Body End-->
 <!-- Map Start-->
 <link rel="stylesheet"
@@ -396,52 +398,32 @@
             inputs[i].onclick = switchLayer;
         }
 
+
+
+        document.getElementById("check").onclick = function () {
+            let allAreFilled = true;
+            document.getElementById("myForm").querySelectorAll("[required]").forEach(function (i) {
+                if (!allAreFilled) return;
+                if (!i.value) allAreFilled = false;
+                if (i.type === "radio") {
+                    let radioValueCheck = false;
+                    document.getElementById("myForm").querySelectorAll(`[name=${i.name}]`).forEach(function (r) {
+                        if (r.checked) radioValueCheck = true;
+                    })
+                    allAreFilled = radioValueCheck;
+                }
+            })
+            if (!allAreFilled) {
+                alert('Fill all the fields');
+            }
+        };
+
+        function submitFunction() {
+            alert('Thank you for your report! We will update the database in a week.')
+        }
     </script>
 }
 <!-- Map End-->
-<!-- Import fdata from database to the map-->
-<table class="table" style="display:none">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Scientific_Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Vernacular_name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Event_Date__parsed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Latitude)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Longitude)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr class="position">
-            <td class="name1">
-                @Html.DisplayFor(modelItem => item.Scientific_Name)
-            </td>
-            <td class="name2">
-                @Html.DisplayFor(modelItem => item.Vernacular_name)
-            </td>
-            <td class="date">
-                @Html.DisplayFor(modelItem => item.Event_Date__parsed)
-            </td>
-            <td class="latitude">
-                @Html.DisplayFor(modelItem => item.Latitude)
-            </td>
-            <td class="longitude">
-                @Html.DisplayFor(modelItem => item.Longitude)
-            </td>
-        </tr>
-    }
-</table>
-<!-- Import data from database to the map End-->
 <!-- css Start-->
 <style>
     .reverse-geo-controls {
@@ -517,6 +499,50 @@
                         margin-right: 5px;
                     }
 </style>
+<!-- css end-->
+<!-- Import fdata from database to the map-->
+<table class="table" style="display:none">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Scientific_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vernacular_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Event_Date__parsed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr class="position">
+            <td class="name1">
+                @Html.DisplayFor(modelItem => item.Scientific_Name)
+            </td>
+            <td class="name2">
+                @Html.DisplayFor(modelItem => item.Vernacular_name)
+            </td>
+            <td class="date">
+                @Html.DisplayFor(modelItem => item.Event_Date__parsed)
+            </td>
+            <td class="latitude">
+                @Html.DisplayFor(modelItem => item.Latitude)
+            </td>
+            <td class="longitude">
+                @Html.DisplayFor(modelItem => item.Longitude)
+            </td>
+        </tr>
+    }
+</table>
+<!-- Import fdata from database to the map End-->
 
 <style>
 
@@ -572,4 +598,3 @@
             color: #919191;
         }
 </style>
-<!-- css end-->
