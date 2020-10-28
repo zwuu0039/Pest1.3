@@ -206,6 +206,7 @@
         })();
     </script>
     <script>
+        //cREATE A LIST TO STORE THE INFORMATION OF PEST
         var pointlist = [];
         $(".position").each(function () {
             var name1 = $(".name1", this).text().trim();
@@ -214,6 +215,7 @@
             var latitude = $(".latitude", this).text().trim();
             var longitude = $(".longitude", this).text().trim();
 
+            //create a point to output to information of a pest
             var point = {
                 "name1": name1,
                 "name2": name2,
@@ -256,6 +258,7 @@
 
         var filterGroup = document.getElementById('filter-group');
 
+        //map's style
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v8',
